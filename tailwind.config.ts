@@ -8,6 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'not-black': '#180f0f',
+        'pale': '#F0E4D8',
+        'brand-yellow': '#f8de7f',
+        'brand-green': '#D4ED30',
+        'brand-purple': '#987dc1',
+        'brand-pink': '#f3acc0',
+        'brand-blue': '#ace4f3'
+      },
+      boxShadow: {
+        'thick': '3px 5px 0px',
+        'thick-hover': '2px 2px 0px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
