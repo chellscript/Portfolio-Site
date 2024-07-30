@@ -15,6 +15,7 @@ interface TaglineDataProps {
 
 export const MySkills = [
   "React",
+  "Next.js",
   "Typescript",
   "HTML & CSS",
   "Figma",

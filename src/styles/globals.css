@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h3 {
+    font-size: 1.5rem;
+    /* text-2xl */
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 2.25rem;
+      /* md:text-4xl */
+    }
+  }
+
+  h2 {
+    font-size: 3rem;
+    /* text-5xl corresponds to 3rem */
+  }
+
+
+}
+
 @layer utilities {
 
   .frame-clip {

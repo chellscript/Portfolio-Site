@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -13,8 +14,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/src/*": ["./src/*"],
-
+      "@/src/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

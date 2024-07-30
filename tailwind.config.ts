@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'not-black': '#180f0f',
         'pale': '#F0E4D8',
+        'not-black': '#180f0f',
         'brand-yellow': '#f5bc66',
         'brand-green': '#D4ED30',
         'brand-purple': '#987dc1',
