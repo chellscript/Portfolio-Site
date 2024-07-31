@@ -16,16 +16,15 @@ export const getStaticProps = async () => {
     return { props: { data } };
   } catch (error) {
     console.error(error);
+    return { props: {} };
   }
 };
 
 export default function Home({ data }: DataProps) {
-  // const { pastWork, skills } = data;
-
   return (
     <>
+      <NavBar />
       <main>
-        <NavBar />
         <Hero />
         <Skills />
         <Work pastWork={data.pastWork} />

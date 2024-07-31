@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { PastWorkDataProps } from "@/src/typings";
-import PastWorkTabs from "../pastWorkTabs";
-import PastWorkList from "../pastWorkList";
-import PastWorkDisplay from "../pastWorkDisplay";
+import PreviousProjectTabs from "../previousProjectTabs";
+import WorkList from "../pastWorkList";
+import WorkDisplay from "../pastWorkDisplay";
 
 const Work = ({ pastWork }: { pastWork: PastWorkDataProps[] }) => {
   const [visibleCompanyIndex, setVisibleCompanyIndex] = useState<number>(0);
   const [visibleWorkIndex, setVisibleWorkIndex] = useState<number | null>(null);
 
-  const resetComponentView = (newCompanyIndex) => {
+  const resetComponentView = (newCompanyIndex: number) => {
     setVisibleCompanyIndex(newCompanyIndex);
     setVisibleWorkIndex(null);
   };
@@ -17,7 +17,7 @@ const Work = ({ pastWork }: { pastWork: PastWorkDataProps[] }) => {
       <div className="flex w-[90vw] flex-col content-center lg:max-w-screen-lg">
         <h2 className="mb-8 justify-center">My Past Work</h2>
         <div className="flex flex-row place-items-end gap-x-2 self-start justify-self-start">
-          <PastWorkTabs
+          <PreviousProjectTabs
             pastWorkData={pastWork}
             visibleCompanyIndex={visibleCompanyIndex}
             resetComponentView={resetComponentView}
@@ -25,13 +25,12 @@ const Work = ({ pastWork }: { pastWork: PastWorkDataProps[] }) => {
         </div>
         <div className="min-h-[504px] rounded-md border border-black bg-pale shadow-thick-hover">
           {visibleWorkIndex == null ? (
-            <PastWorkList
-              data={pastWork}
-              visibleCompanyIndex={visibleCompanyIndex}
+            <WorkList
+              data={pastWork[visibleCompanyIndex]}
               setVisibleWorkIndex={setVisibleWorkIndex}
             />
           ) : (
-            <PastWorkDisplay
+            <WorkDisplay
               data={pastWork[visibleCompanyIndex].work[visibleWorkIndex]}
             />
           )}

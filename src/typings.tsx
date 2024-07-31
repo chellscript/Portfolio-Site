@@ -19,15 +19,24 @@ export interface DataProps {
     pastWork: PastWorkDataProps[];
   };
 }
-
 export interface PastWorkDataProps {
   name: string;
   duration: string;
   symbol: string;
-  work: ExampleWorkProps[];
+  work: WorkProps[];
+}
+export interface PastWorkListProps {
+  data: PastWorkDataProps;
+  setVisibleWorkIndex: (arg: number) => void;
 }
 
-export interface ExampleWorkProps {
+export interface ProjectTabsProps {
+  pastWorkData: PastWorkDataProps[];
+  visibleCompanyIndex: number;
+  resetComponentView: (arg: number) => void;
+}
+
+export interface WorkProps {
   name: string;
   cover: string;
   media: string;

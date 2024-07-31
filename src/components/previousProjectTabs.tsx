@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
+import { ProjectTabsProps } from "../typings";
 
-const PastWorkTabs = ({
+const PreviousProjectTabs = ({
   pastWorkData,
   visibleCompanyIndex,
   resetComponentView,
-}) =>
+}: ProjectTabsProps) =>
   pastWorkData.map(({ symbol, name, work }, index) => {
     let isSelected = visibleCompanyIndex === index;
     return (
@@ -43,4 +44,4 @@ const PastWorkTabs = ({
       </button>
     );
   });
-export default PastWorkTabs;
+export default PreviousProjectTabs;
