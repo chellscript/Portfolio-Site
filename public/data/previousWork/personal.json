@@ -1,0 +1,28 @@
+{
+  "name": "Personal Projects",
+  "symbol": "/images/previousWork/PersonalLogo.png",
+  "duration": null,
+  "work": [
+    {
+      "name": "CraVe",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://michasa.github.io/CraveLDN/"
+    },
+    {
+      "name": "Blockchain Developer Bootcamp",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": ""
+    },
+    {
+      "name": "BlockExplorer",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": ""
+    }
+  ]
+}

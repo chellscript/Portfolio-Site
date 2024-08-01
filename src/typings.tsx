@@ -15,7 +15,7 @@ export interface TaglineDataProps {
 
 export interface DataProps {
   data: {
-    skills: string[];
+    // skills: string[];
     pastWork: PastWorkDataProps[];
   };
 }

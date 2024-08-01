@@ -1,0 +1,42 @@
+{
+  "name": "Square-Enix Europe",
+  "symbol": "/images/previousWork/LogoSE.jpeg",
+  "duration": "",
+  "work": [
+    {
+      "name": "Nier Automata",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://nier.square-enix-games.com/en-gb/"
+    },
+    {
+      "name": "NeoTWEWY",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://square-enix-games.com/neotwewy/en-us/"
+    },
+    {
+      "name": "Star Ocean",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://starocean.square-enix-games.com/en-gb"
+    },
+    {
+      "name": "Dragon Quest Builders 2",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://dragonquest.square-enix-games.com/builders2/en-gb/home/"
+    },
+    {
+      "name": "Love Live! School Idol Project",
+      "cover": "",
+      "media": "",
+      "description": "",
+      "link": "https://lovelive-sifachm.square-enix-games.com/"
+    }
+  ]
+}
