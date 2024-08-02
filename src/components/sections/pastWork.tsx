@@ -4,7 +4,11 @@ import PreviousProjectTabs from "../previousProjectTabs";
 import WorkList from "../pastWorkList";
 import WorkDisplay from "../pastWorkDisplay";
 
-const Work = ({ pastWork }: { pastWork: PastWorkDataProps[] }) => {
+const Work = ({
+  previousWorkData,
+}: {
+  previousWorkData: PastWorkDataProps[];
+}) => {
   const [visibleCompanyIndex, setVisibleCompanyIndex] = useState<number>(0);
   const [visibleWorkIndex, setVisibleWorkIndex] = useState<number | null>(null);
 
@@ -18,20 +22,22 @@ const Work = ({ pastWork }: { pastWork: PastWorkDataProps[] }) => {
         <h2 className="mb-8 justify-center">My Past Work</h2>
         <div className="flex flex-row place-items-end gap-x-2 self-start justify-self-start">
           <PreviousProjectTabs
-            pastWorkData={pastWork}
+            previousWorkData={previousWorkData}
             visibleCompanyIndex={visibleCompanyIndex}
             resetComponentView={resetComponentView}
           />
         </div>
-        <div className="min-h-[504px] rounded-md border border-black bg-pale shadow-thick-hover">
+        <div className="min-h-[504px] rounded-md border border-t-[0.5px] border-not-black bg-pale shadow-thick-hover">
           {visibleWorkIndex == null ? (
             <WorkList
-              data={pastWork[visibleCompanyIndex]}
+              workListData={previousWorkData[visibleCompanyIndex]}
               setVisibleWorkIndex={setVisibleWorkIndex}
             />
           ) : (
             <WorkDisplay
-              data={pastWork[visibleCompanyIndex].work[visibleWorkIndex]}
+              workDisplayData={
+                previousWorkData[visibleCompanyIndex].work[visibleWorkIndex]
+              }
             />
           )}
         </div>

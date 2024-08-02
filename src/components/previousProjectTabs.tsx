@@ -4,17 +4,17 @@ import React from "react";
 import { ProjectTabsProps } from "../typings";
 
 const PreviousProjectTabs = ({
-  pastWorkData,
+  previousWorkData,
   visibleCompanyIndex,
   resetComponentView,
 }: ProjectTabsProps) =>
-  pastWorkData.map(({ symbol, name, work }, index) => {
+  previousWorkData.map(({ symbol, name, work }, index) => {
     let isSelected = visibleCompanyIndex === index;
     return (
       <button
         key={index}
         className={clsx(
-          "relative -bottom-px flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-black p-2 text-base",
+          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-black p-2 text-base",
           isSelected
             ? "border border-b-0 border-black bg-pale"
             : "bg-brand-purple",

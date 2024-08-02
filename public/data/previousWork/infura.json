@@ -5,13 +5,28 @@
   "work": [
     {
       "name": "UX Improvements",
+      "techUsed": [
+        "Typescript",
+        "Next.js",
+        "LaunchDarkly",
+        "Tailwind",
+        "Figma"
+      ],
       "cover": "",
       "media": "",
       "description": "",
       "link": ""
     },
     {
-      "name": "Onboarding Tour",
+      "name": "Platform Onboarding Tour",
+      "techUsed": [
+        "Typescript",
+        "Next.js",
+        "LaunchDarkly",
+        "Tailwind",
+        "React Joyride",
+        "Figma"
+      ],
       "cover": "",
       "media": "",
       "description": "",
@@ -19,6 +34,13 @@
     },
     {
       "name": "Onboarding Survey",
+      "techUsed": [
+        "Typescript",
+        "Next.js",
+        "LaunchDarkly",
+        "Tailwind",
+        "Figma"
+      ],
       "cover": "",
       "media": "",
       "description": "",
@@ -26,6 +48,10 @@
     },
     {
       "name": "Email Campaign",
+      "techUsed": [
+        "MJML",
+        "Figma"
+      ],
       "cover": "",
       "media": "",
       "description": "",

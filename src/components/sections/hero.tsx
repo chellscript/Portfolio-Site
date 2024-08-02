@@ -8,10 +8,10 @@ import divider from "/public/images/hero/waveDivider.svg";
 
 const Hero = () => (
   <section className="relative grid h-[600px] grid-cols-12 grid-rows-12 justify-items-center bg-[url('/images/hero/background.jpeg')] bg-cover md:min-h-dvh">
-    <div className="col-start-2 col-end-12 row-start-1 row-end-12 mx-10 mt-10 grid size-full max-h-[600px] max-w-screen-lg grid-cols-12 grid-rows-12 justify-self-center rounded-md border border-not-black bg-brand-blue bg-cover bg-right bg-repeat-x text-3xl font-bold md:row-end-10 md:mt-12">
+    <div className="col-start-2 col-end-12 row-start-1 row-end-12 mx-10 mt-10 grid size-full max-h-[600px] max-w-screen-lg grid-cols-12 grid-rows-12 justify-self-center rounded-md border border-not-black bg-brand-blue bg-cover bg-right bg-repeat-x text-3xl font-bold shadow-thick-hover md:row-end-10 md:mt-12">
       <div className="z-[2] col-start-2 col-end-8 row-start-2 row-end-7 h-fit md:col-start-2 md:col-end-8 md:row-start-3 lg:row-start-5">
         <div className="text-2xl md:text-4xl">Hey World, I'm</div>
-        <h1>
+        <h1 className="">
           <span className="text-6xl md:text-7xl">Michi</span>
           <div className="text-2xl underline lg:text-4xl">
             Front End Developer,

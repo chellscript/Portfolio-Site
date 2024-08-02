@@ -13,10 +13,10 @@ export interface TaglineDataProps {
   special?: boolean;
 }
 
-export interface DataProps {
-  data: {
-    // skills: string[];
-    pastWork: PastWorkDataProps[];
+export interface copyDataProps {
+  copyData: {
+    skills: string[];
+    previousWork: PastWorkDataProps[];
   };
 }
 export interface PastWorkDataProps {
@@ -26,18 +26,19 @@ export interface PastWorkDataProps {
   work: WorkProps[];
 }
 export interface PastWorkListProps {
-  data: PastWorkDataProps;
+  workListData: PastWorkDataProps;
   setVisibleWorkIndex: (arg: number) => void;
 }
 
 export interface ProjectTabsProps {
-  pastWorkData: PastWorkDataProps[];
+  previousWorkData: PastWorkDataProps[];
   visibleCompanyIndex: number;
   resetComponentView: (arg: number) => void;
 }
 
 export interface WorkProps {
   name: string;
+  techUsed: any;
   cover: string;
   media: string;
   description: string;
