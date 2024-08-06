@@ -18,7 +18,7 @@
       "link": ""
     },
     {
-      "name": "Platform Onboarding Tour",
+      "name": "Onboarding Tour",
       "techUsed": [
         "Typescript",
         "Next.js",
@@ -50,6 +50,7 @@
       "name": "Email Campaign",
       "techUsed": [
         "MJML",
+        "MailGun API",
         "Figma"
       ],
       "cover": "",

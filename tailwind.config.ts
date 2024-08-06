@@ -20,6 +20,7 @@ const config: Config = {
       boxShadow: {
         'thick': '3px 5px 0px',
         'thick-hover': '2px 2px 0px',
+        'under': 'inset 0px 3px 6px 0px #00000082'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

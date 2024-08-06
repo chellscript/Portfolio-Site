@@ -13,7 +13,9 @@
     },
     {
       "name": "NeoTWEWY",
-      "techUsed": [],
+      "techUsed": [
+        "i18n"
+      ],
       "cover": "",
       "media": "",
       "description": "",

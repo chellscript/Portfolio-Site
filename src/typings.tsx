@@ -38,7 +38,7 @@ export interface ProjectTabsProps {
 
 export interface WorkProps {
   name: string;
-  techUsed: any;
+  techUsed: string[];
   cover: string;
   media: string;
   description: string;
