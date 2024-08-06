@@ -10,11 +10,14 @@
         "Next.js",
         "LaunchDarkly",
         "Tailwind",
-        "Figma"
+        "Github Actions",
+        "Playwright",
+        "Figma",
+        "Vercel"
       ],
       "cover": "",
       "media": "",
-      "description": "",
+      "description": "SASS product",
       "link": ""
     },
     {

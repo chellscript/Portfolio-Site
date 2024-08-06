@@ -23,7 +23,7 @@ const PastWorkList = ({
           </div>
           <div className="group relative text-left text-xl">{name}</div>
           <div className="flex flex-row flex-wrap gap-2 self-end">
-            {<TechTags limit={2} tags={techUsed} />}
+            {<TechTags limit={3} tags={techUsed} />}
           </div>
         </button>{" "}
         <div className="transition-translate static bottom-0 w-52 rounded-b-lg border border-t-0 border-not-black bg-brand-green px-2 text-center duration-300 ease-in-out lg:absolute lg:-translate-y-8 lg:group-hover:-translate-y-2">

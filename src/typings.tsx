@@ -14,10 +14,8 @@ export interface TaglineDataProps {
 }
 
 export interface copyDataProps {
-  copyData: {
-    skills: string[];
-    previousWork: PastWorkDataProps[];
-  };
+  skills: string[];
+  previousWork: PastWorkDataProps[];
 }
 export interface PastWorkDataProps {
   name: string;
