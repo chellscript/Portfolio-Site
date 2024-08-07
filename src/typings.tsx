@@ -26,6 +26,8 @@ export interface PastWorkDataProps {
 export interface PastWorkListProps {
   workListData: PastWorkDataProps;
   setVisibleWorkIndex: (arg: number) => void;
+  viewProjectIndex: number;
+  setviewProjectIndex: (arg: number) => void;
 }
 
 export interface ProjectTabsProps {

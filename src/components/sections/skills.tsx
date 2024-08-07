@@ -1,5 +1,8 @@
 import React from "react";
 
+//TODO - create error boundary
+// TODO - split this section into about me and skills
+
 const Skills = ({ skillsData }: { skillsData: string[] }) => {
   return (
     <section

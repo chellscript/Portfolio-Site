@@ -24,6 +24,9 @@
 }
 
 @layer utilities {
+  .debug {
+    border: solid 1px hotpink;
+  }
 
   .frame-clip {
     -webkit-mask-image: url('../images/wavyClip.png');
