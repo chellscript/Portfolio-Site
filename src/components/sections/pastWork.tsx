@@ -1,39 +1,39 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { PastWorkDataProps } from "@/src/typings";
 import PreviousProjectTabs from "../previousProjectTabs";
 import WorkList from "../pastWorkList";
 import WorkDisplay from "../pastWorkDisplay";
+import { useMediaQuery } from "react-responsive";
 
-//TODO - create error boundary
+//TODO - create error boundary for lack of data
 
 const Work = ({
   previousWorkData,
 }: {
   previousWorkData: PastWorkDataProps[];
 }) => {
-  const [visibleCompanyIndex, setVisibleCompanyIndex] = useState<number>(0);
-  const [visibleWorkIndex, setVisibleWorkIndex] = useState<number | null>(null);
-  const [viewProjectIndex, setviewProjectIndex] = useState<number>(0);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  useEffect(() => {
-    navigateScroll();
-  }, [viewProjectIndex]);
+  const [selectedCompanyIndex, setSelectedCompanyIndex] = useState<number>(0);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<
+    number | null
+  >(null);
+  const [focusedProjectIndex, setFocusedProjectIndex] = useState<number>(0); // For mobile only styling
 
-  const resetComponentView = (newCompanyIndex: number) => {
-    setVisibleCompanyIndex(newCompanyIndex);
-    setVisibleWorkIndex(null);
-    setviewProjectIndex(0);
-  };
+  const updateComponentView = (newCompanyIndex: number) => {
+    setSelectedCompanyIndex(newCompanyIndex);
+    setSelectedProjectIndex(null);
 
-  const navigateScroll = () => {
-    let selectedProject = document.getElementById(
-      `project-${viewProjectIndex}`,
-    );
-    selectedProject?.scrollIntoView({ block: "nearest", inline: "center" });
+    isMobile && setFocusedProjectIndex(0);
   };
 
   return (
-    <section id="work" className="flex justify-center bg-brand-purple/50 py-10">
+    <section
+      id="work"
+      className="flex snap-y justify-center bg-brand-purple/50 py-10"
+    >
       <div className="flex w-[90vw] flex-col content-center lg:max-w-screen-lg">
         <h2 className="mb-8 justify-center">My Past Work</h2>
         <div
@@ -41,23 +41,25 @@ const Work = ({
           role="tablist"
         >
           <PreviousProjectTabs
-            previousWorkData={previousWorkData}
-            visibleCompanyIndex={visibleCompanyIndex}
-            resetComponentView={resetComponentView}
+            data={previousWorkData}
+            selectedCompanyIndex={selectedCompanyIndex}
+            updateComponentView={updateComponentView}
           />
         </div>
         <div className="min-h-[504px] rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale shadow-thick-hover">
-          {visibleWorkIndex == null ? (
+          {selectedProjectIndex == null ? (
             <WorkList
-              workListData={previousWorkData[visibleCompanyIndex]}
-              setVisibleWorkIndex={setVisibleWorkIndex}
-              viewProjectIndex={viewProjectIndex}
-              setviewProjectIndex={setviewProjectIndex}
+              data={previousWorkData[selectedCompanyIndex].work}
+              setSelectedProjectIndex={setSelectedProjectIndex}
+              setFocusedProjectIndex={setFocusedProjectIndex}
+              focusedProjectIndex={focusedProjectIndex}
             />
           ) : (
             <WorkDisplay
-              workDisplayData={
-                previousWorkData[visibleCompanyIndex].work[visibleWorkIndex]
+              data={
+                previousWorkData[selectedCompanyIndex].work[
+                  selectedProjectIndex
+                ]
               }
             />
           )}

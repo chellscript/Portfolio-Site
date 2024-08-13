@@ -24,16 +24,16 @@ export interface PastWorkDataProps {
   work: WorkProps[];
 }
 export interface PastWorkListProps {
-  workListData: PastWorkDataProps;
-  setVisibleWorkIndex: (arg: number) => void;
-  viewProjectIndex: number;
-  setviewProjectIndex: (arg: number) => void;
+  data: PastWorkDataProps["work"];
+  setSelectedProjectIndex: (arg: number) => void;
+  focusedProjectIndex: number;
+  setFocusedProjectIndex: (arg: number) => void;
 }
 
 export interface ProjectTabsProps {
-  previousWorkData: PastWorkDataProps[];
-  visibleCompanyIndex: number;
-  resetComponentView: (arg: number) => void;
+  data: PastWorkDataProps[];
+  selectedCompanyIndex: number;
+  updateComponentView: (arg: number) => void;
 }
 
 export interface WorkProps {

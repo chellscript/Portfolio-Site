@@ -31,7 +31,11 @@
     },
     {
       "name": "Dragon Quest Builders 2",
-      "techUsed": [],
+      "techUsed": [
+        "Javascript",
+        "Test",
+        "Test"
+      ],
       "cover": "",
       "media": "",
       "description": "",

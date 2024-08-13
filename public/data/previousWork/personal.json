@@ -4,18 +4,6 @@
   "duration": null,
   "work": [
     {
-      "name": "This Portfolio ⭐",
-      "techUsed": [
-        "Next.js",
-        "Tailwind",
-        "Typescript"
-      ],
-      "cover": "",
-      "media": "",
-      "description": "Slightly meta entry but this very website was an enjoyable labor of love that was a great way to refresh my skills after such a long break ",
-      "link": ""
-    },
-    {
       "name": "CraVe",
       "techUsed": [],
       "cover": "",

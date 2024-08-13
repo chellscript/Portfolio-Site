@@ -4,9 +4,9 @@ import TechTags from "./techTagsDisplay";
 import Image from "next/image";
 
 const WorkDisplay = ({
-  workDisplayData: { name, description, techUsed },
+  data: { name, description, techUsed },
 }: {
-  workDisplayData: WorkProps;
+  data: WorkProps;
 }) => (
   <div className="flex h-full flex-col gap-6 p-4 md:flex-row">
     <div className="relative flex w-full flex-grow flex-col justify-center border">
@@ -28,7 +28,6 @@ const WorkDisplay = ({
       </div>
     </div>
   </div>
-  // </div>
 );
 
 export default WorkDisplay;

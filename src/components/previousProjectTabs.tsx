@@ -4,12 +4,12 @@ import React from "react";
 import { ProjectTabsProps } from "../typings";
 
 const PreviousProjectTabs = ({
-  previousWorkData,
-  visibleCompanyIndex,
-  resetComponentView,
+  data,
+  selectedCompanyIndex,
+  updateComponentView,
 }: ProjectTabsProps) =>
-  previousWorkData.map(({ symbol, name, work }, index) => {
-    let isSelected = visibleCompanyIndex === index;
+  data.map(({ symbol, name, work }, index) => {
+    let isSelected = selectedCompanyIndex === index;
     return (
       <button
         key={index}
@@ -23,7 +23,7 @@ const PreviousProjectTabs = ({
             : "bg-brand-purple",
           name === "Personal Projects" && "order-last",
         )}
-        onClick={() => resetComponentView(index)}
+        onClick={() => updateComponentView(index)}
       >
         <Image width={500} height={500} src={symbol} alt="" className="w-6" />
         <div
