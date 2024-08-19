@@ -1,5 +1,5 @@
 import React from "react";
-import { WorkProps } from "../typings";
+import { WorkProps } from "../../typings";
 
 interface TechTagsProps {
   limit?: number;
@@ -7,7 +7,7 @@ interface TechTagsProps {
 }
 
 const TechTags = ({ limit, tags }: TechTagsProps) => {
-  let iterationArray =
+  const iterationArray =
     limit && limit < tags.length ? tags.slice(0, limit) : tags;
 
   return (

@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import { ProjectTabsProps } from "../typings";
+import { ProjectTabsProps } from "../../typings";
 
-const PreviousProjectTabs = ({
+const PreviousWorkTabs = ({
   data,
   selectedCompanyIndex,
   updateComponentView,
 }: ProjectTabsProps) =>
   data.map(({ symbol, name, work }, index) => {
-    let isSelected = selectedCompanyIndex === index;
+    const isSelected = selectedCompanyIndex === index;
     return (
       <button
         key={index}
@@ -23,7 +23,9 @@ const PreviousProjectTabs = ({
             : "bg-brand-purple",
           name === "Personal Projects" && "order-last",
         )}
-        onClick={() => updateComponentView(index)}
+        onClick={() => {
+          if (!isSelected) updateComponentView(index);
+        }}
       >
         <Image width={500} height={500} src={symbol} alt="" className="w-6" />
         <div
@@ -42,4 +44,4 @@ const PreviousProjectTabs = ({
       </button>
     );
   });
-export default PreviousProjectTabs;
+export default PreviousWorkTabs;

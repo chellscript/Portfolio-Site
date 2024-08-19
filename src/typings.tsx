@@ -1,10 +1,4 @@
-import {
-  faFire,
-  IconDefinition,
-  faArrowPointer,
-  faBuilding,
-  faWandMagicSparkles,
-} from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface TaglineDataProps {
   number: number;
@@ -20,14 +14,13 @@ export interface copyDataProps {
 export interface PastWorkDataProps {
   name: string;
   duration: string;
+  role?: string;
   symbol: string;
   work: WorkProps[];
 }
-export interface PastWorkListProps {
-  data: PastWorkDataProps["work"];
+export interface ProjectListProps {
+  data: PastWorkDataProps;
   setSelectedProjectIndex: (arg: number) => void;
-  focusedProjectIndex: number;
-  setFocusedProjectIndex: (arg: number) => void;
 }
 
 export interface ProjectTabsProps {
