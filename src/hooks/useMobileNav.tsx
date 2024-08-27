@@ -1,4 +1,3 @@
-"use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PastWorkDataProps } from "../typings";
 import { useMediaQuery } from "react-responsive";

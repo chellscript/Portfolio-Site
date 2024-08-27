@@ -1,6 +1,6 @@
 {
   "name": "Infura (Consensys)",
-  "symbol": "/images/previousWork/LogoInfura.jpg",
+  "logo": "/images/previousWork/logoTab/infura.png",
   "duration": "2022 - 2023",
   "role": "UX Engineer",
   "work": [
@@ -18,6 +18,7 @@
       ],
       "cover": "",
       "media": "/images/nier.png",
+      "mediaKey": "",
       "description": "SASS product. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, autem beatae sequi, nam aut in velit eveniet doloremque cupiditate delectus odit molestias commodi reiciendis numquam nemo corrupti illo nobis quisquam.",
       "link": ""
     },
@@ -33,6 +34,7 @@
       ],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": ""
     },
@@ -47,6 +49,7 @@
       ],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": ""
     },
@@ -59,6 +62,7 @@
       ],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": ""
     }

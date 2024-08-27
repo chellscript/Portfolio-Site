@@ -8,7 +8,7 @@ const PreviousWorkTabs = ({
   selectedCompanyIndex,
   updateComponentView,
 }: ProjectTabsProps) =>
-  data.map(({ symbol, name, work }, index) => {
+  data.map(({ logo, name, work }, index) => {
     const isSelected = selectedCompanyIndex === index;
     return (
       <button
@@ -27,7 +27,7 @@ const PreviousWorkTabs = ({
           if (!isSelected) updateComponentView(index);
         }}
       >
-        <Image width={500} height={500} src={symbol} alt="" className="w-6" />
+        <Image width={500} height={500} src={logo} alt="" className="w-6" />
         <div
           className={clsx("text-sm md:!block", isSelected ? "block" : "hidden")}
         >

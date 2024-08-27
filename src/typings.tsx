@@ -15,7 +15,7 @@ export interface PastWorkDataProps {
   name: string;
   duration: string;
   role?: string;
-  symbol: string;
+  logo: string;
   work: WorkProps[];
 }
 export interface ProjectListProps {
@@ -34,6 +34,7 @@ export interface WorkProps {
   techUsed: string[];
   cover: string;
   media: string;
+  mediaKey: string;
   description: string;
   link?: string;
 }

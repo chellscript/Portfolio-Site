@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         'pale': '#F0E4D8',
         'not-black': '#180f0f',
-        'brand-yellow': '#f5bc66',
+        'brand-yellow': '#ffcb6b',
         'brand-green': '#D4ED30',
         'brand-purple': '#987dc1',
         'brand-pink': '#f3acc0',

@@ -1,14 +1,17 @@
 {
   "name": "Square-Enix",
-  "symbol": "/images/previousWork/LogoSE.jpeg",
+  "logo": "/images/previousWork/logo/se.jpeg",
   "duration": "2018-2023",
   "role": "Front End Engineer",
   "work": [
     {
       "name": "Nier Automata",
-      "techUsed": [],
+      "techUsed": [
+        "i18n"
+      ],
       "cover": "",
       "media": "/images/nier.png",
+      "mediaKey": "nier",
       "description": "",
       "link": "https://nier.square-enix-games.com/en-gb/"
     },
@@ -19,6 +22,7 @@
       ],
       "cover": "",
       "media": "",
+      "mediaKey": "neot",
       "description": "",
       "link": "https://square-enix-games.com/neotwewy/en-us/"
     },
@@ -27,6 +31,7 @@
       "techUsed": [],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": "https://starocean.square-enix-games.com/en-gb"
     },
@@ -39,6 +44,7 @@
       ],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": "https://dragonquest.square-enix-games.com/builders2/en-gb/home/"
     },
@@ -47,6 +53,7 @@
       "techUsed": [],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": "https://lovelive-sifachm.square-enix-games.com/"
     }

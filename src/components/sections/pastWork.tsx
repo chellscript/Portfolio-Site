@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { PastWorkDataProps } from "@/src/typings";
 import PreviousWorkTabs from "../pastWork/previousWorkTabs";

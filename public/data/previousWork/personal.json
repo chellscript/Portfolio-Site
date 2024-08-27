@@ -1,6 +1,6 @@
 {
   "name": "Personal Projects",
-  "symbol": "/images/previousWork/PersonalLogo.png",
+  "logo": "/images/previousWork/logo/personal.png",
   "duration": null,
   "work": [
     {
@@ -8,6 +8,7 @@
       "techUsed": [],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": "https://michasa.github.io/CraveLDN/"
     },
@@ -16,6 +17,7 @@
       "techUsed": [],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": ""
     },
@@ -24,6 +26,7 @@
       "techUsed": [],
       "cover": "",
       "media": "",
+      "mediaKey": "",
       "description": "",
       "link": ""
     }
