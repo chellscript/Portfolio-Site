@@ -20,7 +20,9 @@
     /* text-5xl corresponds to 3rem */
   }
 
-
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
@@ -39,11 +41,4 @@
 
   }
 
-
-
 }
-
-/* //TODO this is globally affecting all anchorlinks
-a {
-  @apply underline text-brand-purple hover:text-blue-800 visited:text-purple-600
-} */

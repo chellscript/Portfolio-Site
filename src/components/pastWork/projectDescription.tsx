@@ -13,7 +13,6 @@ const ProjectDescription = ({
   setSelectedProjectIndex: (arg: null) => void;
 }) => (
   <>
-    {" "}
     <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg border bg-white p-5 shadow-thick-hover md:w-[600px] lg:w-full">
       <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))] items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-black/50 pb-2 text-center text-xs uppercase">
         {[companyName, role, duration].map(

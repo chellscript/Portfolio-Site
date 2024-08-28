@@ -24,10 +24,10 @@ const Work = ({
   return (
     <section
       id="work"
-      className="flex snap-y justify-center bg-brand-purple/50 py-10"
+      className="flex snap-y justify-center bg-brand-purple/50"
     >
       <div className="flex w-[90vw] flex-col content-center lg:max-w-screen-lg">
-        <h2 className="mb-8 justify-center">My Past Work</h2>
+        <h2 className="mb-4 pt-10 text-center">My Past Work</h2>
         <div
           className="flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"

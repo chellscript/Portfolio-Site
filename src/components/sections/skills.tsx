@@ -9,7 +9,9 @@ const Skills = ({ skillsData }: { skillsData: string[] }) => {
       id="skills"
       className="grid grid-cols-5 grid-rows-5 justify-items-center gap-5 bg-brand-yellow"
     >
-      <h2 className="col-span-5 row-span-1 text-black">My Skills</h2>
+      <h2 className="col-span-5 row-span-1 mb-4 pt-10 text-center text-black">
+        My Skills
+      </h2>
       <div className="col-span-5 row-span-4 w-1/2 max-w-screen-md rounded-md">
         <div className="grid grid-cols-6 gap-2">
           {skillsData.map((skill, index) => (
