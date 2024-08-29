@@ -6,7 +6,7 @@ import {
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 
-interface TaglineDataProps {
+interface HeroCardProps {
   number: number;
   line: string;
   icon: IconDefinition;
@@ -28,7 +28,7 @@ export const MySkills = [
   "Svelte",
 ];
 
-export const TaglineData: TaglineDataProps[] = [
+export const TaglineData: HeroCardProps[] = [
   {
     number: MySkills.length,
     line: "Technical Skills",
@@ -46,7 +46,7 @@ export const TaglineData: TaglineDataProps[] = [
   },
   {
     number: 1,
-    line: "Versatile Dev to Hire",
+    line: "Creative Dev to Hire",
     icon: faWandMagicSparkles,
     special: true,
   },

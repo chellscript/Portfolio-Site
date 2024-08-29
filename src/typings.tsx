@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-export interface TaglineDataProps {
+export interface HeroCardProps {
   number: number;
   line: string;
   icon: IconDefinition;

@@ -19,7 +19,7 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
     <div className="flex size-full flex-col items-center justify-center md:justify-start">
       <ul
         ref={ref}
-        className="flex h-fit w-full flex-row content-start items-center gap-4 overflow-x-auto text-clip rounded-md border p-4 md:grid md:size-full md:grid-cols-[repeat(auto-fit,minmax(208px,1fr))] md:justify-start md:overflow-hidden"
+        className="flex h-fit w-full flex-row content-start items-center gap-2 overflow-x-auto text-clip rounded-md border p-4 md:grid md:size-full md:grid-cols-[repeat(auto-fill,minmax(208px,1fr))] md:justify-start md:overflow-hidden"
       >
         {workData.map(({ name, techUsed }, index) => (
           <li

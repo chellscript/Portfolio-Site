@@ -1,64 +1,37 @@
 import Image from "next/image";
 import React from "react";
-import clsx from "clsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TaglineData } from "@/src/data";
+import HeroCards from "../heroCards";
 import myself from "/public/images/hero/myself.png";
-import divider from "/public/images/hero/waveDivider.svg";
-
-//NOTE - Something like this https://youtu.be/I2NNxr3WPDo?si=uiV5hGzNX58wrhhG&t=5
 
 const Hero = () => (
-  <section className="relative grid h-[600px] grid-cols-12 grid-rows-12 justify-items-center bg-[url('/images/hero/background.jpeg')] bg-cover md:min-h-dvh">
-    <div className="col-start-2 col-end-12 row-start-1 row-end-12 mx-10 mt-10 grid size-full max-h-[600px] max-w-screen-lg grid-cols-12 grid-rows-12 justify-self-center rounded-md border border-not-black bg-brand-blue bg-cover bg-right bg-repeat-x text-3xl font-bold shadow-thick-hover md:row-end-10 md:mt-12">
-      <div className="z-[2] col-start-2 col-end-8 row-start-2 row-end-7 h-fit md:col-start-2 md:col-end-8 md:row-start-3 lg:row-start-5">
-        <div className="text-2xl md:text-4xl">Hey World, I'm</div>
-        <h1 className="">
+  <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(3,auto)] items-center justify-items-center gap-y-4 bg-[url('/images/hero/background.jpeg')] bg-cover p-2 pt-8 md:gap-y-[unset] md:p-10 *:md:max-w-screen-md *:lg:max-w-screen-lg">
+    <div className="row-start-1 grid min-h-[32rem] w-[90%] grid-cols-1 grid-rows-[minmax(auto,35%)_auto] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover p-4 pb-0 shadow-thick-hover md:h-[38rem] md:w-full md:grid-cols-[1fr_2fr] md:grid-rows-[repeat(5,auto)] md:justify-items-center md:pl-10 md:pr-0">
+      <h1
+        className="col-span-full col-start-1 row-start-1 flex flex-row items-center gap-y-2 self-center md:col-span-1 md:row-span-2 md:row-start-2 md:flex-col md:items-start"
+        id="#"
+      >
+        <span className="block flex-1">
+          <div className="text-2xl md:text-4xl">Hey World, I'm</div>
           <span className="text-6xl md:text-7xl">Michi</span>
-          <div className="text-2xl underline lg:text-4xl">
-            Front End Developer,
-            <br />
-            <em>User-Empathy Enthusiast.</em>
-          </div>
-        </h1>
-      </div>
-      <div className="relative col-start-5 col-end-13 row-start-3 row-end-11 bg-cover bg-no-repeat md:col-start-6 md:row-start-2 md:row-end-13">
+        </span>
+        <span className="block flex-1 text-2xl underline md:text-3xl lg:text-4xl">
+          Front End Developer,
+          <br />
+          <em>User-Empathy Enthusiast.</em>
+        </span>
+      </h1>
+      <div className="relative col-span-full row-span-full row-start-2 md:col-span-full md:col-start-2 md:row-start-1 md:self-end md:justify-self-end">
         <Image
           src={myself}
-          fill
           alt="Picture of Michi"
-          className="object-contain object-left-bottom drop-shadow-lg md:object-contain lg:object-right-bottom"
+          className="object-contain object-bottom md:object-center lg:object-left-bottom"
         />
       </div>
     </div>
-    <div className="z-[2] col-start-1 col-end-13 row-start-11 row-end-12 grid size-full max-w-screen-sm grid-cols-4 gap-x-2 md:col-start-3 md:col-end-11 md:row-start-10 md:row-end-12 md:h-full">
-      {TaglineData.map(({ number, line, special, icon }, index) => (
-        <div
-          key={index}
-          className={clsx(
-            "relative col-span-1 aspect-square content-baseline self-center overflow-hidden rounded-lg bg-not-black p-2 text-center transition-transform ease-in md:h-auto md:border-2 md:px-4 md:hover:-translate-y-4",
-            special
-              ? "border-brand-yellow text-brand-yellow"
-              : "border-white text-white",
-          )}
-        >
-          <FontAwesomeIcon
-            icon={icon}
-            className={clsx(
-              "absolute left-14 top-4 aspect-square h-[70%] opacity-10",
-            )}
-          />
-          <p className="text-4xl text-inherit md:mb-2 md:text-5xl">{number}</p>
-          <p className="text-sm text-inherit lg:text-lg">{line}</p>
-        </div>
-      ))}
+    <div className="z-[2] row-start-2 -mt-28 grid grid-cols-[repeat(4,minmax(auto,1fr))] gap-x-2 md:-mt-20 md:gap-x-4">
+      <HeroCards data={TaglineData} />
     </div>
-    <Image
-      src={divider}
-      fill
-      alt=""
-      className="row-start-11 row-end-13 size-full object-cover"
-    />
   </section>
 );
 

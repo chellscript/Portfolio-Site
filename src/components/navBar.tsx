@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const OPTIONS = [
-  { label: "Skills", url: "skills" },
+  { label: "About Me", url: "skills" },
   { label: "Past Work", url: "work" },
   { label: "Contact Me", url: "contact" },
 ];
@@ -21,8 +21,11 @@ function NavBar() {
   }, [isMobile]);
 
   return (
-    <header className="mx-auto flex w-full max-w-screen-lg justify-end">
-      <nav className="fixed right-4 top-4 z-10 flex h-10 space-x-2 bg-none lg:pr-0">
+    <header className="relative mx-auto flex w-full max-w-screen-lg justify-end">
+      <nav
+        // onBlur={() => setIsOpen(false)}
+        className="fixed right-8 top-3 z-10 flex h-10 space-x-2 bg-none md:top-6 xl:right-[unset]"
+      >
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
@@ -38,6 +41,7 @@ function NavBar() {
           <Link
             href={`#${url}`}
             key={index}
+            onClick={() => setIsOpen(false)}
             className={clsx(
               "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:shadow-thick-hover md:block",
               isOpen ? "block" : "hidden",
