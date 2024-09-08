@@ -15,7 +15,7 @@ const TechTags = ({ limit, tags }: TechTagsProps) => {
       {iterationArray.map((item, index) => (
         <div
           key={index}
-          className="size-fit rounded-lg border border-not-black bg-brand-blue px-2 text-sm hover:bg-brand-yellow"
+          className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 text-sm hover:bg-brand-blue"
         >
           {item}
         </div>

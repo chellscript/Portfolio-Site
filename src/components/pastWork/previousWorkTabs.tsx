@@ -27,7 +27,14 @@ const PreviousWorkTabs = ({
           if (!isSelected) updateComponentView(index);
         }}
       >
-        <Image width={500} height={500} src={logo} alt="" className="w-6" />
+        <Image
+          quality={100}
+          width={35}
+          height={35}
+          src={logo}
+          alt=""
+          className="w-6"
+        />
         <div
           className={clsx("text-sm md:!block", isSelected ? "block" : "hidden")}
         >

@@ -38,7 +38,7 @@ const Work = ({
             updateComponentView={updateComponentView}
           />
         </div>
-        <div className="min-h-[504px] rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale shadow-thick-hover">
+        <div className="shadow-base min-h-[504px] rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale">
           {selectedProjectIndex === null ? (
             <ProjectList
               data={previousWorkData[selectedCompanyIndex]}

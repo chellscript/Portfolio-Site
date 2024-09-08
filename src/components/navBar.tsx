@@ -22,14 +22,11 @@ function NavBar() {
 
   return (
     <header className="relative mx-auto flex w-full max-w-screen-lg justify-end">
-      <nav
-        // onBlur={() => setIsOpen(false)}
-        className="fixed right-8 top-3 z-10 flex h-10 space-x-2 bg-none md:top-6 xl:right-[unset]"
-      >
+      <nav className="fixed right-8 top-3 z-10 flex h-10 space-x-2 bg-none md:top-6 xl:right-[unset]">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
-            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-thick shadow-not-black hover:bg-brand-green hover:shadow-thick-hover md:hidden",
+            "shadow-base min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-not-black hover:bg-brand-green hover:shadow-thick md:hidden",
             isOpen ? "bg-brand-green" : "bg-white",
           )}
         >
@@ -43,7 +40,7 @@ function NavBar() {
             key={index}
             onClick={() => setIsOpen(false)}
             className={clsx(
-              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:shadow-thick-hover md:block",
+              "shadow-base hover:shadow-base relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 shadow-not-black hover:border-white/50 hover:bg-brand-green md:block",
               isOpen ? "block" : "hidden",
             )}
           >

@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    font-size: 2rem;
+    /* text-3xl */
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+      /* md:text-4xl */
+    }
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    /* text-3xl */
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 3rem;
+      /* md:text-5xl */
+    }
+  }
+
   h3 {
     font-size: 1.5rem;
     /* text-2xl */
@@ -15,9 +39,40 @@
     }
   }
 
-  h2 {
-    font-size: 3rem;
-    /* text-5xl corresponds to 3rem */
+  h4 {
+    font-size: 1.25rem;
+    /* text-xl */
+  }
+
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 1.875rem;
+      /* md:text-3xl */
+    }
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    /* text-lg */
+  }
+
+  @media (min-width: 768px) {
+    h5 {
+      font-size: 1.5rem;
+      /* md:text-2xl */
+    }
+  }
+
+  h6 {
+    font-size: 1rem;
+    /* text-base */
+  }
+
+  @media (min-width: 768px) {
+    h6 {
+      font-size: 1.25rem;
+      /* md:text-xl */
+    }
   }
 
   html {
@@ -30,15 +85,12 @@
     border: solid 1px hotpink;
   }
 
-  .frame-clip {
-    -webkit-mask-image: url('../images/wavyClip.png');
-    mask-image: url('../images/wavyClip.png');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    mask-position: center;
 
+
+}
+
+@layer components {
+  .chip {
+    @apply shadow-base break-keep whitespace-break-spaces rounded-2xl leading-loose border border-not-black shadow-not-black/80 py-1 px-2;
   }
-
 }

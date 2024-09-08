@@ -1,8 +1,8 @@
 // import { Inter } from "next/font/google";
 import Hero from "@/src/components/sections/hero";
-import Skills from "@/src/components/sections/skills";
+import AboutMe from "@/src/components/sections/aboutMe";
 import Work from "@/src/components/sections/pastWork";
-import Contact from "@/src/components/sections/contact";
+// import Contact from "@/src/components/sections/contact";
 import NavBar from "../components/navBar";
 import { Dirent, promises as fs } from "fs";
 import path from "path";
@@ -60,11 +60,11 @@ export default function Home({ copyData }: { copyData: copyDataProps }) {
       <NavBar />
       <main>
         <Hero />
-        <Skills skillsData={skills} />
+        <AboutMe skillsData={skills} />
         <Work previousWorkData={previousWork} />
-        <Contact />
+        {/*<Contact /> */}
       </main>
-      <footer>Footer</footer>
+      {/* <footer>Footer</footer> */}
     </>
   );
 }
