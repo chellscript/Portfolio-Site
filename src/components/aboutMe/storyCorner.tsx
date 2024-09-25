@@ -2,7 +2,7 @@ import React from "react";
 
 const StoryCorner = () => {
   return (
-    <div className="flex flex-col gap-x-4 gap-y-4 md:flex-row lg:flex-col lg:gap-y-4">
+    <div className="flex flex-col gap-4 md:flex-row lg:flex-col lg:gap-y-4">
       <div className="prose rounded-md border border-not-black bg-pale p-4 shadow-thick md:w-1/2 lg:w-full">
         <h3 className="mb-3 text-center">
           From{" "}

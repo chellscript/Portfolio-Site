@@ -31,7 +31,7 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
           >
             <button
               onClick={() => setSelectedProjectIndex(index)}
-              className="relative z-[2] flex h-[90%] w-52 flex-col gap-y-2 rounded-t-lg border border-not-black bg-white p-2"
+              className="z-1 relative flex h-[90%] w-52 flex-col gap-y-2 rounded-t-lg border border-not-black bg-white p-2"
             >
               <div className="size-48 self-center rounded-md border md:size-40">
                 <Image

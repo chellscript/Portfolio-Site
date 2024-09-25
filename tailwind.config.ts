@@ -18,15 +18,15 @@ const config: Config = {
         'brand-pink': '#f3acc0',
         'brand-blue': '#ace4f3'
       },
+      zIndex: {
+        1: '1'
+      },
       boxShadow: {
-
         'base': '2px 2px 0px', 'thick': '3px 5px 0px',
         'bricks': '0px 4px 0px'
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        hero: "url('/images/hero/background.jpeg')"
       },
     },
   },

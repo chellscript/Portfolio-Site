@@ -11,7 +11,7 @@ interface TimeLineProps {
 const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
   return (
     <>
-      <div className="border-top border-3 absolute h-full w-1 bg-gradient-to-b from-not-black from-90% md:h-1 md:w-full md:bg-gradient-to-r" />
+      <div className="absolute h-full w-1 bg-gradient-to-b from-not-black from-90% md:h-1 md:w-full md:bg-gradient-to-r" />
       {data.map(({ name, role, date, description }, index) => {
         const isActive = activeDate === index;
 
@@ -28,7 +28,7 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
           >
             <p
               className={clsx(
-                "text-md rounded-lg rounded-b-none border border-not-black bg-brand-blue/80 text-center text-not-black group-hover:font-bold",
+                "rounded-lg rounded-b-none border border-not-black bg-brand-blue/80 text-center text-not-black group-hover:font-bold",
                 isActive && "bg-brand-green font-bold md:text-lg",
               )}
             >
