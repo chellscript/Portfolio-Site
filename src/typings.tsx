@@ -10,6 +10,12 @@ export interface HeroCardProps {
 export interface copyDataProps {
   skills: string[];
   previousWork: PastWorkDataProps[];
+  timeline: {
+    name: string;
+    date: string;
+    role?: string;
+    description: string;
+  }[];
 }
 export interface PastWorkDataProps {
   name: string;

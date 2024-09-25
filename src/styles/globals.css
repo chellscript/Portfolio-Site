@@ -84,13 +84,14 @@
   .debug {
     border: solid 1px hotpink;
   }
-
-
-
 }
 
 @layer components {
+  .timeline-dot {
+    @apply after:absolute after:-left-[30px] after:top-[5%] after:block after:size-4 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-top-6 md:after:left-1/2 md:after:-translate-x-1/2;
+  }
+
   .chip {
-    @apply shadow-base break-keep whitespace-break-spaces rounded-2xl leading-loose border border-not-black shadow-not-black/80 py-1 px-2;
+    @apply rounded-xl border border-not-black px-3 py-1 text-3xl leading-loose;
   }
 }

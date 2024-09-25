@@ -2,6 +2,7 @@
 
 - [ ] Make title padding equivalent to navbar size on mobile, set scrolling behaviour
 - [ ] Implement Hero section with inspiration from:
+- https://www.getillustrations.com/illustration-pack/halftone-doodle-character-illustration
   - [Example Image](https://github.com/ed-roh/gym-typescript/blob/master/src/assets/HomePageGraphic.png)
   - [Pinterest: Neu Brutalism Elements](https://in.pinterest.com/search/pins/?q=neu%20brutalism%20elements&rs=typed)
 - [Dribbble: Neo Brutalism](https://dribbble.com/tags/neo%20brutalism)

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -10,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         'pale': '#F0E4D8',
-        'not-black': '#180f0f',
+        'not-black': '#2c3e50',
         'brand-yellow': '#ffcb6b',
         'brand-green': '#D4ED30',
         'brand-purple': '#987dc1',
@@ -18,8 +19,8 @@ const config: Config = {
         'brand-blue': '#ace4f3'
       },
       boxShadow: {
-        'base': '3px 5px 0px',
-        'thick': '2px 2px 0px',
+
+        'base': '2px 2px 0px', 'thick': '3px 5px 0px',
         'bricks': '0px 4px 0px'
       },
       backgroundImage: {
@@ -29,6 +30,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
 };
 export default config;

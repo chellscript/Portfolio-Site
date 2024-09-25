@@ -6,13 +6,13 @@ import myself from "/public/images/hero/myself.png";
 
 const Hero = () => (
   <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(3,auto)] items-center justify-items-center gap-y-4 bg-[url('/images/hero/background.jpeg')] bg-cover p-2 pt-8 md:gap-y-[unset] md:p-10 *:md:max-w-screen-md *:lg:max-w-screen-lg">
-    <div className="shadow-base row-start-1 grid min-h-[32rem] w-[90%] grid-cols-1 grid-rows-[minmax(auto,35%)_auto] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover p-4 pb-0 md:h-[38rem] md:w-full md:grid-cols-[1fr_2fr] md:grid-rows-[repeat(5,auto)] md:justify-items-center md:pl-10 md:pr-0">
+    <div className="row-start-1 grid min-h-[32rem] w-[90%] grid-cols-1 grid-rows-[minmax(auto,35%)_auto] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover p-4 pb-0 shadow-thick md:h-[38rem] md:w-full md:grid-cols-[1fr_2fr] md:grid-rows-[repeat(5,auto)] md:justify-items-center md:pl-10 md:pr-0">
       <h1
         className="col-span-full col-start-1 row-start-1 flex flex-row items-center gap-y-2 self-center md:col-span-1 md:row-span-2 md:row-start-2 md:flex-col md:items-start"
         id="#"
       >
         <span className="block flex-1">
-          <span className="block">Hey World, I'm</span>
+          <span className="block whitespace-nowrap">Hey World, I'm</span>
           <span className="text-5xl md:text-6xl">Michi</span>
         </span>
         <span className="block flex-1 text-2xl underline md:text-3xl lg:text-4xl">

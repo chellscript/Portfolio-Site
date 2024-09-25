@@ -10,7 +10,7 @@ const HeroCards = ({ data }: { data: HeroCardProps[] }) =>
       className={clsx(
         "relative col-span-1 grid h-36 content-center self-center overflow-hidden rounded-lg border bg-not-black p-2 text-center transition-transform ease-in md:aspect-square md:h-40 md:justify-self-center md:border-2 md:px-4 md:hover:-translate-y-4",
         special
-          ? "border-brand-yellow text-brand-yellow"
+          ? "border-yellow-500 text-yellow-500"
           : "border-white text-white",
       )}
     >

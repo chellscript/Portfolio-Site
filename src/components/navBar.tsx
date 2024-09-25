@@ -10,7 +10,7 @@ const OPTIONS = [
   { label: "Past Work", url: "work" },
   { label: "Contact Me", url: "contact" },
 ];
-
+//TODO change active highlight to blue
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +26,7 @@ function NavBar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
-            "shadow-base min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-not-black hover:bg-brand-green hover:shadow-thick md:hidden",
+            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-thick shadow-not-black hover:bg-brand-green hover:shadow-base md:hidden",
             isOpen ? "bg-brand-green" : "bg-white",
           )}
         >
@@ -40,11 +40,11 @@ function NavBar() {
             key={index}
             onClick={() => setIsOpen(false)}
             className={clsx(
-              "shadow-base hover:shadow-base relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 shadow-not-black hover:border-white/50 hover:bg-brand-green md:block",
+              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:shadow-base md:block",
               isOpen ? "block" : "hidden",
             )}
           >
-            <span className="text-not-black">{label}</span>
+            {label}
           </Link>
         ))}
       </nav>

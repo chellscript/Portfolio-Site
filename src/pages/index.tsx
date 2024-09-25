@@ -2,13 +2,14 @@
 import Hero from "@/src/components/sections/hero";
 import AboutMe from "@/src/components/sections/aboutMe";
 import Work from "@/src/components/sections/pastWork";
-// import Contact from "@/src/components/sections/contact";
+import Contact from "@/src/components/sections/contact";
 import NavBar from "../components/navBar";
 import { Dirent, promises as fs } from "fs";
 import path from "path";
 import { copyDataProps } from "../typings";
 
 // const inter = Inter({ subsets: ["latin"] }); // this is how to import fonts
+
 const publicPath = path.join(process.cwd(), "public", "data");
 
 type fetchDataProps = Promise<string[] | Record<string, undefined>>[];
@@ -54,17 +55,18 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ copyData }: { copyData: copyDataProps }) {
-  const { previousWork, skills } = copyData;
+  // console.log(copyData);
+  const { previousWork, skills, timeline } = copyData;
   return (
     <>
       <NavBar />
       <main>
         <Hero />
-        <AboutMe skillsData={skills} />
+        <AboutMe skillsData={skills} timelineData={timeline} />
         <Work previousWorkData={previousWork} />
-        {/*<Contact /> */}
+        <Contact />
       </main>
-      {/* <footer>Footer</footer> */}
+      <footer>Footer</footer>
     </>
   );
 }

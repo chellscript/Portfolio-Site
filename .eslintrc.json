@@ -3,7 +3,6 @@
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
     "plugin:jsx-a11y/recommended"
-    //, "plugin:tailwindcss/recommended"
   ],
   "rules": {
     "react/no-unescaped-entities": "off"

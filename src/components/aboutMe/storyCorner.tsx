@@ -3,10 +3,10 @@ import React from "react";
 const StoryCorner = () => {
   return (
     <div className="flex flex-col gap-x-4 gap-y-4 md:flex-row lg:flex-col lg:gap-y-4">
-      <div className="shadow-base rounded-md border border-not-black bg-pale p-4">
-        <h3 className="text-center">
+      <div className="prose rounded-md border border-not-black bg-pale p-4 shadow-thick md:w-1/2 lg:w-full">
+        <h3 className="mb-3 text-center">
           From{" "}
-          <em className="chip self-center bg-brand-green text-not-black shadow-not-black/80">
+          <em className="chip self-center bg-brand-green text-not-black">
             Life Code
           </em>{" "}
           to <em className="chip bg-brand-pink">Computer Code</em>
@@ -18,14 +18,14 @@ const StoryCorner = () => {
           quae veritatis, dolor fugiat?
         </p>
       </div>
-      <div className="shadow-base rounded-md border border-not-black bg-pale p-4">
-        <h4 className="text-center">
-          Wait, what's a{" "}
+      <div className="prose rounded-md border border-not-black bg-pale p-4 shadow-thick md:w-1/2 lg:w-full">
+        <h3 className="mb-3 text-center">
+          Wait, what is an{" "}
           <em className="chip bg-brand-purple/50 text-not-black lg:whitespace-pre">
             User-Empathy Enthusiast
           </em>{" "}
           ?
-        </h4>
+        </h3>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
       </div>
     </div>
