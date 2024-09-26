@@ -60,7 +60,7 @@ export default function Home({ copyData }: { copyData: copyDataProps }) {
   return (
     <>
       <NavBar />
-      <main>
+      <main className="[&_section_>_*:first-child]:max-web-size">
         <Hero />
         <AboutMe skillsData={skills} timelineData={timeline} />
         <Work previousWorkData={previousWork} />

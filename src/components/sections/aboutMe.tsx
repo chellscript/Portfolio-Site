@@ -20,7 +20,7 @@ const AboutMe = ({
       id="skills"
       className="flex flex-col items-center bg-brand-yellow/50 p-4 md:p-10"
     >
-      <div className="grid w-full items-center gap-x-2 gap-y-4 rounded-md md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:grid-rows-[1fr_auto]">
+      <div className="grid w-full items-center gap-x-2 gap-y-4 rounded-md lg:grid-cols-2 lg:grid-rows-[1fr_auto]">
         <div className="lg:col-start-1 lg:row-start-1">
           <StoryCorner />
         </div>
