@@ -18,22 +18,23 @@ const AboutMe = ({
   return (
     <section
       id="skills"
-      className="flex flex-col items-center bg-brand-yellow/50 p-4 md:p-10"
+      className="flex flex-col items-center bg-brand-yellow/50 p-6 md:p-10"
     >
-      <div className="grid w-full items-center gap-x-2 gap-y-4 rounded-md lg:grid-cols-2 lg:grid-rows-[1fr_auto]">
-        <div className="lg:col-start-1 lg:row-start-1">
+      <div className="grid w-full justify-items-center gap-x-2 gap-y-4 rounded-md md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-x-4 md:gap-y-8">
+        <div className="items-center self-center lg:col-start-1 lg:row-start-1 lg:w-4/5">
           <StoryCorner />
-        </div>
-        <div className="lg:col-start-2 lg:row-start-1">
-          <SkillBricks data={skillsData} />
-        </div>
-        <div className="relative row-start-2 my-8 grid grid-flow-row grid-cols-1 grid-rows-1 gap-y-2 md:auto-cols-fr md:grid-flow-col md:gap-x-2 md:pt-4 lg:col-span-2 lg:row-start-2 lg:h-72">
+        </div>{" "}
+        <div className="col-start-1 flex size-full w-full justify-end justify-self-end md:col-start-2 md:row-start-1 lg:justify-center">
           <TimeLine
             data={timelineData}
             activeDate={activeDate}
             setActiveDate={setActiveDate}
           />
         </div>
+        <div className="md:col-span-2">
+          <SkillBricks data={skillsData} />
+        </div>
+        {/* md:auto-cols-fr md:grid-flow-col md:gap-x-2 md:pt-4 lg:col-span-2 lg:row-start-2 lg:h-72 */}
       </div>
     </section>
   );

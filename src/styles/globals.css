@@ -91,10 +91,10 @@
 
 @layer components {
   .timeline-dot {
-    @apply after:absolute after:-left-[30px] after:top-[5%] after:block after:size-4 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-top-6 md:after:left-1/2 md:after:-translate-x-1/2;
+    @apply after:absolute after:-left-6 after:top-1/4 after:block after:size-4 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''];
   }
 
   .chip {
-    @apply rounded-xl border border-not-black px-3 py-1 text-3xl leading-loose;
+    @apply rounded-xl border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
   }
 }

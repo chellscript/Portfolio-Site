@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>The DevElle in the Detail👿</title>
+        <title>ChellScrip 🐚 💖</title>
       </Head>
       <Component {...pageProps} />
     </>
