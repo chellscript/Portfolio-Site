@@ -21,8 +21,8 @@ function NavBar() {
   }, [isMobile]);
 
   return (
-    <header className="relative mx-auto flex w-full max-w-screen-lg justify-end">
-      <nav className="fixed right-8 top-3 z-10 flex h-10 space-x-2 bg-none md:top-6 xl:right-[unset]">
+    <header className="relative mx-auto flex max-w-screen-sm justify-end md:max-w-screen-md lg:max-w-screen-lg">
+      <nav className="fixed right-2 top-3 z-10 flex h-10 flex-col gap-y-2 bg-none md:right-16 md:top-6 md:flex-row md:gap-x-2 md:gap-y-0 lg:right-[unset]">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
@@ -40,7 +40,7 @@ function NavBar() {
             key={index}
             onClick={() => setIsOpen(false)}
             className={clsx(
-              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:shadow-base md:block",
+              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:font-bold hover:shadow-base md:block",
               isOpen ? "block" : "hidden",
             )}
           >
