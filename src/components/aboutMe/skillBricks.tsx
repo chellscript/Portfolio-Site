@@ -5,7 +5,7 @@ import Link from "next/link";
 const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
   return (
     <div className="relative flex flex-col items-center gap-y-2">
-      <h4>✨ My technical skills</h4>{" "}
+      <h3>✨ My technical skills</h3>{" "}
       <div className="flex w-full flex-row flex-wrap gap-3 md:w-5/6">
         {data.map((skill, index) => (
           <span

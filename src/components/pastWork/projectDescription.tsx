@@ -13,7 +13,7 @@ const ProjectDescription = ({
   setSelectedProjectIndex: (arg: null) => void;
 }) => (
   <>
-    <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg border bg-white p-5 shadow-thick md:w-[600px] lg:w-full">
+    <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg border bg-white p-5 shadow-lg md:w-[600px] lg:w-full">
       <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))] items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-black/50 pb-2 text-center text-xs uppercase">
         {[companyName, role, duration].map(
           (data, index) => data && <p key={index}>{data}</p>,
@@ -47,7 +47,7 @@ const ProjectDescription = ({
       </div>
     </div>
     <button
-      className="col-span-1 row-span-1 w-full rounded-lg bg-brand-purple p-1 font-bold text-white shadow-thick shadow-not-black hover:shadow-thick hover:shadow-not-black md:w-1/2 lg:justify-self-end"
+      className="col-span-1 row-span-1 w-full rounded-lg bg-brand-purple p-1 font-bold text-white shadow-lg shadow-not-black hover:shadow-lg hover:shadow-not-black md:w-1/2 lg:justify-self-end"
       onClick={() => setSelectedProjectIndex(null)}
     >
       <div className="text-nowrap rounded-lg border-2 border-white p-1">

@@ -11,7 +11,7 @@ interface TimeLineProps {
 const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
   return (
     <>
-      <div className="relative grid w-4/5 grid-flow-row grid-cols-1 gap-y-4 lg:w-3/5">
+      <div className="relative grid w-4/5 max-w-sm grid-flow-row grid-cols-1 gap-y-4 md:w-4/5 xl:w-3/5">
         <div className="absolute -left-6 h-full w-1 bg-gradient-to-b from-not-black from-90%" />
         {data.map(({ name, role, date, description }, index) => {
           const isActive = activeDate === index;

@@ -22,12 +22,39 @@ const config: Config = {
         1: '1'
       },
       boxShadow: {
-        'base': '2px 2px 0px', 'thick': '3px 5px 0px',
+        'none': 'unset',
+        DEFAULT: '2px 2px 0px',
+        'lg': '3px 5px 0px',
         'bricks': '0px 4px 0px'
       },
       backgroundImage: {
         hero: "url('/images/hero/background.jpeg')"
       },
+      animation: {
+        'sideswipe-right': 'sideswipeRightIn 0.75s linear forwards',
+        'sideswipe-right-out': 'sideswipeRightOut 0.75s linear  forwards',
+        'sideswipe-left': 'sideswipeLeftIn 0.75s linear forwards',
+        'sideswipe-left-out': 'sideswipeLeftOut 0.75s linear forwards',
+      },
+      keyframes: {
+        sideswipeRightIn: {
+          '0%': { transform: 'translateX(100%)', },
+          '100%': { transform: 'translateX(0)' },
+        },
+        sideswipeRightOut: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
+        sideswipeLeftIn: {
+          '0%': { transform: 'translateX(-100%)', },
+          '100%': { transform: 'translateX(0)' },
+        },
+        sideswipeLeftOut: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)', opacity: '0' },
+        },
+      }
+
     },
   },
   plugins: [

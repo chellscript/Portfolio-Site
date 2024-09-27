@@ -26,7 +26,7 @@ function NavBar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
-            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-thick shadow-not-black hover:bg-brand-green hover:shadow-base md:hidden",
+            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-lg shadow-not-black hover:bg-brand-green hover:shadow md:hidden",
             isOpen ? "bg-brand-green" : "bg-white",
           )}
         >
@@ -40,7 +40,7 @@ function NavBar() {
             key={index}
             onClick={() => setIsOpen(false)}
             className={clsx(
-              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-thick shadow-not-black hover:border-white/50 hover:bg-brand-green hover:font-bold hover:shadow-base md:block",
+              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-lg shadow-not-black hover:border-white/50 hover:bg-brand-green hover:font-bold hover:shadow md:block",
               isOpen ? "block" : "hidden",
             )}
           >

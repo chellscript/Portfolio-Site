@@ -8,7 +8,7 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => (
   <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(3,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
-    <div className="row-start-1 grid min-h-[32rem] w-fit grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow-thick shadow-not-black md:h-[38rem] md:w-11/12 md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4 lg:max-w-screen-md">
+    <div className="row-start-1 grid min-h-[32rem] w-fit grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow-lg shadow-not-black md:h-[38rem] md:w-11/12 md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4 lg:max-w-screen-md">
       <h1
         className="z-1 col-span-full col-start-1 row-span-full row-start-1 flex h-5/6 flex-col justify-between self-center py-4 text-center sm:h-full md:row-span-2 md:row-start-2 md:self-start md:justify-self-start md:p-0 md:text-start lg:gap-y-2"
         id="#"
@@ -32,10 +32,10 @@ const Hero = () => (
       </div>
     </div>
     <div className="max-web-size z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center overflow-x-auto sm:justify-center md:-mt-20 md:max-w-screen-md md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center md:overflow-visible">
-      <h4 className="flex items-center bg-pale md:hidden">
+      <h3 className="flex items-center bg-pale md:hidden">
         My Stats
         <FontAwesomeIcon icon={faArrowRightLong} fontSize="" />
-      </h4>
+      </h3>
       <HeroCards data={TaglineData} />
     </div>
   </section>

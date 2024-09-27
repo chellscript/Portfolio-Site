@@ -2,8 +2,8 @@ import React from "react";
 
 const StoryCorner = () => {
   return (
-    <div className="flex w-full flex-col gap-4 lg:gap-y-4">
-      <div className="prose rounded-md border border-not-black bg-pale p-4 shadow-thick md:w-full lg:w-full">
+    <div className="flex w-full flex-col items-center gap-4 *:w-4/5 *:md:w-full lg:gap-y-4 *:lg:w-4/5 xl:items-center">
+      <div className="prose w-full rounded-md border border-not-black bg-pale p-4 shadow-lg">
         <h3 className="not-prose mb-3 text-center">
           From{" "}
           <em className="chip self-center whitespace-nowrap break-normal bg-brand-green leading-loose text-not-black">
@@ -21,11 +21,11 @@ const StoryCorner = () => {
           quae veritatis, dolor fugiat?
         </p>
       </div>
-      <div className="prose rounded-md border border-not-black bg-pale p-4 shadow-thick md:w-full lg:w-full">
+      <div className="prose w-full rounded-md border border-not-black bg-pale p-4 shadow-lg">
         <h3 className="not-prose mb-3 text-center">
           Wait
           <br />
-          <em className="chip bg-brand-purple/50 text-not-black sm:text-nowrap lg:whitespace-pre">
+          <em className="chip bg-brand-purple/50 text-not-black">
             User-Empathy Enthusiast
           </em>{" "}
           ?
