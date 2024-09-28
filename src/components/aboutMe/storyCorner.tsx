@@ -22,10 +22,10 @@ const StoryCorner = () => {
         </p>
       </div>
       <div className="prose w-full rounded-md border border-not-black bg-pale p-4 shadow">
-        <h3 className="not-prose mb-3 text-center">
+        <h3 className="not-prose relative mb-3 text-center">
           Wait
           <br />
-          <em className="chip relative border-none bg-brand-purple/50 text-not-black mix-blend-multiply after:absolute after:bottom-10 after:rotate-12 after:not-italic after:content-['🙌']">
+          <em className="chip border-none bg-brand-purple/50 text-not-black mix-blend-multiply after:absolute after:bottom-10 after:rotate-12 after:not-italic after:content-['🙌']">
             User-Empathy Enthusiast
           </em>
           ?

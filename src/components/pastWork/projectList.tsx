@@ -4,6 +4,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useMobileNav } from "@/src/hooks/useMobileNav";
 import { ProjectListProps } from "@/src/typings";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
   const ref = useRef<HTMLUListElement | null>(null);
@@ -19,19 +21,19 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
     <div className="flex size-full flex-col items-center justify-center md:justify-start">
       <ul
         ref={ref}
-        className="flex h-fit w-full flex-row content-start items-center gap-2 overflow-x-auto text-clip rounded-md border p-4 md:grid md:size-full md:grid-cols-[repeat(auto-fill,minmax(208px,1fr))] md:justify-start md:overflow-hidden"
+        className="grid h-fit w-full grid-flow-col grid-cols-[repeat(auto-fill,minmax(208px,1fr))] content-start items-center justify-start gap-2 overflow-x-scroll text-clip rounded-md border px-4 py-6 ease-in-out md:size-full md:grid-flow-row md:auto-rows-fr md:p-4"
       >
         {workData.map(({ name, techUsed }, index) => (
           <li
             className={clsx(
-              "group relative h-96 snap-x flex-col items-center opacity-100 transition-all md:flex md:h-80 md:grayscale-0",
+              "group relative flex h-96 snap-x flex-col items-center justify-center opacity-100 transition-all md:flex md:h-80 md:grayscale-0",
             )}
             key={index}
             id={`project-${index}`}
           >
             <button
               onClick={() => setSelectedProjectIndex(index)}
-              className="relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-t-lg border border-not-black bg-white p-2"
+              className="hover:shadow-button-hover relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-lg border border-not-black bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-not-black"
             >
               <div className="size-48 self-center rounded-md border md:size-40">
                 <Image
@@ -49,21 +51,26 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
                 {<TechTags limit={3} tags={techUsed} />}
               </div>
             </button>
-            <div className="static bottom-0 h-fit w-full rounded-b-lg border border-t-0 border-not-black bg-brand-green px-2 text-center md:w-52 lg:absolute lg:-translate-y-8 lg:duration-300 lg:ease-in-out lg:group-hover:-translate-y-2">
-              Check It Out
-            </div>
           </li>
         ))}
       </ul>
-      <div className="flex w-64 flex-row justify-between md:hidden">
-        <button className="debug" onClick={() => previous()}>
-          Left
+      <div className="flex w-1/2 flex-row items-center justify-between md:hidden">
+        <button
+          onClick={() => previous()}
+          className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+          aria-label="Previous Project"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <p>
+        <span className="inline-block h-fit align-middle text-lg">
           {focusedProjectIndex + 1}/{workData.length}
-        </p>
-        <button className="debug" onClick={() => next()}>
-          Right
+        </span>
+        <button
+          className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+          onClick={() => next()}
+          aria-label="Next Project"
+        >
+          <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
     </div>

@@ -24,17 +24,18 @@ const config: Config = {
       boxShadow: {
         DEFAULT: '3px 2px 0px',
         'button': '3px 5px 0px',
-        'button-hover': ' 1px 5px 0px',
+        'button-hover': '0px 3px 0px',
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
         hero: "url('/images/hero/background.jpeg')"
       },
       animation: {
-        'sideswipe-right': 'sideswipeRightIn 0.75s linear forwards',
-        'sideswipe-right-out': 'sideswipeRightOut 0.75s linear  forwards',
-        'sideswipe-left': 'sideswipeLeftIn 0.75s linear forwards',
-        'sideswipe-left-out': 'sideswipeLeftOut 0.75s linear forwards',
+        'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',
+        'sideswipe-right-out': 'sideswipeRightOut 0.5s linear  forwards',
+        'sideswipe-left': 'sideswipeLeftIn 0.5s linear forwards',
+        'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
+
       },
       keyframes: {
         sideswipeRightIn: {

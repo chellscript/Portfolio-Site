@@ -33,7 +33,6 @@ const AboutMe = ({
           {MobileToggle.map(({ label, emoji }, index) => (
             <button
               key={index}
-              // change to shadow-orange-950
               className={clsx(
                 "outer-shadow-button flex grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black bg-brand-yellow p-2 font-semibold text-black transition-colors disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:font-bold disabled:text-pale",
               )}
@@ -41,7 +40,7 @@ const AboutMe = ({
               onClick={() => setActiveSlide(index)}
             >
               {label}
-              <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white p-2">
+              <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white px-2 py-1">
                 {emoji}
               </span>
             </button>
