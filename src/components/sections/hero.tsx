@@ -3,12 +3,14 @@ import React from "react";
 import { TaglineData } from "@/src/data";
 import HeroCards from "../heroCards";
 import myself from "/public/images/hero/myself.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => (
-  <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(3,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
-    <div className="row-start-1 grid min-h-[32rem] w-fit grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black md:h-[38rem] md:w-11/12 md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4 lg:max-w-screen-md">
+  <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
+    {/* In reverse order so peer selectors from hero card work */}
+    <div className="peer z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center overflow-x-auto p-4 sm:justify-center md:-mt-20 md:w-auto md:max-w-screen-sm md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center md:overflow-visible md:overflow-x-auto">
+      <HeroCards data={TaglineData} />
+    </div>
+    <div className="peer-hover:bg-hero-pattern min-h-128 md:max-h-144 max-w-hero row-start-1 grid w-fit grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-soft-light peer-hover:transition-all md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4">
       <h1
         className="z-1 col-span-full col-start-1 row-span-full row-start-1 flex h-5/6 flex-col justify-between self-center py-4 text-center sm:h-full md:row-span-2 md:row-start-2 md:self-start md:justify-self-start md:p-0 md:text-start lg:gap-y-2"
         id="#"
@@ -30,13 +32,6 @@ const Hero = () => (
           className="object-cover object-top max-md:max-w-[400px] max-sm:object-top sm:object-cover md:h-full md:max-h-[unset] md:object-center lg:h-4/5 lg:w-auto lg:object-contain"
         />
       </div>
-    </div>
-    <div className="max-web-size z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center overflow-x-auto p-4 sm:justify-center md:-mt-20 md:max-w-screen-md md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center md:overflow-visible">
-      <h3 className="flex items-center bg-pale md:hidden">
-        My Stats
-        <FontAwesomeIcon icon={faArrowRightLong} fontSize="" />
-      </h3>
-      <HeroCards data={TaglineData} />
     </div>
   </section>
 );

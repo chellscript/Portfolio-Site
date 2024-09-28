@@ -60,13 +60,13 @@ export default function Home({ copyData }: { copyData: copyDataProps }) {
   return (
     <>
       <NavBar />
-      <main className="[&_section_>_*:first-child]:max-web-size">
+      <main className="[&_section_>_*:first-child]:max-app-width">
         <Hero />
         <AboutMe skillsData={skills} timelineData={timeline} />
         <Work previousWorkData={previousWork} />
         <Contact />
       </main>
-      <footer>Footer</footer>
+      <footer className="w-full bg-not-black text-white">Footer</footer>
     </>
   );
 }

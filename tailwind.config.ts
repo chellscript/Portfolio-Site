@@ -9,6 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        128: '32rem',  // for 32rem (512px)
+        144: '36rem',  // for 36rem (576px)
+      },
+      maxWidth: {
+        hero: '896px'
+      },
+      width: {
+        hero: '896px'
+      },
       colors: {
         'pale': '#F0E4D8',
         'not-black': '#2c3e50',
@@ -28,7 +38,9 @@ const config: Config = {
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
-        hero: "url('/images/hero/background.jpeg')"
+        hero: "url('/images/hero/background.jpeg')",
+        'hero-pattern': "url('/images/hero/pattern.svg')",
+        'about-pattern': "url('/images/about/pattern.svg')",
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',
