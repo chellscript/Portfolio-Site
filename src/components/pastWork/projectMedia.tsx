@@ -16,7 +16,7 @@ const ProjectMedia = ({ mediaKey }: { mediaKey: string }) => {
         <div className="relative row-start-2 size-fit">
           <button
             onClick={() => setShowBigger(true)}
-            className="z-1 absolute -bottom-8 -right-4 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-brand-green p-4 hover:scale-105 md:-bottom-4 md:right-4"
+            className="absolute -bottom-8 -right-4 z-1 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-white p-4 shadow-inner shadow-gray-300/80 hover:translate-y-1 hover:bg-brand-green hover:shadow md:-bottom-4 md:right-4"
           >
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
@@ -44,7 +44,7 @@ const ProjectMedia = ({ mediaKey }: { mediaKey: string }) => {
               <div className="fixed left-1/2 top-1/2 w-dvw -translate-x-1/2 -translate-y-1/2 lg:w-[90dvw]">
                 <button
                   onClick={() => setShowBigger(false)}
-                  className="z-1 relative -bottom-6 -right-6 ml-auto flex aspect-square items-center justify-center rounded-full bg-brand-green hover:scale-90"
+                  className="relative -bottom-6 -right-6 z-1 ml-auto flex aspect-square items-center justify-center rounded-full bg-brand-green hover:scale-90"
                 >
                   <FontAwesomeIcon
                     icon={faXmark}

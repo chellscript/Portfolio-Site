@@ -13,8 +13,8 @@ const ProjectDescription = ({
   setSelectedProjectIndex: (arg: null) => void;
 }) => (
   <>
-    <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg border bg-white p-5 shadow-lg md:w-[600px] lg:w-full">
-      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))] items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-black/50 pb-2 text-center text-xs uppercase">
+    <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg bg-white p-5 md:w-[600px] lg:w-full">
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))] items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-not-black/50 pb-2 text-center text-xs uppercase">
         {[companyName, role, duration].map(
           (data, index) => data && <p key={index}>{data}</p>,
         )}
@@ -25,7 +25,7 @@ const ProjectDescription = ({
           <p> {description} </p>
         </div>
       </div>
-      <div className="w-full gap-y-4 space-y-2 self-end border-t border-dashed border-black/50 pt-2">
+      <div className="w-full gap-y-4 space-y-2 self-end border-t border-dashed border-not-black/50 pt-2">
         {link && (
           <div className="flex flex-row flex-wrap items-center gap-x-2">
             <div className="inline-flex h-fit gap-x-1 bg-brand-yellow/50 text-sm font-bold">
@@ -47,12 +47,10 @@ const ProjectDescription = ({
       </div>
     </div>
     <button
-      className="col-span-1 row-span-1 w-full rounded-lg bg-brand-purple p-1 font-bold text-white shadow-lg shadow-not-black hover:shadow-lg hover:shadow-not-black md:w-1/2 lg:justify-self-end"
+      className="outer-shadow-button col-span-1 row-span-1 w-full text-nowrap rounded-lg border border-not-black bg-brand-purple p-2 font-bold text-white hover:translate-y-1 md:w-1/2 lg:justify-self-end"
       onClick={() => setSelectedProjectIndex(null)}
     >
-      <div className="text-nowrap rounded-lg border-2 border-white p-1">
-        Go back
-      </div>
+      Go back
     </button>
   </>
 );

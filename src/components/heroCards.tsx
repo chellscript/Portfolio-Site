@@ -8,7 +8,7 @@ const HeroCards = ({ data }: { data: HeroCardProps[] }) =>
     <div
       key={index}
       className={clsx(
-        "relative grid aspect-square w-full min-w-28 auto-cols-fr content-center overflow-hidden rounded-lg border bg-not-black p-2 text-center transition-transform ease-in md:h-36 md:w-auto md:border-2 md:px-4 md:hover:-translate-y-4 lg:h-40 lg:w-auto",
+        "relative grid aspect-square w-full min-w-28 auto-cols-fr content-center overflow-hidden rounded-lg border bg-not-black p-2 text-center shadow-orange-950 transition-transform ease-in md:h-36 md:w-auto md:border-2 md:px-4 md:hover:-translate-y-4 lg:h-40 lg:w-auto",
         special
           ? "border-yellow-500 text-yellow-500"
           : "border-white text-white",

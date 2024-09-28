@@ -52,6 +52,25 @@
     @apply after:absolute after:-left-6 after:top-1/4 after:block after:size-4 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''];
   }
 
+  .outer-shadow-button {
+    @apply shadow-button hover:shadow-button-hover shadow-not-black hover:shadow-not-black;
+  }
+
+  .inner-shadow-button {
+    @apply shadow-inner shadow-gray-300/80;
+  }
+
+  .combined-shadow-button {
+    box-shadow:
+      inset -2px -4px 0px 0px rgb(209 213 219 / 0.7),
+      3px 5px 0px rgb(43, 61, 79);
+
+    &:hover {
+      box-shadow:
+        inset -2px -4px 0px 0px rgba(255, 255, 255, 0.7),
+        1px 5px 0px rgb(43, 61, 79);
+    }
+  }
   .chip {
     @apply rounded-xl border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
   }

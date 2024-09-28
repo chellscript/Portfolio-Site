@@ -16,8 +16,11 @@ const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
           </span>
         ))}
       </div>
-      <Link href="#work" className="chip bg-brand-blue text-xl hover:font-bold">
-        P.S Wanna see how I used them 😉?
+      <Link
+        href="#work"
+        className="chip combined-shadow-button my-4 border border-not-black bg-white p-4 text-xl hover:font-bold"
+      >
+        Wanna see how I used them 😉⤵️?
       </Link>
     </div>
   );

@@ -54,7 +54,7 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
                     {name}
                   </p>
                   {role && (
-                    <p className="m-0 hidden italic md:inline-block md:text-lg">
+                    <p className="m-0 italic md:inline-block md:text-lg">
                       {role}
                     </p>
                   )}

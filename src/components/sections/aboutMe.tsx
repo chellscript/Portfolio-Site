@@ -29,18 +29,19 @@ const AboutMe = ({
     >
       <h2>Who Am I?</h2>
       <div className="max-web-size grid w-full justify-items-center gap-8 overflow-hidden rounded-md md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-x-4 md:gap-y-8">
-        <div className="col-span-full col-start-1 row-start-2 flex w-full flex-wrap gap-2 rounded-md border border-not-black bg-orange-950/60 p-2 md:hidden">
+        <div className="col-span-full col-start-1 row-start-2 flex w-full flex-wrap gap-2 p-2 md:hidden">
           {MobileToggle.map(({ label, emoji }, index) => (
             <button
               key={index}
+              // change to shadow-orange-950
               className={clsx(
-                "flex grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black bg-brand-yellow p-2 font-semibold text-black shadow shadow-orange-950 transition-colors disabled:border-4 disabled:border-pale disabled:bg-brand-purple disabled:text-pale",
+                "outer-shadow-button flex grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black bg-brand-yellow p-2 font-semibold text-black transition-colors disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:font-bold disabled:text-pale",
               )}
               disabled={activeSlide == index}
               onClick={() => setActiveSlide(index)}
             >
               {label}
-              <span className="rounded-full border border-orange-950 bg-white p-2">
+              <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white p-2">
                 {emoji}
               </span>
             </button>

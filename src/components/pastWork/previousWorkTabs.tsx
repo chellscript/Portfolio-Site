@@ -17,10 +17,10 @@ const PreviousWorkTabs = ({
         role="tab"
         aria-selected={isSelected}
         className={clsx(
-          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-black p-2 text-base",
+          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 text-base transition-all",
           isSelected
-            ? "border border-b-0 border-black bg-pale"
-            : "bg-brand-purple",
+            ? "border border-b-0 border-not-black bg-pale"
+            : "isolate bg-brand-purple",
           name === "Personal Projects" && "order-last",
         )}
         onClick={() => {
@@ -29,11 +29,14 @@ const PreviousWorkTabs = ({
       >
         <Image
           quality={100}
-          width={35}
-          height={35}
+          width={25}
+          height={25}
           src={logo}
           alt=""
-          className="w-6"
+          className={clsx(
+            "w-6 rounded-full",
+            isSelected && "border-2 border-brand-purple",
+          )}
         />
         <div
           className={clsx("text-sm md:!block", isSelected ? "block" : "hidden")}

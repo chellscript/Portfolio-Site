@@ -22,12 +22,14 @@ function NavBar() {
 
   return (
     <header className="relative mx-auto flex max-w-screen-sm justify-end md:max-w-screen-md lg:max-w-screen-lg">
-      <nav className="fixed right-2 top-3 z-10 flex h-10 flex-col gap-y-2 bg-none md:right-16 md:top-6 md:flex-row md:gap-x-2 md:gap-y-0 lg:right-[unset]">
+      <nav className="fixed right-2 top-3 z-10 flex h-10 flex-col gap-y-4 bg-none md:right-16 md:top-6 md:flex-row md:gap-x-2 md:gap-y-0 lg:right-20">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={clsx(
-            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 shadow-lg shadow-not-black hover:bg-brand-green hover:shadow md:hidden",
-            isOpen ? "bg-brand-green" : "bg-white",
+            "min-w-fit text-nowrap rounded-full border border-indigo-950 px-4 py-2 md:hidden",
+            isOpen
+              ? "outer-shadow-button bg-brand-green"
+              : "combined-shadow-button bg-white hover:bg-brand-green",
           )}
         >
           <span className="text-not-black">
@@ -40,7 +42,7 @@ function NavBar() {
             key={index}
             onClick={() => setIsOpen(false)}
             className={clsx(
-              "relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-not-black shadow-lg shadow-not-black hover:border-white/50 hover:bg-brand-green hover:font-bold hover:shadow md:block",
+              "hover:outer-shadow-button combined-shadow-button relative min-w-fit text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green hover:font-bold md:block",
               isOpen ? "block" : "hidden",
             )}
           >

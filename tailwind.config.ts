@@ -22,10 +22,10 @@ const config: Config = {
         1: '1'
       },
       boxShadow: {
-        'none': 'unset',
-        DEFAULT: '2px 2px 0px',
-        'lg': '3px 5px 0px',
-        'bricks': '0px 4px 0px'
+        DEFAULT: '3px 2px 0px',
+        'button': '3px 5px 0px',
+        'button-hover': ' 1px 5px 0px',
+        inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
         hero: "url('/images/hero/background.jpeg')"
