@@ -34,8 +34,8 @@ const AboutMe = ({
             className={clsx(
               "col-start-1 row-start-2 md:col-start-1 md:row-start-1 lg:col-start-1 lg:row-start-1",
               activeSlide == 0
-                ? "animate-sideswipe-left"
-                : "animate-sideswipe-left-out md:animate-[initial]",
+                ? "max-md:animate-sideswipe-left"
+                : "max-md:animate-sideswipe-left-out md:animate-[initial]",
             )}
           >
             <StoryCorner />
@@ -44,8 +44,8 @@ const AboutMe = ({
             className={clsx(
               "col-start-1 row-start-2 flex w-full justify-center justify-self-end md:col-start-2 md:row-start-1 md:justify-end lg:justify-center",
               activeSlide == 1
-                ? "animate-sideswipe-right"
-                : "animate-sideswipe-right-out md:animate-[initial]",
+                ? "max-md:animate-sideswipe-right"
+                : "max-md:animate-sideswipe-right-out",
             )}
           >
             <TimeLine
@@ -59,7 +59,7 @@ const AboutMe = ({
               <button
                 key={index}
                 className={clsx(
-                  "outer-shadow-button flex grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black bg-brand-yellow p-2 font-semibold text-black transition-colors disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:font-bold disabled:text-pale",
+                  "cta-button bg-brand-yellow p-2 disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:font-bold disabled:text-pale",
                 )}
                 disabled={activeSlide == index}
                 onClick={() => setActiveSlide(index)}

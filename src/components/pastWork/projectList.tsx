@@ -21,19 +21,19 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
     <div className="flex size-full flex-col items-center justify-center md:justify-start">
       <ul
         ref={ref}
-        className="grid h-fit w-full grid-flow-col grid-cols-[repeat(auto-fill,minmax(208px,1fr))] content-start items-center justify-start gap-2 overflow-x-scroll text-clip rounded-md border px-4 py-6 ease-in-out md:size-full md:grid-flow-row md:auto-rows-fr md:p-4"
+        className="grid h-fit w-full grid-flow-col auto-rows-auto items-center justify-start gap-4 text-clip rounded-md border ease-in-out max-md:overflow-x-scroll md:size-full md:auto-cols-min md:grid-flow-row md:grid-cols-3 lg:grid-cols-4"
       >
         {workData.map(({ name, techUsed }, index) => (
           <li
             className={clsx(
-              "group relative flex h-96 snap-x flex-col items-center justify-center opacity-100 transition-all md:flex md:h-80 md:grayscale-0",
+              "group relative flex h-96 snap-x flex-col items-center justify-center opacity-100 transition-all duration-0 ease-linear md:flex md:h-80 md:grayscale-0",
             )}
             key={index}
             id={`project-${index}`}
           >
             <button
               onClick={() => setSelectedProjectIndex(index)}
-              className="hover:shadow-button-hover relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-lg border border-not-black bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-not-black"
+              className="relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-lg border border-not-black bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-button-hover hover:shadow-not-black"
             >
               <div className="size-48 self-center rounded-md border md:size-40">
                 <Image

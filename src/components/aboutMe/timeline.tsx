@@ -19,7 +19,7 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
             <button
               onClick={() => setActiveDate(index)}
               className={clsx(
-                "timeline-dot group relative col-span-full h-fit w-full self-baseline justify-self-end ease-in-out *:transition-all *:duration-150",
+                "timeline-dot group relative col-span-full h-fit w-full self-baseline justify-self-end *:transition-colors *:duration-100 *:ease-linear",
                 isActive
                   ? "col-span-3 after:rounded-none after:bg-brand-green md:col-span-2"
                   : "after:bg-brand-blue",

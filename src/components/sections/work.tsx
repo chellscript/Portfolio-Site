@@ -24,12 +24,12 @@ const Work = ({
   return (
     <section
       id="work"
-      className="flex snap-y justify-center bg-brand-purple/50 p-6 md:p-10"
+      className="flex justify-center bg-brand-purple/50 p-6 md:p-10"
     >
-      <div className="flex w-[90vw] flex-col content-center">
+      <div className="max-app-width flex w-full flex-col content-center">
         <h2 className="mb-4 text-center">My Past Work</h2>
         <div
-          className="flex flex-row place-items-end gap-x-2 self-start justify-self-start"
+          className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"
         >
           <PreviousWorkTabs
@@ -38,7 +38,7 @@ const Work = ({
             updateComponentView={updateComponentView}
           />
         </div>
-        <div className="z-1 rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale py-6 shadow shadow-not-black">
+        <div className="bg-work-pattern z-1 mb-5 rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale px-4 py-6 bg-blend-soft-light shadow shadow-not-black transition-all duration-75 ease-linear md:p-6">
           {selectedProjectIndex === null ? (
             <ProjectList
               data={previousWorkData[selectedCompanyIndex]}

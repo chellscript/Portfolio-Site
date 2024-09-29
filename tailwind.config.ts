@@ -41,6 +41,9 @@ const config: Config = {
         hero: "url('/images/hero/background.jpeg')",
         'hero-pattern': "url('/images/hero/pattern.svg')",
         'about-pattern': "url('/images/about/pattern.svg')",
+        'work-pattern': "url('/images/previousWork/pattern.svg')",
+        'contact-pattern': "url('/images/contact-pattern.svg')",
+        'contact-pattern2': "url('/images/moo.svg')",
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',

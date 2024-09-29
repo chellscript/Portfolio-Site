@@ -19,7 +19,7 @@ const PreviousWorkTabs = ({
         className={clsx(
           "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 text-base transition-all",
           isSelected
-            ? "border border-b-0 border-not-black bg-pale"
+            ? "bg-work-pattern border border-b-0 border-not-black bg-pale bg-left-top bg-blend-soft-light"
             : "isolate bg-brand-purple",
           name === "Personal Projects" && "order-last",
         )}

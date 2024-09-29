@@ -21,7 +21,7 @@ function NavBar() {
   }, [isMobile]);
 
   return (
-    <nav className="fixed left-1/2 top-3 z-10 flex w-full -translate-x-1/2 flex-col items-end gap-y-3 px-4 max-md:max-w-[400px] md:w-full md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 md:px-10 lg:right-0 lg:w-hero lg:p-0">
+    <nav className="fixed left-1/2 top-3 z-10 flex w-full -translate-x-1/2 flex-col items-end gap-y-3 px-4 md:w-full md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 md:px-10 lg:right-0 lg:max-w-screen-lg lg:p-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(

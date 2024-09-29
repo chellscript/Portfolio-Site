@@ -1,12 +1,13 @@
 // import { Inter } from "next/font/google";
 import Hero from "@/src/components/sections/hero";
-import AboutMe from "@/src/components/sections/aboutMe";
-import Work from "@/src/components/sections/pastWork";
+import AboutMe from "@/src/components/sections/about";
+import Work from "@/src/components/sections/work";
 import Contact from "@/src/components/sections/contact";
 import NavBar from "../components/navBar";
 import { Dirent, promises as fs } from "fs";
 import path from "path";
 import { copyDataProps } from "../typings";
+import Footer from "../components/sections/footer";
 
 // const inter = Inter({ subsets: ["latin"] }); // this is how to import fonts
 
@@ -60,13 +61,13 @@ export default function Home({ copyData }: { copyData: copyDataProps }) {
   return (
     <>
       <NavBar />
-      <main className="[&_section_>_*:first-child]:max-app-width">
+      <main className="">
         <Hero />
         <AboutMe skillsData={skills} timelineData={timeline} />
         <Work previousWorkData={previousWork} />
         <Contact />
       </main>
-      <footer className="w-full bg-not-black text-white">Footer</footer>
+      <Footer />
     </>
   );
 }

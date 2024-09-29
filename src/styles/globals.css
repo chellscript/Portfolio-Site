@@ -75,12 +75,8 @@
     @apply rounded-xl border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
   }
 
-  /* //TODO move to tailwind */
-  /* .about-background {
-    background: url("../../public/images/8GlMuy01.svg"), rgb(255 203 107 / 0.5);
+  .cta-button {
+    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-semibold text-black;
+    background-color: var(--tw-bg-color);
   }
-
-  .hero-background {
-    background: url("../../public/images/wYQhFl01.svg"), #ace4f3;
-  } */
 }

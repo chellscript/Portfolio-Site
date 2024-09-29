@@ -7,10 +7,10 @@ import myself from "/public/images/hero/myself.png";
 const Hero = () => (
   <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
     {/* In reverse order so peer selectors from hero card work */}
-    <div className="peer z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center overflow-x-auto p-4 sm:justify-center md:-mt-20 md:w-auto md:max-w-screen-sm md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center md:overflow-visible md:overflow-x-auto">
+    <div className="peer z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center p-4 max-md:overflow-x-auto sm:justify-center md:-mt-20 md:w-auto md:max-w-screen-sm md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center">
       <HeroCards data={TaglineData} />
     </div>
-    <div className="peer-hover:bg-hero-pattern min-h-128 md:max-h-144 max-w-hero row-start-1 grid w-fit grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-soft-light peer-hover:transition-all md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4">
+    <div className="row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover bg-blend-lighten shadow shadow-not-black peer-hover:bg-hero-pattern peer-hover:transition-all md:max-h-144 md:grid-cols-[1fr_2fr] md:grid-rows-5 md:justify-items-center md:pl-10 md:pr-0 md:pt-4">
       <h1
         className="z-1 col-span-full col-start-1 row-span-full row-start-1 flex h-5/6 flex-col justify-between self-center py-4 text-center sm:h-full md:row-span-2 md:row-start-2 md:self-start md:justify-self-start md:p-0 md:text-start lg:gap-y-2"
         id="#"
