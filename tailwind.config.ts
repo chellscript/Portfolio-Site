@@ -31,6 +31,16 @@ const config: Config = {
       zIndex: {
         1: '1'
       },
+      fontFamily: {
+        sans: ['var(--font-pt_sans)', 'Arial', 'Helvetica', 'sans-serif'],
+        homevideo: ['var(--font-homevideo)'],
+        gacko: ['var(--font-gacko)'],
+        caffie_lofie: ['var(--font-caffie_lofie)'],
+        blacker: ['var(--font-blacker)'],
+        garden_delight: ['var(--font-garden_delight)'],
+
+      },
+
       boxShadow: {
         DEFAULT: '3px 2px 0px',
         'button': '3px 5px 0px',
@@ -39,11 +49,12 @@ const config: Config = {
       },
       backgroundImage: {
         hero: "url('/images/hero/background.jpeg')",
+        heroMe: "url('/images/hero/myself.png')",
         'hero-pattern': "url('/images/hero/pattern.svg')",
         'about-pattern': "url('/images/about/pattern.svg')",
         'work-pattern': "url('/images/previousWork/pattern.svg')",
-        'contact-pattern': "url('/images/contact-pattern.svg')",
-        'contact-pattern2': "url('/images/moo.svg')",
+        'contact-pattern': "url('/images/contact/pattern.svg')",
+
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',
@@ -75,7 +86,7 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    // ...
+
   ],
 };
 export default config;

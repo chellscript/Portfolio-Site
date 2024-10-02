@@ -1,17 +1,14 @@
-// import { Inter } from "next/font/google";
 import Hero from "@/src/components/sections/hero";
 import AboutMe from "@/src/components/sections/about";
 import Work from "@/src/components/sections/work";
 import Contact from "@/src/components/sections/contact";
-import NavBar from "../components/navBar";
 import { Dirent, promises as fs } from "fs";
 import path from "path";
 import { copyDataProps } from "../typings";
-import Footer from "../components/sections/footer";
-
-// const inter = Inter({ subsets: ["latin"] }); // this is how to import fonts
 
 const publicPath = path.join(process.cwd(), "public", "data");
+
+//TODO move to google docs
 
 type fetchDataProps = Promise<string[] | Record<string, undefined>>[];
 
@@ -56,18 +53,13 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ copyData }: { copyData: copyDataProps }) {
-  // console.log(copyData);
   const { previousWork, skills, timeline } = copyData;
   return (
     <>
-      <NavBar />
-      <main className="">
-        <Hero />
-        <AboutMe skillsData={skills} timelineData={timeline} />
-        <Work previousWorkData={previousWork} />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <AboutMe skillsData={skills} timelineData={timeline} />
+      <Work previousWorkData={previousWork} />
+      <Contact />
     </>
   );
 }

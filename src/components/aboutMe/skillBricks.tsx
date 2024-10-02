@@ -5,11 +5,16 @@ import Link from "next/link";
 const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
   return (
     <div className="relative flex flex-col items-center gap-y-6">
-      <h3>✨ My technical skills</h3>{" "}
+      <span className="text-center">
+        <h3 className="mb-0 text-center">✨ My technical skills</h3>
+        <p className="m-0 font-gacko text-3xl text-not-black">
+          (In no particular order)
+        </p>
+      </span>
       <div className="flex w-full flex-row flex-wrap gap-3 md:w-5/6">
         {data.map((skill, index) => (
           <span
-            className="chip flex-1 content-center whitespace-nowrap rounded-xl border-2 border-red-950/30 bg-red-400 text-center text-xl lg:text-2xl"
+            className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center font-caffie_lofie text-xl font-normal text-red-950 lg:text-2xl"
             key={index}
           >
             {skill}
@@ -18,11 +23,11 @@ const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
       </div>
       <Link
         href="#work"
-        className="cta-button bg-white p-4 text-center text-xl hover:font-bold"
+        className="cta-button bg-brand-blue p-4 text-center text-xl text-not-black"
       >
         Wanna see how I used them{" "}
-        <span className="inner-shadow-button aspect-square size-8 rounded-full border border-orange-950 bg-brand-green px-2 py-1">
-          x
+        <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white px-2 py-1">
+          🔥
         </span>
       </Link>
     </div>

@@ -28,8 +28,8 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
             >
               <p
                 className={clsx(
-                  "rounded-lg rounded-b-none border border-not-black bg-brand-blue/80 text-center text-not-black group-hover:font-bold",
-                  isActive && "bg-brand-green font-bold md:text-lg",
+                  "font-caffie_lofie rounded-lg rounded-b-none border border-not-black bg-brand-blue/80 text-center text-not-black",
+                  isActive && "bg-brand-green md:text-lg",
                 )}
               >
                 {date}
@@ -45,22 +45,20 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
                 <div className="prose">
                   <p
                     className={clsx(
-                      "m-0 md:text-base lg:text-xl",
-                      isActive
-                        ? "font-bold before:absolute md:text-2xl"
-                        : "font-semibold",
+                      "font-blacker m-0 md:text-base lg:text-xl",
+                      isActive && "before:absolute md:text-2xl",
                     )}
                   >
                     {name}
                   </p>
                   {role && (
-                    <p className="m-0 italic md:inline-block md:text-lg">
+                    <p className="m-0 font-bold md:inline-block md:text-lg">
                       {role}
                     </p>
                   )}
                 </div>
                 {isActive && (
-                  <p className="text-pretty rounded-lg border border-not-black bg-white p-2 text-sm md:text-base">
+                  <p className="prose text-pretty rounded-lg border border-not-black bg-white p-2 text-sm md:text-base">
                     {description}
                   </p>
                 )}

@@ -16,12 +16,12 @@ const PreviousWorkTabs = ({
         aria-label={`${name} Past Work Tab`}
         role="tab"
         aria-selected={isSelected}
+        disabled={isSelected}
         className={clsx(
-          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 text-base transition-all",
+          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 font-blacker text-base transition-all duration-75 ease-in",
           isSelected
-            ? "bg-work-pattern border border-b-0 border-not-black bg-pale bg-left-top bg-blend-soft-light"
-            : "isolate bg-brand-purple",
-          name === "Personal Projects" && "order-last",
+            ? "order-first border border-b-0 border-not-black bg-pale bg-work-pattern bg-left-top text-not-black bg-blend-soft-light"
+            : "bg-brand-purple text-white hover:text-brand-yellow",
         )}
         onClick={() => {
           if (!isSelected) updateComponentView(index);
@@ -39,13 +39,16 @@ const PreviousWorkTabs = ({
           )}
         />
         <div
-          className={clsx("text-sm md:!block", isSelected ? "block" : "hidden")}
+          className={clsx(
+            "block text-sm md:text-xl",
+            isSelected ? "block" : "text-shadow max-md:hidden",
+          )}
         >
           {name}
         </div>
         <div
           className={clsx(
-            "absolute -right-2 -top-3 flex aspect-square size-6 place-content-center rounded-full border border-not-black bg-brand-green text-not-black",
+            "absolute -right-2 -top-3 isolate flex aspect-square size-6 flex-col justify-center rounded-full border border-not-black bg-white text-not-black shadow-inner shadow-gray-500/50",
             isSelected && "hidden",
           )}
         >

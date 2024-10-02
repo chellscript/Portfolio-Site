@@ -27,12 +27,15 @@ const AboutMe = ({
       id="about-me"
       className="flex flex-col items-center bg-orange-400/50 bg-about-pattern p-6 bg-blend-soft-light md:p-10"
     >
-      <h2>Who Am I?</h2>
+      <h2 className="font-blacker">About Me</h2>
+      <p className="mb-5 text-center font-garden_delight text-xl text-not-black md:text-2xl">
+        (Debugging stereotypes, one line at a time)
+      </p>
       <div className="max-app-width grid grid-cols-1 grid-rows-[repeat(2,auto)] gap-y-4 md:gap-y-8">
         <div className="col-span-full col-start-1 row-start-1 grid w-full gap-y-8 max-md:grid-rows-[repeat(2,auto)] max-md:overflow-hidden md:grid-cols-2">
           <div
             className={clsx(
-              "col-start-1 row-start-2 md:col-start-1 md:row-start-1 lg:col-start-1 lg:row-start-1",
+              "col-start-1 row-start-2 max-md:h-fit md:col-start-1 md:row-start-1 lg:col-start-1 lg:row-start-1",
               activeSlide == 0
                 ? "max-md:animate-sideswipe-left"
                 : "max-md:animate-sideswipe-left-out md:animate-[initial]",
@@ -42,7 +45,7 @@ const AboutMe = ({
           </div>
           <div
             className={clsx(
-              "col-start-1 row-start-2 flex w-full justify-center justify-self-end md:col-start-2 md:row-start-1 md:justify-end lg:justify-center",
+              "col-start-1 row-start-2 flex w-full justify-center justify-self-end max-md:h-fit md:col-start-2 md:row-start-1 md:justify-end lg:justify-center",
               activeSlide == 1
                 ? "max-md:animate-sideswipe-right"
                 : "max-md:animate-sideswipe-right-out",
@@ -59,7 +62,7 @@ const AboutMe = ({
               <button
                 key={index}
                 className={clsx(
-                  "cta-button bg-brand-yellow p-2 disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:font-bold disabled:text-pale",
+                  "cta-button bg-brand-yellow p-2 text-not-black disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:text-pale",
                 )}
                 disabled={activeSlide == index}
                 onClick={() => setActiveSlide(index)}

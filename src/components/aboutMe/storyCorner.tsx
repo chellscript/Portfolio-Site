@@ -6,15 +6,10 @@ const StoryCorner = () => {
       <div className="prose w-full rounded-md border border-not-black bg-pale p-4 shadow">
         <h3 className="not-prose mb-3 text-center">
           From{" "}
-          <em className="chip self-center whitespace-nowrap break-normal border-none bg-brand-green/80 leading-loose text-not-black">
-            Life Code
-          </em>{" "}
-          to{" "}
-          <em className="chip whitespace-nowrap break-normal border-none bg-brand-pink/80">
-            Computer Code
-          </em>
+          <span className="text-highlight bg-brand-green/80">Life Code</span> to{" "}
+          <span className="text-highlight bg-brand-pink/80">Computer Code</span>
         </h3>
-        <p>
+        <p className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
           accusamus nesciunt! Magnam saepe eligendi voluptatem nam maxime. Ullam
           consequatur, tempore officiis culpa cupiditate quibusdam ab mollitia
@@ -25,8 +20,7 @@ const StoryCorner = () => {
         <h3 className="not-prose relative mb-3 text-center">
           Wait
           <br />
-          {/* after:content-['🙌'] */}
-          <em className="chip border-none bg-brand-purple/50 text-not-black mix-blend-multiply after:absolute after:bottom-10 after:rotate-12 after:not-italic">
+          <em className="text-highlight bg-brand-purple/50">
             User-Empathy Enthusiast
           </em>
           ?

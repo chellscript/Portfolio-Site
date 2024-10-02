@@ -41,7 +41,7 @@ export const TaglineData: HeroCardProps[] = [
   },
   {
     number: 2,
-    line: "Companies\n ",
+    line: "Cool Companies\n ",
     icon: faBuilding,
   },
   {

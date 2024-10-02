@@ -33,7 +33,7 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
           >
             <button
               onClick={() => setSelectedProjectIndex(index)}
-              className="relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-lg border border-not-black bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-button-hover hover:shadow-not-black"
+              className="relative z-1 flex h-[90%] w-52 flex-col gap-y-2 rounded-lg border border-not-black/80 bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-button-hover hover:shadow-not-black/80"
             >
               <div className="size-48 self-center rounded-md border md:size-40">
                 <Image
@@ -44,9 +44,9 @@ const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
                   alt={`Cover of ${name} Project`}
                 />
               </div>
-              <div className="group relative line-clamp-1 text-left text-lg">
+              <h3 className="font-blacker group relative m-0 line-clamp-1 text-left text-lg">
                 {name}
-              </div>
+              </h3>
               <div className="flex flex-row flex-wrap gap-2 self-start">
                 {<TechTags limit={3} tags={techUsed} />}
               </div>

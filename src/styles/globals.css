@@ -3,38 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply my-6 text-3xl;
+  html,
+  body {
+    scroll-behavior: smooth;
   }
-
-  @media (min-width: 768px) {
-    h1 {
-      @apply my-8 text-4xl;
-    }
+  h1 {
+    @apply my-6 font-blacker text-5xl md:my-8 lg:text-6xl;
   }
 
   h2 {
-    @apply my-5 text-3xl;
-  }
-
-  @media (min-width: 768px) {
-    h2 {
-      @apply my-6 text-5xl;
-    }
+    @apply my-5 mb-0 font-blacker text-4xl md:my-6 md:mb-0 lg:text-5xl;
   }
 
   h3 {
-    @apply my-4 text-2xl;
+    @apply my-4 font-blacker text-3xl md:my-5 lg:text-4xl;
   }
 
-  @media (min-width: 768px) {
-    h3 {
-      @apply my-5 text-4xl;
-    }
+  .custom-link {
+    @apply font-medium text-[#1FB1D8] underline decoration-brand-yellow decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out hover:font-bold;
   }
 
-  html {
-    scroll-behavior: smooth;
+  .custom-link:hover {
+    @apply text-brand-purple decoration-brand-purple;
+  }
+
+  *:focus,
+  a:focus {
+    @apply outline-none ring-2 ring-[#1FB1D8] ring-offset-4 ring-offset-pale;
+  }
+
+  .custom-link:active {
+    @apply text-brand-pink decoration-brand-pink;
   }
 }
 
@@ -49,7 +48,7 @@
 
 @layer components {
   .timeline-dot {
-    @apply after:absolute after:-left-6 after:top-1/4 after:block after:size-4 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''];
+    @apply after:absolute after:-left-5 after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''];
   }
 
   .outer-shadow-button {
@@ -71,12 +70,24 @@
         1px 5px 0px rgb(43, 61, 79);
     }
   }
-  .chip {
-    @apply rounded-xl border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
+  .brick {
+    @apply border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
+  }
+
+  .text-highlight {
+    @apply rotate-12 rounded-xl px-3 py-2 leading-4 text-not-black mix-blend-multiply;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px 1px #2c3e50;
   }
 
   .cta-button {
-    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-semibold text-black;
+    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-caffie_lofie text-black;
     background-color: var(--tw-bg-color);
+  }
+
+  .hero-bullet {
+    @apply relative block after:absolute after:-left-8 after:top-1 after:size-6 after:bg-cover md:mb-2 md:ml-8 md:after:bg-[url("../../public/images/hero/bullet.svg")] md:after:content-[''];
   }
 }

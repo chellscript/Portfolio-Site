@@ -1,7 +1,6 @@
 import { PastWorkDataProps, WorkProps } from "@/src/typings";
 import TechTags from "./techTagsDisplay";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faTerminal } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const ProjectDescription = ({
   companyData: { name: companyName, duration, role },
@@ -14,13 +13,13 @@ const ProjectDescription = ({
 }) => (
   <>
     <div className="col-span-1 row-span-5 grid size-full grid-cols-1 grid-rows-[auto_2fr_1fr] flex-col content-start rounded-lg bg-white p-5 md:w-[600px] lg:w-full">
-      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))] items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-not-black/50 pb-2 text-center text-xs uppercase">
+      <div className="grid w-full auto-cols-fr grid-flow-col items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-not-black/50 pb-2 text-center font-homevideo text-xs uppercase">
         {[companyName, role, duration].map(
           (data, index) => data && <p key={index}>{data}</p>,
         )}
       </div>
       <div className="self-stretch">
-        <h3 className="text-center">{name}</h3>
+        <h3 className="break-words text-center">{name}</h3>
         <div className="prose max-h-40 w-full flex-col overflow-auto text-pretty">
           <p> {description} </p>
         </div>
@@ -28,26 +27,26 @@ const ProjectDescription = ({
       <div className="w-full gap-y-4 space-y-2 self-end border-t border-dashed border-not-black/50 pt-2">
         {link && (
           <div className="flex flex-row flex-wrap items-center gap-x-2">
-            <div className="inline-flex h-fit gap-x-1 bg-brand-yellow/50 text-sm font-bold">
-              <FontAwesomeIcon icon={faGlobe} size="xl" />
+            <div className="inline-flex h-fit gap-x-1 bg-brand-yellow/50 font-homevideo text-sm">
               <p>Visit It</p>
             </div>
-            <a href={link} target="_blank" className="">
+            <Link href={link} target="_blank" className="custom-link">
               {link}
-            </a>
+            </Link>
           </div>
         )}
         <div className="flex flex-row flex-wrap items-center gap-2">
-          <div className="inline-flex h-fit flex-nowrap items-center gap-x-1 whitespace-nowrap bg-brand-yellow/50 text-sm font-bold">
-            <FontAwesomeIcon icon={faTerminal} />
-            <p>Tech Used</p>
+          <div className="inline-flex h-fit flex-nowrap items-center gap-x-1 whitespace-nowrap">
+            <p className="bg-brand-green/50 font-homevideo text-sm">
+              Tech Used
+            </p>
           </div>
           <TechTags tags={techUsed} />
         </div>{" "}
       </div>
     </div>
     <button
-      className="outer-shadow-button col-span-1 row-span-1 w-full text-nowrap rounded-lg border border-not-black bg-brand-purple p-2 font-bold text-white hover:translate-y-1 md:w-1/2 lg:justify-self-end"
+      className="text-shadow cta-button col-span-1 row-span-1 w-full text-nowrap rounded-lg border bg-brand-purple p-2 text-xl text-white hover:translate-y-1 md:w-1/2 lg:justify-self-end"
       onClick={() => setSelectedProjectIndex(null)}
     >
       Go back
