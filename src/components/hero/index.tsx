@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { TaglineData } from "@/src/data";
-import HeroCards from "../heroCards";
+import HeroCards from "./heroCards";
 import myself from "/public/images/hero/myself.png";
 import scribble from "/public/images/hero/scribble.svg";
 
@@ -20,14 +20,14 @@ const Hero = () => (
           <span className="flex flex-col *:block max-md:h-full max-md:items-center max-md:justify-between md:gap-y-8">
             <span className="">
               Hey,{" "}
-              <span className="font-garden_delight text-5xl text-not-black md:text-white lg:text-6xl">
+              <span className="font-caffie_lofie text-5xl text-not-black md:text-white lg:text-6xl">
                 Beautiful
               </span>{" "}
               World!
             </span>
             <span>
               I'm{" "}
-              <span className="font-garden_delight text-5xl text-brand-pink md:text-6xl">
+              <span className="font-caffie_lofie text-5xl text-brand-pink md:text-6xl">
                 Michi
               </span>
             </span>
@@ -36,12 +36,11 @@ const Hero = () => (
             <span className="hero-bullet">Front End Developer</span>
             <span className="hero-bullet">
               User-Empathy Enthusiast, <br />
-              <span className="relative text-brand-yellow">
-                {" "}
+              <span className="relative font-caffie_lofie text-brand-yellow">
                 always
                 <Image
                   src={scribble}
-                  className="absolute left-2 top-8 -z-1 scale-150 object-cover"
+                  className="absolute left-2 top-9 -z-1 scale-150 object-cover"
                   alt=""
                 />
               </span>

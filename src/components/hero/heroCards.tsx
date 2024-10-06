@@ -4,6 +4,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeroCards = ({ data }: { data: HeroCardProps[] }) => (
+  //TODO use this to marquee https://www.npmjs.com/package/react-fast-marquee
+
   <>
     {data.map(({ number, line, special, icon }, index) => (
       <div

@@ -1,7 +1,7 @@
-import Hero from "@/src/components/sections/hero";
-import AboutMe from "@/src/components/sections/about";
-import Work from "@/src/components/sections/work";
-import Contact from "@/src/components/sections/contact";
+import Hero from "@/src/components/hero";
+import AboutMe from "@/src/components/aboutMe";
+import Work from "@/src/components/pastWork";
+import Contact from "@/src/components/contact";
 import { Dirent, promises as fs } from "fs";
 import path from "path";
 import { copyDataProps } from "../typings";

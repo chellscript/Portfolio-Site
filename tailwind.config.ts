@@ -38,7 +38,6 @@ const config: Config = {
         caffie_lofie: ['var(--font-caffie_lofie)'],
         blacker: ['var(--font-blacker)'],
         garden_delight: ['var(--font-garden_delight)'],
-
       },
 
       boxShadow: {

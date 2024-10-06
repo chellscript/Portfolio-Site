@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { PastWorkDataProps } from "@/src/typings";
-import PreviousWorkTabs from "../pastWork/previousWorkTabs";
-import ProjectList from "../pastWork/projectList";
-import ProjectDisplay from "../pastWork/projectDisplay";
+import PreviousWorkTabs from "./previousWorkTabs";
+import ProjectList from "./projectList";
+import ProjectDisplay from "./projectDisplay";
 
 const Work = ({
   previousWorkData,

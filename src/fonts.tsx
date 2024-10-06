@@ -12,11 +12,6 @@ export const homevideo = localFont({
   variable: "--font-homevideo",
 });
 
-export const gacko = localFont({
-  src: "../public/fonts/Gacko-BF66ed3451f2442.otf",
-  variable: "--font-gacko",
-});
-
 export const caffie_lofie = localFont({
   src: "../public/fonts/caffie-lofie.otf",
   variable: "--font-caffie_lofie",

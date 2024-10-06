@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import SkillBricks from "../aboutMe/skillBricks";
+import SkillBricks from "./skillBricks";
 import { copyDataProps } from "@/src/typings";
-import StoryCorner from "../aboutMe/storyCorner";
-import TimeLine from "../aboutMe/timeline";
+import StoryCorner from "./storyCorner";
+import TimeLine from "./timeline";
 import clsx from "clsx";
 
 //TODO - create error boundary

@@ -10,7 +10,7 @@ const Footer = () => {
       <p className="text-center">
         {" "}
         © Michi, 2024. All rights reserved, except{" "}
-        <span className="font-gacko text-xl">
+        <span className="font-caffie_lofie text-xl">
           <span className="text-brand-yellow">the good vibes</span> – those are{" "}
           <span className="text-brand-yellow">for you! ✨</span>
         </span>

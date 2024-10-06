@@ -7,7 +7,7 @@ const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
     <div className="relative flex flex-col items-center gap-y-6">
       <span className="text-center">
         <h3 className="mb-0 text-center">✨ My technical skills</h3>
-        <p className="m-0 font-gacko text-3xl text-not-black">
+        <p className="m-0 font-garden_delight text-2xl text-not-black">
           (In no particular order)
         </p>
       </span>
