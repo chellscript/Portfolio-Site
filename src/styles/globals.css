@@ -29,7 +29,7 @@
 
   *:focus,
   a:focus {
-    @apply outline-none ring-2 ring-[#1FB1D8] ring-offset-4 ring-offset-pale;
+    @apply outline-none ring-2 ring-[#1FB1D8] ring-offset-2 ring-offset-pale;
   }
 
   .custom-link:active {
@@ -41,6 +41,11 @@
   .max-app-width {
     @apply md:max-w-screen-md lg:max-w-screen-lg;
   }
+
+  .animation-paused {
+    animation-play-state: paused !important;
+  }
+
   .debug {
     border: solid 1px hotpink;
   }
@@ -79,7 +84,7 @@
   }
 
   .text-shadow {
-    text-shadow: 1px 1px 1px #2c3e50;
+    text-shadow: 1px 1px 2px #2c3e50;
   }
 
   .cta-button {

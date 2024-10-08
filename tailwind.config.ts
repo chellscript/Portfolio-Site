@@ -60,9 +60,14 @@ const config: Config = {
         'sideswipe-right-out': 'sideswipeRightOut 0.5s linear  forwards',
         'sideswipe-left': 'sideswipeLeftIn 0.5s linear forwards',
         'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
-
+        marquee: 'marquee 10s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-100% - 4px))' },
+        }
+        ,
         sideswipeRightIn: {
           '0%': { transform: 'translateX(100%)', },
           '100%': { transform: 'translateX(0)' },

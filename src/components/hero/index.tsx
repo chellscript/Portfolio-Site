@@ -8,8 +8,15 @@ import scribble from "/public/images/hero/scribble.svg";
 const Hero = () => (
   <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
     {/* In reverse order so peer selectors from hero card work */}
-    <div className="peer z-1 col-span-1 row-start-2 grid w-full auto-cols-min grid-flow-col gap-x-2 self-center p-4 max-md:max-w-lg max-md:overflow-x-auto sm:justify-center md:-mt-20 md:w-auto md:max-w-screen-sm md:auto-cols-fr md:gap-0 md:gap-x-4 md:justify-self-center">
-      <HeroCards data={TaglineData} />
+    <div className="peer z-1 w-full self-center overflow-x-hidden p-4 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
+      {/*  */}
+      <div className="max-md:hover:animation-paused max-md:animate-marquee flex flex-row gap-x-1 md:flex-col">
+        <HeroCards data={TaglineData} />
+        <span className="md:hidden">
+          {" "}
+          <HeroCards data={TaglineData} />
+        </span>
+      </div>
     </div>{" "}
     <div className="row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-pattern peer-hover:bg-blend-lighten peer-hover:transition-all md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
       <div className="z-1 col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">

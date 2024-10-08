@@ -9,7 +9,7 @@ const Contact = () => {
       id="contact"
       className="flex flex-col items-center bg-brand-pink/50 p-6 bg-blend-soft-light md:p-10"
     >
-      <div className="debug relative flex h-fit w-full max-w-screen-md flex-col items-center overflow-hidden rounded-lg bg-brand-pink/50 bg-contact-pattern bg-center bg-repeat p-4 bg-blend-overlay shadow shadow-[hotpink]/50 after:ml-0.5 md:items-start">
+      <div className="relative flex h-fit w-full max-w-screen-md flex-col items-center overflow-hidden rounded-lg bg-brand-pink/50 bg-contact-pattern bg-center bg-repeat p-4 bg-blend-overlay shadow shadow-[hotpink]/50 after:ml-0.5 md:items-start">
         <h2 className="">Lets Connect</h2>
         <p className="font-garden_delight text-xl text-not-black md:text-2xl">
           Scrolled this far? Reach out and say hi 👋!

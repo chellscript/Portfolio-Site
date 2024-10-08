@@ -6,16 +6,16 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col flex-wrap items-center gap-4 bg-not-black p-4 text-white">
+    <footer className="flex w-full flex-col flex-wrap items-center gap-2 bg-not-black p-4 text-white">
       <p className="text-center">
         {" "}
         © Michi, 2024. All rights reserved, except{" "}
-        <span className="font-caffie_lofie text-xl">
+        <span className="font-caffie_lofie text-lg">
           <span className="text-brand-yellow">the good vibes</span> – those are{" "}
           <span className="text-brand-yellow">for you! ✨</span>
         </span>
       </p>
-      <div className="flex gap-x-4 *:text-4xl">
+      <div className="flex gap-x-4 *:text-3xl">
         <Link href="" className="hover:text-brand-green">
           <FontAwesomeIcon icon={faGithub} />{" "}
         </Link>{" "}

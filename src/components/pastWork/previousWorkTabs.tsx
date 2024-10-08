@@ -18,7 +18,7 @@ const PreviousWorkTabs = ({
         aria-selected={isSelected}
         disabled={isSelected}
         className={clsx(
-          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 font-blacker text-base transition-all duration-75 ease-in",
+          "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 font-blacker text-base",
           isSelected
             ? "order-first border border-b-0 border-not-black bg-pale bg-work-pattern bg-left-top text-not-black bg-blend-soft-light"
             : "bg-brand-purple text-white hover:text-brand-yellow",

@@ -4,9 +4,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeroCards = ({ data }: { data: HeroCardProps[] }) => (
-  //TODO use this to marquee https://www.npmjs.com/package/react-fast-marquee
-
-  <>
+  <div className="col-span-1 row-start-2 grid auto-cols-min grid-flow-col gap-x-1 md:auto-cols-fr md:gap-0 md:gap-x-4">
     {data.map(({ number, line, special, icon }, index) => (
       <div
         key={index}
@@ -29,7 +27,7 @@ const HeroCards = ({ data }: { data: HeroCardProps[] }) => (
         <p className="text-inherit md:text-lg lg:text-xl">{line}</p>
       </div>
     ))}{" "}
-  </>
+  </div>
 );
 
 export default HeroCards;
