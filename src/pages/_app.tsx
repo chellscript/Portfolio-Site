@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>ShellScript 🐚 💖</title>
+        <title>ChellScript</title>
       </Head>
       <main
         className={clsx(

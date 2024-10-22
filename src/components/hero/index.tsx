@@ -10,7 +10,7 @@ const Hero = () => (
     {/* In reverse order so peer selectors from hero card work */}
     <div className="peer z-1 w-full self-center overflow-x-hidden p-4 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
       {/*  */}
-      <div className="max-md:hover:animation-paused max-md:animate-marquee flex flex-row gap-x-1 md:flex-col">
+      <div className="max-md:hover:animation-paused flex flex-row gap-x-1 max-md:animate-marquee md:flex-col">
         <HeroCards data={TaglineData} />
         <span className="md:hidden">
           {" "}
@@ -18,7 +18,7 @@ const Hero = () => (
         </span>
       </div>
     </div>{" "}
-    <div className="row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-pattern peer-hover:bg-blend-lighten peer-hover:transition-all md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
+    <div className="row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-pattern peer-hover:bg-blend-screen peer-hover:transition-all md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
       <div className="z-1 col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">
         <h1
           className="text-shadow m-0 flex flex-col items-center justify-between py-2 text-left text-white max-md:h-full max-md:text-center md:h-fit md:p-0 md:pl-10 md:text-start md:text-not-black lg:gap-y-2"

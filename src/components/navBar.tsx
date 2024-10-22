@@ -24,6 +24,7 @@ function NavBar() {
     <nav className="fixed left-1/2 top-3 z-10 flex w-full -translate-x-1/2 flex-col items-end gap-y-3 px-4 font-blacker md:w-full md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:p-0 lg:px-14">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="menu"
         className={clsx(
           "text-nowrap rounded-full border border-indigo-950 px-4 py-2 md:hidden",
           isOpen
