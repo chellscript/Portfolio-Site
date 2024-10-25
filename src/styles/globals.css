@@ -53,7 +53,7 @@
 
 @layer components {
   .timeline-dot {
-    @apply after:absolute after:-left-5 after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''];
+    @apply after:absolute after:-left-[7%] after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-left-[9%] lg:after:-left-[7%];
   }
 
   .outer-shadow-button {
@@ -80,7 +80,7 @@
   }
 
   .text-highlight {
-    @apply rotate-12 rounded-xl px-3 py-2 leading-4 text-not-black mix-blend-multiply;
+    @apply rounded-xl px-3 py-2 leading-4 text-not-black mix-blend-multiply;
   }
 
   .text-shadow {

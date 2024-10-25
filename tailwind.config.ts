@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
+const plugin = require('tailwindcss/plugin')
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -90,6 +91,9 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    plugin(function ({ addVariant }) {
+      addVariant('span', '&>span');
+    }),
 
   ],
 };

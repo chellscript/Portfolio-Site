@@ -1,9 +1,10 @@
-import { HeroCardProps } from "@/src/typings";
+import { IconMapper } from "@/src/iconMapper";
+import { dataProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const HeroCards = ({ data }: { data: HeroCardProps[] }) => (
+const HeroCards = ({ data }: { data: dataProps["hero"]["cards"]["list"] }) => (
   <div className="col-span-1 row-start-2 grid auto-cols-min grid-flow-col gap-x-1 md:auto-cols-fr md:gap-0 md:gap-x-4">
     {data.map(({ number, line, special, icon }, index) => (
       <div
@@ -16,15 +17,18 @@ const HeroCards = ({ data }: { data: HeroCardProps[] }) => (
         )}
       >
         <FontAwesomeIcon
-          icon={icon}
+          icon={IconMapper[icon]}
           className={clsx(
             "absolute inset-1/2 aspect-square h-[70%] -translate-x-1/2 -translate-y-1/2 opacity-10",
           )}
         />
-        <p className="text-3xl text-inherit md:mb-2 md:text-4xl lg:text-4xl">
+        <p className="mb-0 text-3xl text-inherit md:mb-2 md:text-4xl lg:text-4xl">
           {number}
         </p>
-        <p className="text-inherit md:text-lg lg:text-xl">{line}</p>
+        <p
+          className="text-inherit md:text-lg lg:text-xl"
+          dangerouslySetInnerHTML={{ __html: line }}
+        />
       </div>
     ))}{" "}
   </div>

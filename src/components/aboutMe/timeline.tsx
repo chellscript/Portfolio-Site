@@ -1,45 +1,55 @@
-import { copyDataProps } from "@/src/typings";
+import { dataProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
 
 interface TimeLineProps {
+  data: dataProps["about"]["timeline"]["list"];
   activeDate: number;
-  setActiveDate: (arg: number) => void;
-  data: copyDataProps["timeline"];
+  setActiveDate: (index: number) => void;
 }
 
-const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
+//!!TODO rewrite these sort of types using Pick type Pick<Type, Keys>
+type TimelineItem = dataProps["about"]["timeline"]["list"][number];
+
+const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
+  const buttonColors: {
+    [key in TimelineItem["type"]]: string;
+  } = {
+    life: "bg-brand-pink/80",
+    work: "bg-brand-blue/80",
+    special: "bg-brand-yellow",
+  };
   return (
     <>
-      <div className="relative grid w-4/5 max-w-sm auto-cols-max grid-flow-row grid-cols-1 gap-y-4 md:w-4/5 xl:w-3/5">
-        <div className="absolute -left-6 h-full w-1 bg-gradient-to-b from-not-black from-90%" />
-        {data.map(({ name, role, date, description }, index) => {
+      <div className="relative grid size-full w-full max-w-sm auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center">
+        <div className="absolute left-2 h-full w-1 bg-gradient-to-b from-not-black from-90% md:-left-6" />
+        {data.map(({ title, role, date, content, type }, index) => {
           const isActive = activeDate === index;
           return (
             <button
               onClick={() => setActiveDate(index)}
               className={clsx(
-                "timeline-dot group relative",
+                "timeline-dot group relative w-5/6 justify-self-center md:w-full",
                 isActive
-                  ? "after:rounded-none after:bg-brand-green lg:w-full"
-                  : "after:bg-brand-blue lg:w-3/4",
+                  ? "after:rounded-none after:bg-not-black"
+                  : `after:bg-stone-500`,
               )}
               key={index}
             >
               <p
                 className={clsx(
-                  "rounded-lg rounded-b-none border border-not-black bg-brand-blue/80 text-center font-caffie_lofie text-not-black",
-                  isActive && "bg-brand-green md:text-lg",
+                  isActive && "md:text-lg",
+                  `rounded-lg rounded-b-none border border-not-black text-center font-caffie_lofie text-not-black ${buttonColors[type]}`,
                 )}
               >
                 {date}
               </p>
               <div
                 className={clsx(
-                  "rounded-none border border-not-black bg-pale md:rounded-lg md:rounded-t-none",
+                  "rounded-none border border-not-black bg-pale p-2 md:rounded-lg md:rounded-t-none",
                   isActive
-                    ? "mt-1 p-4 shadow-not-black"
-                    : "border-t-0 p-2 group-hover:mt-1 group-hover:border-t",
+                    ? "mt-1 shadow-not-black"
+                    : "border-t-0 group-hover:mt-1 group-hover:border-t",
                 )}
               >
                 <div className="prose">
@@ -49,18 +59,19 @@ const TimeLine = ({ activeDate, setActiveDate, data }: TimeLineProps) => {
                       isActive && "before:absolute md:text-2xl",
                     )}
                   >
-                    {name}
+                    {title}
                   </p>
                   {role && (
-                    <p className="m-0 font-bold md:inline-block md:text-lg">
+                    <p className="m-0 font-bold italic md:inline-block md:text-lg">
                       {role}
                     </p>
                   )}
                 </div>
                 {isActive && (
-                  <p className="text-pretty rounded-lg border border-not-black bg-white p-2 text-sm md:text-base">
-                    {description}
-                  </p>
+                  <p
+                    className="text-pretty rounded-lg border border-not-black bg-white p-1 text-sm md:text-base"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
                 )}
               </div>
             </button>

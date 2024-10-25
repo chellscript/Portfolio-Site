@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import SkillBricks from "./skillBricks";
-import { copyDataProps } from "@/src/typings";
+import { dataProps } from "@/src/typings";
 import StoryCorner from "./storyCorner";
 import TimeLine from "./timeline";
 import clsx from "clsx";
 
-//TODO - create error boundary
+const AboutMe = ({ data }: { data: dataProps["about"] }) => {
+  const {
+    skills,
+    story,
+    timeline,
+    aboutTitle,
+    aboutSubline,
+    skillsTitle,
+    skillsSubline,
+    mobileButtons,
+  } = data;
 
-const MobileToggle = [
-  { label: "About Me", emoji: "💁🏾‍♀️" },
-  { label: "Career Timeline", emoji: "✨" },
-];
-
-const AboutMe = ({
-  skillsData,
-  timelineData,
-}: {
-  skillsData: copyDataProps["skills"];
-  timelineData: copyDataProps["timeline"];
-}) => {
   const [activeDate, setActiveDate] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -27,43 +25,46 @@ const AboutMe = ({
       id="about-me"
       className="flex flex-col items-center bg-orange-400/50 bg-about-pattern p-6 bg-blend-soft-light md:p-10"
     >
-      <h2 className="font-blacker">About Me</h2>
-      <p className="mb-5 text-center font-garden_delight text-xl text-not-black md:text-2xl">
-        (Debugging stereotypes, one line at a time)
-      </p>
-      <div className="max-app-width grid grid-cols-1 grid-rows-[repeat(2,auto)] gap-y-4 md:gap-y-8">
-        <div className="col-span-full col-start-1 row-start-1 grid w-full gap-y-8 max-md:grid-rows-[repeat(2,auto)] max-md:overflow-hidden md:grid-cols-2">
+      <h2
+        className="font-blacker"
+        dangerouslySetInnerHTML={{ __html: aboutTitle }}
+      />
+      <p
+        className="mb-5 text-center font-garden_delight text-xl text-not-black md:text-2xl"
+        dangerouslySetInnerHTML={{ __html: aboutSubline }}
+      />
+
+      <div className="grid w-full auto-rows-min grid-cols-1 grid-rows-[repeat(2,auto)] gap-y-4 md:gap-y-8 lg:max-w-screen-lg">
+        <div className="col-span-full col-start-1 row-start-1 grid w-full gap-y-8 max-md:grid-rows-[repeat(2,auto)] max-md:overflow-hidden md:grid-cols-3">
           <div
             className={clsx(
-              "col-start-1 row-start-2 max-md:h-fit md:col-start-1 md:row-start-1 lg:col-start-1 lg:row-start-1",
+              "col-start-1 row-start-2 max-md:h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-start-1 lg:row-start-1",
               activeSlide == 0
                 ? "max-md:animate-sideswipe-left"
-                : "max-md:animate-sideswipe-left-out md:animate-[initial]",
+                : "max-md:hidden max-md:animate-sideswipe-left-out md:animate-[initial]",
             )}
           >
-            <StoryCorner />
+            <StoryCorner data={story.list} />
           </div>
           <div
             className={clsx(
-              "col-start-1 row-start-2 flex w-full justify-center justify-self-end max-md:h-fit md:col-start-2 md:row-start-1 md:justify-end lg:justify-center",
+              "col-start-1 row-start-2 flex size-full flex-col max-md:h-fit md:col-start-3 md:row-start-1",
               activeSlide == 1
                 ? "max-md:animate-sideswipe-right"
-                : "max-md:animate-sideswipe-right-out",
+                : "max-md:hidden max-md:animate-sideswipe-right-out",
             )}
           >
             <TimeLine
-              data={timelineData}
+              data={timeline.list}
               activeDate={activeDate}
               setActiveDate={setActiveDate}
             />
           </div>
           <div className="col-span-full col-start-1 row-start-1 flex w-full flex-wrap gap-2 p-2 md:hidden">
-            {MobileToggle.map(({ label, emoji }, index) => (
+            {mobileButtons.list.map(({ label, emoji }, index) => (
               <button
                 key={index}
-                className={clsx(
-                  "cta-button bg-brand-yellow p-2 text-not-black disabled:border-2 disabled:border-pale disabled:bg-brand-purple disabled:text-pale",
-                )}
+                className="cta-button bg-brand-yellow p-2 text-not-black disabled:border-2 disabled:border-white disabled:bg-brand-purple disabled:text-white"
                 disabled={activeSlide == index}
                 onClick={() => setActiveSlide(index)}
               >
@@ -76,7 +77,11 @@ const AboutMe = ({
           </div>
         </div>
         <div className="col-span-full col-start-1 row-start-2 md:col-span-2">
-          <SkillBricks data={skillsData} />
+          <SkillBricks
+            title={skillsTitle}
+            subline={skillsSubline}
+            data={skills}
+          />
         </div>
       </div>
     </section>

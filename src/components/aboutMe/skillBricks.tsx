@@ -1,8 +1,17 @@
 import React from "react";
-import { copyDataProps } from "../../typings";
+import { dataProps } from "../../typings";
 import Link from "next/link";
 
-const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
+const SkillBricks = ({
+  data,
+  title,
+  subline,
+}: {
+  data: dataProps["about"]["skills"];
+  title: string;
+  subline: string;
+}) => {
+  const dataArray = data.split(",");
   return (
     <div className="relative flex flex-col items-center gap-y-6">
       <span className="text-center">
@@ -12,7 +21,7 @@ const SkillBricks = ({ data }: { data: copyDataProps["skills"] }) => {
         </p>
       </span>
       <div className="flex w-full flex-row flex-wrap gap-3 md:w-5/6">
-        {data.map((skill, index) => (
+        {dataArray.map((skill, index) => (
           <span
             className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center font-caffie_lofie text-xl font-normal text-red-950 lg:text-2xl"
             key={index}

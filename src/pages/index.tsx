@@ -2,63 +2,26 @@ import Hero from "@/src/components/hero";
 import AboutMe from "@/src/components/aboutMe";
 import Work from "@/src/components/pastWork";
 import Contact from "@/src/components/contact";
-import { Dirent, promises as fs } from "fs";
-import path from "path";
-import { copyDataProps } from "../typings";
 
-const publicPath = path.join(process.cwd(), "public", "data");
-
-//TODO move to google docs
-
-type fetchDataProps = Promise<string[] | Record<string, undefined>>[];
-
-const fetchData = async (
-  directory: string = "",
-): Promise<fetchDataProps | undefined> => {
-  const currentPath = path.join(publicPath, directory);
-  const contents = await fs.readdir(currentPath, { withFileTypes: true });
-
-  return await Promise.all(
-    contents.map(async (content: Dirent) => {
-      if (content.isDirectory()) {
-        return {
-          [content.name.split(".")[0]]: await fetchData(content.name),
-        };
-      }
-
-      if (path.extname(content.name) === ".json") {
-        return fs
-          .readFile(path.join(currentPath, content.name), "utf8")
-          .then((response) => JSON.parse(response));
-      }
-
-      return undefined;
-    }),
-  );
-};
+import { dataProps } from "../typings";
 
 export const getStaticProps = async () => {
-  const copyDataResponse = await fetchData();
-  let copyData = {};
-  if (copyDataResponse?.length) {
-    copyData = copyDataResponse.reduce((previous, current) => {
-      return {
-        ...previous,
-        [Object.keys(current)[0]]: Object.values(current)[0],
-      };
-    }, {});
-  }
+  const response = await fetch(`${process.env.CMS_URL}`, {
+    cache: "no-store",
+  });
+  const data = await response.json();
 
-  return { props: { copyData } };
+  return { props: data };
 };
 
-export default function Home({ copyData }: { copyData: copyDataProps }) {
-  const { previousWork, skills, timeline } = copyData;
+export default function Home({ data }: { data: dataProps }) {
+  const { hero, about, contact, previousWork } = data;
+
   return (
     <>
-      <Hero />
-      <AboutMe skillsData={skills} timelineData={timeline} />
-      <Work previousWorkData={previousWork} />
+      <Hero data={hero} />
+      <AboutMe data={about} />
+      {/*<Work previousWorkData={previousWork} /> */}
       <Contact />
     </>
   );

@@ -71,7 +71,6 @@ export const useMobileNav = (
     }
 
     if (activeIOBlock || !isMobile) {
-      console.log("inside func");
       observer.disconnect();
     }
 

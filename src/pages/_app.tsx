@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "dotenv/config";
 import type { AppProps } from "next/app";
 import reportA11y from "../../a11yreporting";
 import React from "react";
