@@ -1,10 +1,10 @@
 import { IconMapper } from "@/src/iconMapper";
-import { dataProps } from "@/src/typings";
+import { HeroSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const HeroCards = ({ data }: { data: dataProps["hero"]["cards"]["list"] }) => (
+const HeroCards = ({ data }: { data: HeroSectionProps["cards"]["list"] }) => (
   <div className="col-span-1 row-start-2 grid auto-cols-min grid-flow-col gap-x-1 md:auto-cols-fr md:gap-0 md:gap-x-4">
     {data.map(({ number, line, special, icon }, index) => (
       <div

@@ -3,15 +3,14 @@ import React from "react";
 import HeroCards from "./heroCards";
 import myself from "/public/images/hero/myself.png";
 import scribble from "/public/images/hero/scribble.svg";
-import { dataProps } from "@/src/typings";
+import { HeroSectionProps } from "@/src/typings";
 
-const Hero = ({ data }: { data: dataProps["hero"] }) => {
+const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
   return (
     <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-6 pt-8 md:gap-y-[unset] md:p-10">
       {/* In reverse order so peer selectors from hero card work */}
       <div className="peer z-1 w-full self-center overflow-x-hidden p-4 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
-        {/*  */}
         <div className="max-md:hover:animation-paused flex flex-row gap-x-1 max-md:animate-marquee md:flex-col">
           <HeroCards data={cards.list} />
           <span className="md:hidden">

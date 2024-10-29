@@ -1,11 +1,11 @@
 import React from "react";
-import { DataProps } from "../../typings";
+import { PreviousWorkSectionProps, ProjectsListProps } from "../../typings";
 import ProjectMedia from "./projectMedia";
 import ProjectDescription from "./projectDescription";
 
 type ProjectDisplayProps = {
-  companyData: DataProps["previousWork"]["companies"]["list"][number];
-  projectData: DataProps["previousWork"]["companies"]["list"][number]["projects"][number];
+  companyData: PreviousWorkSectionProps["companies"]["list"][number];
+  projectData: ProjectsListProps;
   setSelectedProjectIndex: (arg: null) => void;
 };
 

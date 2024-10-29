@@ -1,10 +1,10 @@
 import React from "react";
 import { ProjectsListProps } from "../../typings";
 
-interface TechTagsProps {
+type TechTagsProps = {
   limit?: number;
   tagsString: ProjectsListProps["techUsed"];
-}
+};
 
 const TechTags = ({ limit, tagsString }: TechTagsProps) => {
   const tagArray = tagsString.split(",");

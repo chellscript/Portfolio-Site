@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import { DataProps } from "../../typings";
+import { PreviousWorkSectionProps } from "../../typings";
 
-interface ProjectTabsProps {
-  data: DataProps["previousWork"]["companies"]["list"];
+type ProjectTabsProps = {
+  data: PreviousWorkSectionProps["companies"]["list"];
   selectedCompanyIndex: number;
   updateComponentView: (arg: number) => void;
-}
+};
 
 const PreviousWorkTabs = ({
   data,

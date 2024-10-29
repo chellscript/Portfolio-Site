@@ -1,5 +1,5 @@
 import React from "react";
-import { dataProps } from "../../typings";
+import { AboutSectionProps } from "../../typings";
 import Link from "next/link";
 
 const SkillBricks = ({
@@ -7,7 +7,7 @@ const SkillBricks = ({
   title,
   subline,
 }: {
-  data: dataProps["about"]["skills"];
+  data: AboutSectionProps["skills"];
   title: string;
   subline: string;
 }) => {
@@ -15,10 +15,14 @@ const SkillBricks = ({
   return (
     <div className="relative flex flex-col items-center gap-y-6">
       <span className="text-center">
-        <h3 className="mb-0 text-center">✨ My technical skills</h3>
-        <p className="m-0 font-garden_delight text-2xl text-not-black">
-          (In no particular order)
-        </p>
+        <h3
+          className="mb-0 text-center uppercase"
+          dangerouslySetInnerHTML={{ __html: `✨${title}` }}
+        />
+        <p
+          className="m-0 font-garden_delight text-2xl text-not-black"
+          dangerouslySetInnerHTML={{ __html: subline }}
+        />
       </span>
       <div className="flex w-full flex-row flex-wrap gap-3 md:w-5/6">
         {dataArray.map((skill, index) => (

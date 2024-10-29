@@ -1,4 +1,4 @@
-import { dataProps } from "@/src/typings";
+import { AboutSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import { marked } from "marked";
 import React from "react";
@@ -6,7 +6,7 @@ import React from "react";
 const StoryCorner = ({
   data,
 }: {
-  data: dataProps["about"]["story"]["list"];
+  data: AboutSectionProps["story"]["list"];
 }) => {
   const highlightColoursIndex: { [index: number]: string } = {
     0: "first-of-type:span:bg-brand-green/70 span:bg-brand-blue/70",

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import SkillBricks from "./skillBricks";
-import { dataProps } from "@/src/typings";
+import { AboutSectionProps } from "@/src/typings";
 import StoryCorner from "./storyCorner";
 import TimeLine from "./timeline";
 import clsx from "clsx";
 
-const AboutMe = ({ data }: { data: dataProps["about"] }) => {
+const AboutMe = ({ data }: { data: AboutSectionProps }) => {
   const {
     skills,
     story,

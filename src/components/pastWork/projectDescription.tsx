@@ -1,10 +1,10 @@
-import { DataProps } from "@/src/typings";
+import { PreviousWorkSectionProps, ProjectsListProps } from "@/src/typings";
 import TechTags from "./techTagsDisplay";
 import Link from "next/link";
 
 type ProjectDescriptionProps = {
-  companyData: DataProps["previousWork"]["companies"]["list"][number];
-  projectData: DataProps["previousWork"]["companies"]["list"][number]["projects"][number];
+  companyData: PreviousWorkSectionProps["companies"]["list"][number];
+  projectData: ProjectsListProps;
   setSelectedProjectIndex: (arg: null) => void;
 };
 

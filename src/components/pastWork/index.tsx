@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { DataProps } from "@/src/typings";
+import { PreviousWorkSectionProps } from "@/src/typings";
 import PreviousWorkTabs from "./previousWorkTabs";
 import ProjectList from "./projectList";
 import ProjectDisplay from "./projectDisplay";
 
-const Work = ({ data }: { data: DataProps["previousWork"] }) => {
+const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
   const {
     title,
     subline,

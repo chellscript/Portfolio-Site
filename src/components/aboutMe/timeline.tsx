@@ -1,15 +1,14 @@
-import { dataProps } from "@/src/typings";
+import { AboutSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
 
-interface TimeLineProps {
-  data: dataProps["about"]["timeline"]["list"];
+type TimeLineProps = {
+  data: AboutSectionProps["timeline"]["list"];
   activeDate: number;
   setActiveDate: (index: number) => void;
-}
+};
 
-//!!TODO rewrite these sort of types using Pick type Pick<Type, Keys>
-type TimelineItem = dataProps["about"]["timeline"]["list"][number];
+type TimelineItem = AboutSectionProps["timeline"]["list"][number];
 
 const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
   const buttonColors: {

@@ -9,6 +9,8 @@ export const getStaticProps = async () => {
   const response = await fetch(`${process.env.CMS_URL}`, {
     cache: "no-store",
   });
+
+  //TODO sanatise this response here
   const data = await response.json();
 
   return { props: data };
