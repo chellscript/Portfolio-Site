@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PastWorkDataProps } from "../typings";
+import { CompaniesDataProps } from "../typings";
 import { useMediaQuery } from "react-responsive";
 
 type Hooks = [
@@ -10,7 +10,7 @@ type Hooks = [
 
 export const useMobileNav = (
   scrollParentCurrent: HTMLUListElement | undefined,
-  data: PastWorkDataProps,
+  data: CompaniesDataProps,
 ): Hooks => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 

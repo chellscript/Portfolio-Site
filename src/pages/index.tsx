@@ -3,7 +3,7 @@ import AboutMe from "@/src/components/aboutMe";
 import Work from "@/src/components/pastWork";
 import Contact from "@/src/components/contact";
 
-import { dataProps } from "../typings";
+import { DataProps } from "../typings";
 
 export const getStaticProps = async () => {
   const response = await fetch(`${process.env.CMS_URL}`, {
@@ -14,14 +14,14 @@ export const getStaticProps = async () => {
   return { props: data };
 };
 
-export default function Home({ data }: { data: dataProps }) {
+export default function Home({ data }: { data: DataProps }) {
   const { hero, about, contact, previousWork } = data;
 
   return (
     <>
       <Hero data={hero} />
       <AboutMe data={about} />
-      {/*<Work previousWorkData={previousWork} /> */}
+      <Work data={previousWork} />
       <Contact />
     </>
   );

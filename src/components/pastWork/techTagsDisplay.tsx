@@ -1,18 +1,19 @@
 import React from "react";
-import { WorkProps } from "../../typings";
+import { ProjectsListProps } from "../../typings";
 
 interface TechTagsProps {
   limit?: number;
-  tags: WorkProps["techUsed"];
+  tagsString: ProjectsListProps["techUsed"];
 }
 
-const TechTags = ({ limit, tags }: TechTagsProps) => {
-  const iterationArray =
-    limit && limit < tags.length ? tags.slice(0, limit) : tags;
+const TechTags = ({ limit, tagsString }: TechTagsProps) => {
+  const tagArray = tagsString.split(",");
 
+  const displayTags =
+    limit && limit < tagArray.length ? tagArray.slice(0, limit) : tagArray;
   return (
     <>
-      {iterationArray.map((item, index) => (
+      {displayTags.map((item, index) => (
         <div
           key={index}
           className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 text-sm font-semibold"
@@ -20,9 +21,9 @@ const TechTags = ({ limit, tags }: TechTagsProps) => {
           {item}
         </div>
       ))}
-      {limit && limit < tags.length && (
-        <div className="size-fit rounded-lg border border-not-black bg-brand-pink px-2 text-sm">
-          {Number(tags.length - limit)}+ more
+      {limit && limit < tagArray.length && (
+        <div className="size-fit rounded-lg border border-not-black bg-brand-pink px-2 text-sm font-bold text-white">
+          {Number(tagArray.length - limit)}+ more
         </div>
       )}
     </>

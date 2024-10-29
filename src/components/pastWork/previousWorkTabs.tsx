@@ -1,19 +1,25 @@
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import { ProjectTabsProps } from "../../typings";
+import { DataProps } from "../../typings";
+
+interface ProjectTabsProps {
+  data: DataProps["previousWork"]["companies"]["list"];
+  selectedCompanyIndex: number;
+  updateComponentView: (arg: number) => void;
+}
 
 const PreviousWorkTabs = ({
   data,
   selectedCompanyIndex,
   updateComponentView,
 }: ProjectTabsProps) =>
-  data.map(({ logo, name, work }, index) => {
+  data.map(({ logo, companyTitle, projects }, index) => {
     const isSelected = selectedCompanyIndex === index;
     return (
       <button
         key={index}
-        aria-label={`${name} Past Work Tab`}
+        aria-label={`${companyTitle} Past Work Tab`}
         role="tab"
         aria-selected={isSelected}
         disabled={isSelected}
@@ -34,26 +40,25 @@ const PreviousWorkTabs = ({
           src={logo}
           alt=""
           className={clsx(
-            "w-6 rounded-full bg-purple-200 md:rounded-none",
+            "w-6 rounded-full md:rounded-none",
             isSelected && "border-2 border-brand-purple",
           )}
         />
         <div
           className={clsx(
-            "block text-sm md:text-xl",
+            "block whitespace-nowrap text-sm md:text-lg",
             isSelected ? "block" : "text-shadow max-md:hidden",
           )}
-        >
-          {name}
-        </div>
+          dangerouslySetInnerHTML={{ __html: companyTitle }}
+        />
+
         <div
           className={clsx(
             "absolute -right-2 -top-3 isolate flex aspect-square size-6 flex-col justify-center rounded-full border border-not-black bg-white text-not-black shadow-inner shadow-gray-500/50",
             isSelected && "hidden",
           )}
-        >
-          {work.length}
-        </div>
+          dangerouslySetInnerHTML={{ __html: projects.length }}
+        />
       </button>
     );
   });
