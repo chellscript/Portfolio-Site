@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 
 const OPTIONS = [
   { label: "About Me", url: "about-me" },
+  { label: "My Skills", url: "skills" },
   { label: "Past Work", url: "work" },
   { label: "Contact Me", url: "contact" },
 ];

@@ -14,7 +14,7 @@ export const useMobileNav = (
 ): Hooks => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const workData = useMemo(() => data.work, [data]);
+  const workData = useMemo(() => data.projects, [data]);
 
   const [activeIOBlock, setActiveIOBlock] = useState(false);
   const [focusedProjectIndex, setFocusedProjectIndex] = useState<number>(0);

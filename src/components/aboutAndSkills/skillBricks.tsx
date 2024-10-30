@@ -4,25 +4,10 @@ import Link from "next/link";
 import skillsMichi from "/public/images/aboutMe/skills.png";
 import Image from "next/image";
 
-const SkillBricks = ({
-  data,
-  title,
-  subline,
-}: {
-  data: AboutSectionProps["skills"];
-  title: string;
-  subline: string;
-}) => {
+const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
   const dataArray = data.split(",");
   return (
-    <div className="relative flex flex-col items-center">
-      <span className="text-center">
-        <h2 className="mb-0 text-center">{title}</h2>
-        <p
-          className="m-0 font-garden_delight text-2xl text-not-black"
-          dangerouslySetInnerHTML={{ __html: subline }}
-        />
-      </span>
+    <>
       <div className="flex p-2 md:w-5/6">
         <Image
           height={180}
@@ -51,7 +36,7 @@ const SkillBricks = ({
           🔥
         </span>
       </Link>
-    </div>
+    </>
   );
 };
 

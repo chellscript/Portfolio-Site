@@ -71,7 +71,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center bg-brand-pink/50 bg-blend-soft-light sm:p-6 md:p-10"
+      className="flex flex-col items-center bg-brand-pink/50 py-6 bg-blend-soft-light md:p-10"
     >
       <div className="relative flex h-fit w-full max-w-screen-md flex-col items-center overflow-hidden rounded-lg bg-brand-pink/50 bg-contact-pattern bg-center bg-repeat p-4 bg-blend-overlay shadow shadow-[hotpink]/50 after:ml-0.5 md:items-start lg:px-8">
         <h2>{title}</h2>

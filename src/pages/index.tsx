@@ -1,5 +1,5 @@
 import Hero from "@/src/components/hero";
-import AboutMe from "@/src/components/aboutMe";
+import AboutMe from "@/src/components/aboutAndSkills";
 import Work from "@/src/components/pastWork";
 import Contact from "@/src/components/contact";
 
