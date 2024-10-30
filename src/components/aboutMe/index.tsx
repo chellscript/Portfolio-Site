@@ -23,7 +23,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
   return (
     <section
       id="about-me"
-      className="flex flex-col items-center bg-orange-400/50 bg-about-pattern p-6 bg-blend-soft-light md:p-10"
+      className="flex flex-col items-center bg-orange-400/50 bg-about-pattern p-4 bg-blend-soft-light md:p-10"
     >
       <h2
         className="font-blacker"

@@ -51,7 +51,7 @@ const config: Config = {
         hero: "url('/images/hero/background.jpeg')",
         heroMe: "url('/images/hero/myself.png')",
         'hero-pattern': "url('/images/hero/pattern.svg')",
-        'about-pattern': "url('/images/about/pattern.svg')",
+        'about-pattern': "url('/images/aboutMe/pattern.svg')",
         'work-pattern': "url('/images/previousWork/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
 
@@ -92,9 +92,9 @@ const config: Config = {
   plugins: [
     require('tailwind-scrollbar'),
     require('@tailwindcss/typography'),
-    plugin(function ({ addVariant }) {
+    plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
       addVariant('span', '&>span');
-    }),
+    })
 
   ],
 };

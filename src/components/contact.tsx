@@ -85,7 +85,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
             height={120}
             src={myself}
             alt="chat avatar of michi"
-            className="col-span-1 col-start-1 row-start-1 aspect-square size-auto rounded-full border-2 border-white bg-brand-yellow/80 object-contain object-bottom md:row-span-full"
+            className="col-span-1 col-start-1 row-start-1 aspect-square rounded-full border-2 border-white bg-brand-yellow/80 object-contain object-bottom md:row-span-full"
           />
           <div className="col-span-1 col-start-1 row-start-2 flex flex-nowrap gap-x-2 md:col-start-2 md:row-start-1">
             <p className="font-homevideo text-xl font-bold">Michi</p>
