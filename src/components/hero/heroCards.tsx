@@ -1,8 +1,7 @@
-import { IconMapper } from "@/src/iconMapper";
+import { FontAwesomeIconMapper } from "@/src/iconMapper";
 import { HeroSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeroCards = ({ data }: { data: HeroSectionProps["cards"]["list"] }) => (
   <div className="col-span-1 row-start-2 grid auto-cols-min grid-flow-col gap-x-1 md:auto-cols-fr md:gap-0 md:gap-x-4">
@@ -16,8 +15,8 @@ const HeroCards = ({ data }: { data: HeroSectionProps["cards"]["list"] }) => (
             : "border-white text-white",
         )}
       >
-        <FontAwesomeIcon
-          icon={IconMapper[icon]}
+        <FontAwesomeIconMapper
+          icon={icon}
           className={clsx(
             "absolute inset-1/2 aspect-square h-[70%] -translate-x-1/2 -translate-y-1/2 opacity-10",
           )}

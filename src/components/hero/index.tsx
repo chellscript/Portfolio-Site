@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import HeroCards from "./heroCards";
-import myself from "/public/images/hero/myself.png";
+import myself from "/public/images/hero/myself2.png";
 import scribble from "/public/images/hero/scribble.svg";
 import { HeroSectionProps } from "@/src/typings";
 

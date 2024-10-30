@@ -12,7 +12,7 @@
   }
 
   h2 {
-    @apply my-5 mb-0 font-blacker text-4xl md:my-6 md:mb-0 lg:text-5xl;
+    @apply my-5 mb-0 font-blacker text-[3.25rem] leading-none md:my-6 md:mb-0 lg:text-5xl;
   }
 
   h3 {
@@ -27,8 +27,8 @@
     @apply text-brand-purple decoration-brand-purple;
   }
 
-  *:focus,
-  a:focus {
+  *:focus-visible,
+  a:focus-visible {
     @apply outline-none ring-2 ring-[#1FB1D8] ring-offset-2 ring-offset-pale;
   }
 
@@ -48,6 +48,14 @@
 
   .debug {
     border: solid 1px hotpink;
+  }
+
+  .hire-emph {
+    @apply span:text-highlight p-2 text-center font-blacker text-2xl span:bg-brand-green/50;
+  }
+
+  .hero-image {
+    @apply object-cover object-top max-lg:max-w-[400px] max-sm:object-cover max-sm:object-top md:h-full md:object-contain md:object-bottom lg:h-5/6 lg:w-auto;
   }
 }
 
@@ -85,6 +93,12 @@
 
   .text-shadow {
     text-shadow: 1px 1px 2px #2c3e50;
+  }
+
+  .text-shadow-hero-mobile {
+    text-shadow:
+      1px 1px 14px #1f2937,
+      1px 1px 0px #1f2937;
   }
 
   .cta-button {

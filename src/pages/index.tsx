@@ -24,7 +24,7 @@ export default function Home({ data }: { data: DataProps }) {
       <Hero data={hero} />
       <AboutMe data={about} />
       <Work data={previousWork} />
-      <Contact />
+      <Contact data={contact} />
     </>
   );
 }

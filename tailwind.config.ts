@@ -90,6 +90,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require('tailwind-scrollbar'),
     require('@tailwindcss/typography'),
     plugin(function ({ addVariant }) {
       addVariant('span', '&>span');

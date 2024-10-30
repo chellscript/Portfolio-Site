@@ -38,7 +38,7 @@ const PreviousWorkTabs = ({
           width={25}
           height={25}
           src={logo}
-          alt=""
+          alt={`${logo} logo`}
           className={clsx(
             "w-6 rounded-full md:rounded-none",
             isSelected && "border-2 border-brand-purple",

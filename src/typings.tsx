@@ -41,10 +41,6 @@ export interface AboutSectionProps {
   };
 }
 
-export interface ContactSectionProps {
-  list: { key: string; label: string; url: string }[];
-}
-
 export interface PreviousWorkSectionProps {
   title: string;
   subline: string;
@@ -68,4 +64,19 @@ export interface ProjectsListProps {
   techUsed: string;
   externalLink?: string;
   githubLink?: string;
+}
+
+export interface ContactSectionProps {
+  title: string;
+  subline: string;
+  employMe: string;
+  contactMe: string;
+  links: {
+    list: {
+      key: string;
+      label: string;
+      logo: string;
+      url: string;
+    }[];
+  };
 }

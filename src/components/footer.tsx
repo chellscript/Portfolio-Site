@@ -8,7 +8,6 @@ const Footer = () => {
   return (
     <footer className="flex w-full flex-col flex-wrap items-center gap-2 bg-not-black p-4 text-white">
       <p className="text-center">
-        {" "}
         © Michi, 2024. All rights reserved, except{" "}
         <span className="font-caffie_lofie text-lg">
           <span className="text-brand-yellow">the good vibes</span> – those are{" "}
