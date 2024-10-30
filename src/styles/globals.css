@@ -35,6 +35,10 @@
   .custom-link:active {
     @apply text-brand-pink decoration-brand-pink;
   }
+
+  section {
+    @apply md:scroll-mt-12;
+  }
 }
 
 @layer utilities {

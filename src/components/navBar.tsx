@@ -11,7 +11,7 @@ const OPTIONS = [
   { label: "Past Work", url: "work" },
   { label: "Contact Me", url: "contact" },
 ];
-//TODO change active highlight to blue
+
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +22,8 @@ function NavBar() {
   }, [isMobile]);
 
   return (
-    <nav className="fixed right-0 top-3 z-10 flex w-fit flex-col items-end gap-y-3 px-4 font-blacker md:left-1/2 md:w-full md:-translate-x-1/2 md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:p-0 lg:px-14">
+    //h-42 for scroll ofset
+    <nav className="fixed right-0 top-3 z-10 flex h-12 w-fit flex-col items-end justify-center gap-y-3 px-4 font-blacker md:left-1/2 md:w-full md:-translate-x-1/2 md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:p-0 lg:px-14">
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="menu"
