@@ -39,6 +39,9 @@
   section {
     @apply md:scroll-mt-12;
   }
+
+  i {
+  }
 }
 
 @layer utilities {
@@ -60,6 +63,10 @@
 
   .hero-image {
     @apply object-cover object-top max-lg:max-w-[400px] max-sm:object-cover max-sm:object-top md:h-full md:object-contain md:object-bottom lg:h-5/6 lg:w-auto;
+  }
+
+  footer a {
+    @apply text-pink-500 underline hover:font-bold;
   }
 }
 

@@ -25,14 +25,15 @@ const ReactionButtion = ({
   toggleBool: boolean;
 }) => (
   <Button
-    className="inner-shadow-button ease group absolute -bottom-4 right-2 grid h-8 w-10 items-center justify-center rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center shadow-not-black/50 transition-all delay-75 duration-75"
+    className="inner-shadow-button ease absolute -bottom-4 right-2 block size-auto items-center justify-center rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center shadow-not-black/50"
     onClick={() => toggleFunction(!toggleBool)}
   >
     <FontAwesomeIcon
       className={clsx(
+        "size-4",
         toggleBool
-          ? "text-red-500 group-hover:text-not-black"
-          : "text-not-black group-hover:scale-125",
+          ? "text-red-500 hover:text-not-black"
+          : "text-not-black hover:scale-125",
       )}
       icon={faHeart}
     />
@@ -92,17 +93,18 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
             <p className="prose uppercase">{currentTime}</p>
           </div>
           <div className="col-span-1 col-start-1 row-start-3 flex flex-col gap-y-6 md:col-start-2 md:row-start-2">
-            <div className="relative flex flex-col gap-y-2">
+            <div className="relative">
               <div
-                className="max-app-width prose w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
+                className="max-app-width w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
                 dangerouslySetInnerHTML={{ __html: marked.parse(contactMe) }}
               />
+
               <ReactionButtion
                 toggleBool={contactHeart}
                 toggleFunction={setContactHeart}
               />
             </div>{" "}
-            <div className="relative flex flex-col gap-y-2">
+            <div className="relative">
               <div
                 className="max-app-width [&>p:nth-of-type(2)]:hire-emph prose w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow prose-p:my-2 max-md:text-center"
                 dangerouslySetInnerHTML={{ __html: marked.parse(employMe) }}

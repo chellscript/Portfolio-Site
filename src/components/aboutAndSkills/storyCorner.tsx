@@ -24,7 +24,7 @@ const StoryCorner = ({
           height={100}
           width={100}
           src={science}
-          className="absolute -top-2 left-0 -scale-x-100 object-cover max-lg:hidden"
+          className="absolute -top-2 left-0 size-auto -scale-x-100 object-cover max-lg:hidden"
           alt="gloved hand holding a scientific pipette"
         />{" "}
         <Image
@@ -55,12 +55,13 @@ const StoryCorner = ({
           dangerouslySetInnerHTML={{ __html: data[1].title }}
         />
         <Image
-          height={100}
-          width={100}
+          height={150}
+          width={150}
           src={empathy}
-          className="absolute right-4 top-4 rotate-6 -scale-x-100 object-cover max-lg:hidden"
+          className="absolute right-4 top-4 size-auto rotate-6 -scale-x-100 object-cover max-lg:hidden"
           alt="pink love heart with person shaped symbol"
         />
+
         <div
           className="prose max-h-60 max-w-none overflow-x-hidden overflow-y-scroll rounded-md bg-white/80 px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] *:md:text-base"
           dangerouslySetInnerHTML={{ __html: marked.parse(data[1].content) }}

@@ -94,6 +94,7 @@ const config: Config = {
     require('@tailwindcss/typography'),
     plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
       addVariant('span', '&>span');
+      addVariant('p-span', '&>p>span');
     })
 
   ],

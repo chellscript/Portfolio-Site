@@ -3,6 +3,14 @@ export interface DataProps {
   about: AboutSectionProps;
   contact: ContactSectionProps;
   previousWork: PreviousWorkSectionProps;
+  footer: FooterProps;
+}
+
+export interface FooterProps {
+  copyright: string;
+  aIImages: string;
+  vector: string;
+  links: { list: { key: string; icon: string; url: string }[] };
 }
 
 // SECTIONS

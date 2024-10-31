@@ -14,8 +14,26 @@ import {
   garden_delight,
 } from "../fonts";
 import clsx from "clsx";
+import { DataProps } from "../typings";
 
-function App({ Component, pageProps }: AppProps) {
+App.getInitialProps = async () => {
+  const response = await fetch(`${process.env.CMS_URL}`, {
+    cache: "no-store",
+  });
+
+  //TODO sanatise this response here
+  const json = await response.json();
+
+  return { json };
+};
+
+function App({
+  Component,
+  pageProps,
+  json,
+}: AppProps & { json: { data: DataProps } }) {
+  const { footer, ...rest } = json.data;
+
   return (
     <>
       <Head>
@@ -32,8 +50,8 @@ function App({ Component, pageProps }: AppProps) {
         )}
       >
         <NavBar />
-        <Component {...pageProps} />
-        <Footer />
+        <Component {...pageProps} copyData={rest} />
+        <Footer data={footer} />
       </main>
     </>
   );

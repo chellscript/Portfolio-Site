@@ -5,19 +5,12 @@ import Contact from "@/src/components/contact";
 
 import { DataProps } from "../typings";
 
-export const getStaticProps = async () => {
-  const response = await fetch(`${process.env.CMS_URL}`, {
-    cache: "no-store",
-  });
-
-  //TODO sanatise this response here
-  const data = await response.json();
-
-  return { props: data };
-};
-
-export default function Home({ data }: { data: DataProps }) {
-  const { hero, about, contact, previousWork } = data;
+export default function Home({
+  copyData,
+}: {
+  copyData: Omit<DataProps, "footer">;
+}) {
+  const { hero, about, contact, previousWork } = copyData;
 
   return (
     <>
