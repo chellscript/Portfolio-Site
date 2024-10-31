@@ -55,10 +55,10 @@ const StoryCorner = ({
           dangerouslySetInnerHTML={{ __html: data[1].title }}
         />
         <Image
-          height={150}
-          width={150}
+          height={120}
+          width={120}
           src={empathy}
-          className="absolute right-4 top-4 size-auto rotate-6 -scale-x-100 object-cover max-lg:hidden"
+          className="absolute right-4 top-4 rotate-6 -scale-x-100 object-cover max-lg:hidden"
           alt="pink love heart with person shaped symbol"
         />
 
