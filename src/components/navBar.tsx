@@ -44,7 +44,7 @@ function NavBar() {
           key={index}
           onClick={() => setIsOpen(false)}
           className={clsx(
-            "hover:outer-shadow-button combined-shadow-button relative w-32 text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center align-middle text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:block",
+            "hover:outer-shadow-button combined-shadow-button relative w-32 text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:block",
             isOpen ? "block" : "hidden",
           )}
         >

@@ -29,7 +29,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
       </div>
       <Link
         href="#work"
-        className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black md:w-5/6"
+        className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black shadow-button md:w-5/6"
       >
         See which projects I used them in{" "}
         <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white px-2 py-1">

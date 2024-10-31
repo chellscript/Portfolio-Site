@@ -52,6 +52,7 @@ const config: Config = {
         heroMe: "url('/images/hero/myself.png')",
         'hero-pattern': "url('/images/hero/pattern.svg')",
         'about-pattern': "url('/images/aboutMe/pattern.svg')",
+        'skills-pattern': "url('/images/aboutMe/pattern-skills.svg')",
         'work-pattern': "url('/images/previousWork/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
 

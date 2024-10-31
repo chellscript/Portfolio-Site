@@ -74,7 +74,7 @@
 
 @layer components {
   .timeline-dot {
-    @apply after:absolute after:-left-[7%] after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-left-[9%] lg:after:-left-[7%];
+    @apply after:absolute after:-left-[7%] after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-top-8 md:after:left-1/2;
   }
 
   .outer-shadow-button {

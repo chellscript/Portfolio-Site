@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import HeroCards from "./heroCards";
 import myself from "/public/images/hero/myself.png";
 import myselfWink from "/public/images/hero/myself-wink.png";
@@ -8,29 +8,36 @@ import arrow from "/public/images/hero/arrow.svg";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
+  const ref = useRef<HTMLDivElement | null>(null);
   return (
     <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-4 pt-8 md:gap-y-[unset] md:p-10">
       {/* In reverse order so peer selectors from hero card work */}
       <div className="peer z-1 flex w-full flex-col self-center overflow-x-hidden p-4 pb-0 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
-        <div className="max-md:hover:animation-paused flex flex-row gap-x-1 max-md:animate-marquee md:flex-col lg:flex-nowrap">
+        <div
+          className="max-md:hover:animation-paused flex flex-row gap-x-1 max-md:animate-marquee md:flex-col lg:flex-nowrap"
+          onMouseEnter={() => {
+            const hint = ref.current as unknown as HTMLElement;
+            if (hint) {
+              hint.classList.add("opacity-0");
+            }
+          }}
+        >
           <HeroCards className="md:hidden" data={cards.list} />
           <HeroCards className="peer" data={cards.list} />
         </div>
-        <div className="mt-6 flex items-end justify-end font-homevideo text-lg peer-hover:hidden">
+        <div
+          ref={ref}
+          className="mt-6 flex items-end justify-end font-homevideo text-lg peer-hover:hidden"
+        >
           <Image
             src={arrow}
-            className="relative bottom-5 left-4 -z-1 object-cover"
+            className="relative bottom-5 left-2 -z-1 object-cover"
             alt=""
           />
-          <p
-            onMouseLeave={(event) => {
-              const parent = event.currentTarget.parentElement;
-              parent?.classList.add("opacity-0");
-            }}
-            className="text-highlight bg-brand-green/80 text-center text-xl lg:text-xl"
-          >
-            [Hover the cards above...]
-          </p>
+          <div className="text-highlight bg-brand-green/80 text-center text-xl lg:text-xl">
+            <span className="md:hidden">Press the cards above...</span>
+            <span className="max-md:hidden">Hover over the cards above...</span>
+          </div>
         </div>
       </div>{" "}
       <div className="row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-pattern peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center peer-hover:[&_img.hero-image:nth-of-type(1)]:hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:static peer-hover:[&_img.hero-image:nth-of-type(2)]:opacity-100">

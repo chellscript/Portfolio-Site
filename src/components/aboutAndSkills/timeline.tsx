@@ -20,15 +20,15 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
   };
   return (
     <>
-      <div className="relative grid size-full w-full max-w-sm auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center">
-        <div className="absolute left-2 h-full w-1 bg-gradient-to-b from-not-black from-90% md:-left-6" />
+      <div className="relative grid size-full w-full auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center max-md:max-w-sm md:auto-cols-fr md:grid-flow-col md:gap-x-4">
+        <div className="absolute left-2 h-full w-1 bg-gradient-to-b from-not-black from-90% md:left-0 md:h-1 md:w-full md:bg-gradient-to-r" />
         {data.map(({ title, role, date, content, type }, index) => {
           const isActive = activeDate === index;
           return (
             <button
               onClick={() => setActiveDate(index)}
               className={clsx(
-                "timeline-dot group relative w-5/6 justify-self-center md:w-full",
+                "timeline-dot group relative max-md:w-5/6 max-md:justify-self-center md:mt-6 md:w-full md:self-start",
                 isActive
                   ? "after:rounded-none after:bg-not-black"
                   : `after:bg-stone-500`,
