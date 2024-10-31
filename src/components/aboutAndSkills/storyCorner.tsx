@@ -42,7 +42,7 @@ const StoryCorner = ({
           dangerouslySetInnerHTML={{ __html: data[0].title }}
         />
         <div
-          className="prose isolate z-1 max-h-60 max-w-none overflow-x-hidden rounded-md bg-white px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] *:md:text-base"
+          className="prose z-1 max-h-60 max-w-none overflow-x-hidden rounded-md bg-white px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] *:md:text-base"
           dangerouslySetInnerHTML={{ __html: marked.parse(data[0].content) }}
         />
       </div>

@@ -16,6 +16,10 @@ import {
 import clsx from "clsx";
 import { DataProps } from "../typings";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 App.getInitialProps = async () => {
   const response = await fetch(`${process.env.CMS_URL}`, {
     cache: "no-store",

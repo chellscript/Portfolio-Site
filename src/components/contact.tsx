@@ -30,7 +30,6 @@ const ReactionButtion = ({
   >
     <FontAwesomeIcon
       className={clsx(
-        "size-4",
         toggleBool
           ? "text-red-500 hover:text-not-black"
           : "text-not-black hover:scale-125",
