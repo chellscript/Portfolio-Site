@@ -8,8 +8,7 @@ export interface DataProps {
 
 export interface FooterProps {
   copyright: string;
-  aIImages: string;
-  vector: string;
+  attributions: string;
   links: { list: { key: string; icon: string; url: string }[] };
 }
 

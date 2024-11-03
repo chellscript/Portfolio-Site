@@ -9,14 +9,24 @@ import Image from "next/image";
 type ProjectListProps = {
   data: CompaniesDataProps["projects"];
   setSelectedProjectIndex: (arg: number) => void;
+  className?: string;
 };
 
-const ProjectList = ({ data, setSelectedProjectIndex }: ProjectListProps) => {
+const ProjectList = ({
+  data,
+  setSelectedProjectIndex,
+  className = "",
+}: ProjectListProps) => {
   const workData = useMemo(() => data, [data]);
 
   return (
-    <div className="flex size-full flex-col items-center justify-center md:justify-start">
-      <ul className="grid h-fit w-full grid-flow-col auto-rows-max items-center justify-start gap-4 text-clip rounded-md border ease-in-out max-md:overflow-x-scroll md:size-full md:auto-cols-min md:grid-flow-row md:grid-cols-3 lg:grid-cols-4">
+    <div
+      className={clsx(
+        className,
+        "flex size-full flex-col items-center justify-center md:justify-start",
+      )}
+    >
+      <ul className="grid h-fit w-full grid-flow-col auto-rows-max items-center justify-start gap-4 text-clip rounded-md ease-in-out max-md:overflow-x-scroll md:size-full md:auto-cols-min md:grid-flow-row md:grid-cols-3 lg:grid-cols-4">
         {workData.map(({ name, techUsed, cover }, index) => {
           let imageUrl;
           if (cover) {

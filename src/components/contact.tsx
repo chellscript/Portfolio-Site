@@ -25,17 +25,19 @@ const ReactionButtion = ({
   toggleBool: boolean;
 }) => (
   <Button
-    className="inner-shadow-button ease absolute -bottom-4 right-2 block size-auto items-center justify-center rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center shadow-not-black/50"
+    className="inner-shadow-button ease absolute -bottom-4 right-2 block size-auto justify-center gap-y-2 rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center font-homevideo shadow-not-black/50"
     onClick={() => toggleFunction(!toggleBool)}
   >
     <FontAwesomeIcon
       className={clsx(
+        "mr-1",
         toggleBool
           ? "text-red-500 hover:text-not-black"
           : "text-not-black hover:scale-125",
       )}
       icon={faHeart}
     />
+    {toggleBool && "1"}
   </Button>
 );
 

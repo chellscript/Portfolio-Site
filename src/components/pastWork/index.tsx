@@ -3,6 +3,7 @@ import { PreviousWorkSectionProps } from "@/src/typings";
 import PreviousWorkTabs from "./previousWorkTabs";
 import ProjectList from "./projectList";
 import ProjectDisplay from "./projectDisplay";
+import clsx from "clsx";
 
 const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
   const {
@@ -45,12 +46,22 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
             updateComponentView={updateComponentView}
           />
         </div>
-        <div className="z-1 mb-5 rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-work-pattern bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
+        <div className="relative z-1 mb-5 overflow-hidden rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-work-pattern bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
           {selectedProjectIndex === null ? (
-            <ProjectList
-              data={list[selectedCompanyIndex].projects}
-              setSelectedProjectIndex={setSelectedProjectIndex}
-            />
+            list.map((company, index) => (
+              <ProjectList
+                className={clsx(
+                  "transition-all duration-500 ease-in-out",
+                  selectedCompanyIndex === index
+                    ? "pointer-events-auto static animate-sideswipe-left opacity-100"
+                    : "pointer-events-none absolute inset-0 animate-sideswipe-left-out opacity-0",
+                )}
+                aria-hidden={selectedCompanyIndex !== index}
+                key={index}
+                data={company.projects}
+                setSelectedProjectIndex={setSelectedProjectIndex}
+              />
+            ))
           ) : (
             <ProjectDisplay
               setSelectedProjectIndex={setSelectedProjectIndex}
