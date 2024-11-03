@@ -1,71 +1,75 @@
 import React, { useState } from "react";
 //TODO replace headlessui with ReactAria
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
-// import Image from "next/image";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { ProjectsListProps } from "@/src/typings";
+import {
+  CTAButton,
+  ImageMediaComponent,
+  VideoMediaComponent,
+} from "./components";
+import { MediaPlaceholder } from "./mediaPlaceholders";
+import ImageLightbox from "./ImageLightbox";
 
-const ProjectMedia = ({ screenshotLink }: { screenshotLink: string }) => {
+const ProjectMedia = ({
+  media,
+  mediaType,
+  name,
+}: Pick<ProjectsListProps, "media" | "mediaType"> & { name: string }) => {
   const [showBigger, setShowBigger] = useState(false);
 
-  return (
-    <>
-      {screenshotLink ? (
+  let renderedComponent;
+
+  if (!media || !["image", "video"].includes(mediaType)) {
+    renderedComponent = <MediaPlaceholder />;
+  }
+
+  switch (mediaType) {
+    case "image":
+      renderedComponent = (
         <>
-          <div className="relative row-start-2 size-fit">
-            <button
+          <ImageMediaComponent
+            width={604}
+            height={309}
+            className="max-md:size-full"
+            sizes="(max-width: 425px) 250px, (max-width: 785px) 650px"
+            media={media}
+            alt={`Screenshot of ${name}`}
+          />
+          <div className="absolute -bottom-8 right-0 z-[5] flex flex-row-reverse items-baseline gap-x-4 lg:bottom-0 lg:right-0 lg:translate-y-1/2">
+            <CTAButton
+              tipMessage="View this larger"
+              icon={faMagnifyingGlass}
               onClick={() => setShowBigger(true)}
-              className="absolute -bottom-8 -right-4 z-1 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-white p-4 shadow-inner shadow-gray-300/80 hover:translate-y-1 hover:bg-brand-green hover:shadow md:-bottom-4 md:right-4"
-            >
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                size="xl"
-                className="text-not-black"
-              />
-            </button>
-            {/* <Image
-            alt="test"
-            src={MediaSrc}
-            placeholder="blur"
-            className="object-contain"
-            sizes="(max-width: 425px) 400px,(max-width: 786px) 650px,500px "
-          /> */}
+            />
           </div>
           {showBigger && (
-            <Dialog
+            <ImageLightbox
               open={showBigger}
               onClose={() => setShowBigger(false)}
-              className="relative z-50 h-dvh"
-            >
-              <div className="fixed inset-0 flex w-screen bg-not-black/90">
-                <DialogPanel className="relative flex h-screen w-screen flex-col items-center justify-center">
-                  <div className="fixed left-1/2 top-1/2 w-dvw -translate-x-1/2 -translate-y-1/2 lg:w-[90dvw]">
-                    <button
-                      onClick={() => setShowBigger(false)}
-                      className="relative -bottom-6 -right-6 z-1 ml-auto flex aspect-square items-center justify-center rounded-full bg-brand-green hover:scale-90"
-                    >
-                      <FontAwesomeIcon
-                        icon={faXmark}
-                        size="2x"
-                        className="aspect-square rounded-full border-4 border-not-black p-2 text-not-black"
-                      />
-                    </button>
-                    {/* <Image
-                  alt="test"
-                  src={MediaSrc}
-                  placeholder="blur"
-                  className="rounded-md border-4 border-brand-green object-contain"
-                /> */}
-                  </div>
-                </DialogPanel>
-              </div>
-            </Dialog>
+              media={media}
+              name={name}
+            />
           )}
         </>
-      ) : (
-        <>Coming Soon</>
-      )}
-    </>
+      );
+      break;
+    case "video":
+      renderedComponent = (
+        <VideoMediaComponent
+          media={media}
+          description={`Walkthrough demonstrating the functionality of the ${name}`}
+        />
+      );
+      break;
+    default:
+      renderedComponent = <MediaPlaceholder />;
+      break;
+  }
+
+  return (
+    <div className="relative row-start-2 flex w-full flex-col justify-center lg:justify-start">
+      {renderedComponent}
+    </div>
   );
 };
 

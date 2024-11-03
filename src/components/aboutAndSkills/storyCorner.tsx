@@ -49,7 +49,7 @@ const StoryCorner = ({
       <div className="prose relative w-full max-w-none rounded-md border border-not-black bg-pale p-4 shadow md:pb-8">
         <h3
           className={clsx(
-            "not-prose span:text-highlight mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:w-3/4 lg:text-start",
+            "not-prose span:text-highlight isolate z-1 mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:text-start",
             highlightColoursIndex[1],
           )}
           dangerouslySetInnerHTML={{ __html: data[1].title }}

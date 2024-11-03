@@ -68,7 +68,8 @@ export interface ProjectsListProps {
   name: string;
   description: string;
   cover: string;
-  screenshot: string;
+  media: string;
+  mediaType: "image" | "video";
   techUsed: string;
   externalLink?: string;
   githubLink?: string;

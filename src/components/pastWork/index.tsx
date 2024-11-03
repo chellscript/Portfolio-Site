@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { PreviousWorkSectionProps } from "@/src/typings";
 import PreviousWorkTabs from "./previousWorkTabs";
@@ -23,7 +21,6 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
     setSelectedProjectIndex(null);
   };
 
-  // TODO change brand blue to something lighter...define tailwind colors
   return (
     <section
       id="work"
@@ -48,7 +45,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
             updateComponentView={updateComponentView}
           />
         </div>
-        <div className="z-1 mb-5 rounded-md rounded-l-none border border-t-[0.5px] border-not-black border-t-pale bg-pale bg-work-pattern bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
+        <div className="z-1 mb-5 rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-work-pattern bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
           {selectedProjectIndex === null ? (
             <ProjectList
               data={list[selectedCompanyIndex].projects}

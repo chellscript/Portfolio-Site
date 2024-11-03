@@ -66,6 +66,9 @@
   .hero-image {
     @apply object-cover object-top max-lg:max-w-[400px] max-sm:object-cover max-sm:object-top md:h-full md:object-contain md:object-bottom lg:h-5/6 lg:w-auto;
   }
+  .project-cover-overlay {
+    @apply after:absolute after:inset-0 after:size-full after:bg-brand-purple/30 after:transition-colors after:duration-300 after:content-[''];
+  }
 
   footer a {
     @apply text-pink-500 underline hover:font-bold;

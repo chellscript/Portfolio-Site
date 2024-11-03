@@ -76,12 +76,16 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           <Image
             src={myself}
             priority
+            width={500}
+            height={700}
             alt="Picture of Michi"
             className="hero-image block"
           />{" "}
           <Image
             src={myselfWink}
             priority
+            width={500}
+            height={700}
             alt="Picture of Michi Winking!"
             className="hero-image absolute opacity-0"
           />

@@ -97,7 +97,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
       </section>
       <section
         id="skills"
-        className="bg-skills-pattern col-span-full col-start-1 row-start-2 flex flex-col items-center bg-red-400/50 bg-blend-soft-light md:col-span-2 *:lg:max-w-screen-lg"
+        className="bg-skills-pattern col-span-full col-start-1 row-start-2 flex flex-col items-center bg-red-400/50 bg-blend-color md:col-span-2 *:lg:max-w-screen-lg"
       >
         <span className="mb-4 text-center">
           <h2 className="mb-0 text-center">{skillsTitle}</h2>

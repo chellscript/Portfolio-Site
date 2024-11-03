@@ -8,6 +8,12 @@
   ],
   "rules": {
     "tailwindcss/classnames-order": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "tailwindcss/no-custom-classname": [
+      1,
+      {
+        "whitelist": ["cld-video-player", "cld-video-player-skin-light"]
+      }
+    ]
   }
 }

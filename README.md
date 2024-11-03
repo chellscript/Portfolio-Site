@@ -1,21 +1,7 @@
-# TODO
-
-- [ ] Make title padding equivalent to navbar size on mobile, set scrolling behaviour
-- [ ] Implement Hero section with inspiration from:
-- https://www.getillustrations.com/illustration-pack/halftone-doodle-character-illustration
-  - [Example Image](https://github.com/ed-roh/gym-typescript/blob/master/src/assets/HomePageGraphic.png)
-  - [Pinterest: Neu Brutalism Elements](https://in.pinterest.com/search/pins/?q=neu%20brutalism%20elements&rs=typed)
-- [Dribbble: Neo Brutalism](https://dribbble.com/tags/neo%20brutalism)
-- [ ] Replace Font Awesome with HugeIcons: [HugeIcons: Source Code Stroke Rounded](https://hugeicons.com/icon/source-code-stroke-rounded)
-
-# FIX IT
-
-- Explore ways to store data and media
-- [ ] Switch to intersection observer hook and fix bugs when switching tab
-
 # IMPROVE IT
 
-- [ ] Scroll bar counter functioning
+- [ ] /Implement pagination for table (max items 6)
+- [ ] Scroll bar counter functioning (GSAP)
 - [ ] Conduct an accessibility (A11y) review of the website.
 - [ ] Explore improving website performance:
 
