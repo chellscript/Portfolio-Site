@@ -4,15 +4,9 @@ import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { NavigationProps } from "../typings";
 
-const OPTIONS = [
-  { label: "About Me", url: "about-me" },
-  { label: "My Skills", url: "skills" },
-  { label: "Past Work", url: "work" },
-  { label: "Contact Me", url: "contact" },
-];
-
-function NavBar() {
+function NavBar({ data: { list } }: { data: NavigationProps }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -22,7 +16,6 @@ function NavBar() {
   }, [isMobile]);
 
   return (
-    //h-42 for scroll ofset
     <nav className="fixed right-0 top-3 z-10 h-1 w-fit items-end justify-center gap-y-3 bg-transparent pr-4 font-blacker max-md:grid md:left-1/2 md:flex md:w-full md:-translate-x-1/2 md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:pr-10 xl:pr-0">
       {" "}
       <button
@@ -39,10 +32,10 @@ function NavBar() {
           <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
         </span>
       </button>
-      {OPTIONS.map(({ label, url }, index) => (
+      {list.map(({ key, label, url }) => (
         <Link
           href={`#${url}`}
-          key={index}
+          key={key}
           onClick={() => setIsOpen(false)}
           className={clsx(
             "hover:outer-shadow-button combined-shadow-button relative text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:top-12 md:block",

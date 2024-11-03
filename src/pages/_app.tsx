@@ -36,7 +36,7 @@ function App({
   pageProps,
   json,
 }: AppProps & { json: { data: DataProps } }) {
-  const { footer, ...rest } = json.data;
+  const { footer, navigation, ...rest } = json.data;
 
   return (
     <>
@@ -53,7 +53,7 @@ function App({
           "font-sans antialiased",
         )}
       >
-        <NavBar />
+        <NavBar data={navigation} />
         <Component {...pageProps} copyData={rest} />
         <Footer data={footer} />
       </main>

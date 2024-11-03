@@ -24,7 +24,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
 
   return (
     <section
-      id="work"
+      id="portfolio"
       className="flex justify-center bg-brand-purple/50 p-6 md:p-10"
     >
       <div className="max-app-width flex w-full flex-col justify-items-center">

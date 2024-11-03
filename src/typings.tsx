@@ -1,4 +1,5 @@
 export interface DataProps {
+  navigation: NavigationProps;
   hero: HeroSectionProps;
   about: AboutSectionProps;
   contact: ContactSectionProps;
@@ -6,6 +7,13 @@ export interface DataProps {
   footer: FooterProps;
 }
 
+export interface NavigationProps {
+  list: {
+    key: string;
+    url: string;
+    label: string;
+  }[];
+}
 export interface FooterProps {
   copyright: string;
   attributions: string;
