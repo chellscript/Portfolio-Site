@@ -38,7 +38,7 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
               <p
                 className={clsx(
                   isActive && "md:text-lg",
-                  `rounded-lg rounded-b-none border border-not-black text-center font-caffie_lofie text-not-black ${buttonColors[type]}`,
+                  `rounded-lg rounded-b-none border border-not-black text-center font-garden_delight text-not-black ${buttonColors[type]}`,
                 )}
               >
                 {date}

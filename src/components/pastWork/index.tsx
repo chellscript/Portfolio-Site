@@ -32,10 +32,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
           className="text-center"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <p
-          className="mb-5 text-center font-garden_delight text-xl text-not-black md:text-2xl"
-          dangerouslySetInnerHTML={{ __html: subline }}
-        />
+        <p className="subline" dangerouslySetInnerHTML={{ __html: subline }} />
         <div
           className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"

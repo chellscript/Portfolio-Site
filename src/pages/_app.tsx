@@ -10,12 +10,12 @@ import {
   pt_sans,
   homevideo,
   blacker,
-  caffie_lofie,
+  alondra_drawn,
   garden_delight,
-} from "../fonts";
+} from "../utils/fonts";
 import clsx from "clsx";
 import { DataProps } from "../typings";
-
+import sanitizeResponse from "../utils/sanitizeResponse";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -25,8 +25,8 @@ App.getInitialProps = async () => {
     cache: "no-store",
   });
 
-  //TODO sanatise this response here
-  const json = await response.json();
+  const unsafeJSON = await response.json();
+  const json = sanitizeResponse(unsafeJSON);
 
   return { json };
 };
@@ -48,7 +48,7 @@ function App({
           pt_sans.variable,
           homevideo.variable,
           blacker.variable,
-          caffie_lofie.variable,
+          alondra_drawn.variable,
           garden_delight.variable,
           "font-sans antialiased",
         )}

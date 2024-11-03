@@ -77,9 +77,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
     >
       <div className="relative flex h-fit w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-brand-pink/50 bg-contact-pattern bg-center bg-repeat p-4 bg-blend-overlay shadow shadow-[hotpink]/50 after:ml-0.5 md:items-center lg:max-w-screen-lg lg:px-8">
         <h2>{title}</h2>
-        <p className="font-garden_delight text-xl text-not-black max-md:text-center md:text-2xl">
-          {subline}
-        </p>
+        <p className="subline">{subline}</p>
         <div className="my-6 grid w-full grid-cols-1 grid-rows-[(repeat(3,auto))] content-center justify-items-center gap-x-4 rounded-lg bg-white/60 p-4 pb-8 md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] md:justify-items-start lg:w-10/12">
           <Image
             quality={100}

@@ -32,7 +32,7 @@ const Footer = ({ data }: { data: FooterProps }) => {
           ))}
         </li>
         <div
-          className="prose-span: span:text-lg p-span:font-caffie_lofie p-span:text-brand-yellow"
+          className="prose-span: span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
           dangerouslySetInnerHTML={{ __html: marked.parse(copyrightDate) }}
         />
         <div className="text-start">

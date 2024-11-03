@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import { homevideo } from "@/src/fonts";
+import { homevideo } from "@/src/utils/fonts";
 import clsx from "clsx";
 import { CTAButton, ImageMediaComponent } from "./components";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";

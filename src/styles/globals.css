@@ -39,11 +39,6 @@
   section {
     @apply md:scroll-mt-12;
   }
-
-  i {
-    color: white;
-    font-size: 8em !important;
-  }
 }
 
 @layer utilities {
@@ -73,6 +68,10 @@
   footer a {
     @apply text-pink-500 underline hover:font-bold;
   }
+
+  .subline {
+    @apply font-alondra_drawn text-center text-lg text-not-black max-md:text-center md:text-3xl;
+  }
 }
 
 @layer components {
@@ -100,7 +99,7 @@
     }
   }
   .brick {
-    @apply border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
+    @apply border border-not-black px-3 py-1 align-middle text-2xl leading-loose md:text-3xl;
   }
 
   .text-highlight {
@@ -118,7 +117,7 @@
   }
 
   .cta-button {
-    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-caffie_lofie text-black;
+    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-garden_delight text-black;
     background-color: var(--tw-bg-color);
   }
 

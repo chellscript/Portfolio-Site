@@ -19,7 +19,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
         <div className="flex w-full flex-row flex-wrap gap-3 justify-self-center">
           {dataArray.map((skill, index) => (
             <span
-              className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center font-caffie_lofie text-xl font-normal text-red-950 lg:text-2xl"
+              className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center text-xl font-normal text-red-950 lg:text-2xl"
               key={index}
             >
               {skill}

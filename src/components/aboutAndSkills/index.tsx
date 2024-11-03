@@ -64,7 +64,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
               dangerouslySetInnerHTML={{ __html: aboutTitle }}
             />
             <p
-              className="text-center font-garden_delight text-xl text-not-black md:text-2xl lg:mb-5"
+              className="subline"
               dangerouslySetInnerHTML={{ __html: aboutSubline }}
             />
           </div>
@@ -97,12 +97,12 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
       </section>
       <section
         id="skills"
-        className="bg-skills-pattern col-span-full col-start-1 row-start-2 flex flex-col items-center bg-red-400/50 bg-blend-color md:col-span-2 *:lg:max-w-screen-lg"
+        className="col-span-full col-start-1 row-start-2 flex flex-col items-center bg-red-400/50 bg-skills-pattern bg-blend-color md:col-span-2 *:lg:max-w-screen-lg"
       >
         <span className="mb-4 text-center">
           <h2 className="mb-0 text-center">{skillsTitle}</h2>
           <p
-            className="font-garden_delight text-2xl text-black"
+            className="subline"
             dangerouslySetInnerHTML={{ __html: skillsSubline }}
           />
         </span>

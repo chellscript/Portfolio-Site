@@ -46,7 +46,7 @@ const PreviousWorkTabs = ({
         />
         <div
           className={clsx(
-            "block text-start text-sm md:text-lg",
+            "block text-start text-sm md:text-base lg:text-lg",
             isSelected ? "block" : "text-shadow max-md:hidden",
           )}
           dangerouslySetInnerHTML={{ __html: companyTitle }}

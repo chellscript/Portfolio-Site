@@ -1,4 +1,4 @@
-import { FontAwesomeIconMapper } from "@/src/iconMapper";
+import { FontAwesomeIconMapper } from "@/src/utils/iconMapper";
 import { HeroSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import React from "react";
@@ -30,16 +30,13 @@ const HeroCards = ({
         <FontAwesomeIconMapper
           icon={icon}
           className={clsx(
-            "absolute inset-1/2 aspect-square h-[70%] -translate-x-1/2 -translate-y-1/2 opacity-10",
+            "absolute inset-1/2 aspect-square h-[70%] -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10",
           )}
         />
         <p className="mb-0 text-3xl text-inherit md:mb-2 md:text-4xl lg:text-4xl">
           {number}
         </p>
-        <p
-          className="text-inherit md:text-lg lg:text-xl"
-          dangerouslySetInnerHTML={{ __html: line }}
-        />
+        <p className="text-inherit md:text-lg lg:text-xl">{line}</p>
       </div>
     ))}{" "}
   </div>

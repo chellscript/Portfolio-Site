@@ -16,7 +16,7 @@ const TechTags = ({ limit, tagsString }: TechTagsProps) => {
       {displayTags.map((item, index) => (
         <div
           key={index}
-          className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 text-sm font-semibold"
+          className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 text-sm"
         >
           {item}
         </div>

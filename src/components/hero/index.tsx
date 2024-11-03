@@ -49,14 +49,14 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
             <span className="flex flex-col *:block max-md:h-full max-md:items-center max-md:justify-between md:gap-y-8">
               <span className="">
                 Hey,{" "}
-                <span className="font-caffie_lofie text-white lg:text-6xl">
+                <span className="font-garden_delight text-white lg:text-6xl">
                   Beautiful
                 </span>{" "}
                 World!
               </span>
               <span>
                 I'm{" "}
-                <span className="font-caffie_lofie text-brand-pink md:text-6xl">
+                <span className="font-garden_delight text-brand-pink md:text-6xl">
                   Michi
                 </span>
               </span>
@@ -65,7 +65,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
               <span className="hero-bullet">Front End Developer</span>
               <span className="hero-bullet">
                 User-Empathy Enthusiast, <br />
-                <span className="relative font-caffie_lofie text-brand-yellow underline decoration-orange-400 decoration-wavy underline-offset-4">
+                <span className="relative font-garden_delight text-brand-yellow underline decoration-orange-400 decoration-wavy underline-offset-4">
                   always
                 </span>
               </span>
