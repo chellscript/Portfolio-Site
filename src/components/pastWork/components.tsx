@@ -1,7 +1,7 @@
 import { CompaniesDataProps } from "@/src/typings";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { loadingBlur } from "./mediaPlaceholders";
+import { loadingBlur } from "./placeholder";
 import { CldVideoPlayer, getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";

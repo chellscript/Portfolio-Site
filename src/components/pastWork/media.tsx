@@ -7,7 +7,7 @@ import {
   ImageMediaComponent,
   VideoMediaComponent,
 } from "./components";
-import { MediaPlaceholder } from "./mediaPlaceholders";
+import { MediaPlaceholder } from "./placeholder";
 import ImageLightbox from "./ImageLightbox";
 
 const ProjectMedia = ({

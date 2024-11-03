@@ -1,7 +1,7 @@
 import React from "react";
 import { PreviousWorkSectionProps, ProjectsListProps } from "../../typings";
-import ProjectMedia from "./projectMedia";
-import ProjectDescription from "./projectDescription";
+import ProjectMedia from "./media";
+import ProjectDescription from "./description";
 
 type ProjectDisplayProps = {
   companyData: PreviousWorkSectionProps["companies"]["list"][number];

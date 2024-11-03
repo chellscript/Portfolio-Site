@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import TechTags from "./techTagsDisplay";
+import TechTags from "./techTags";
 import clsx from "clsx";
 import { CompaniesDataProps } from "@/src/typings";
 import { getCldImageUrl } from "next-cloudinary";
-import { ListPlaceholder, loadingBlur } from "./mediaPlaceholders";
+import { ListPlaceholder, loadingBlur } from "./placeholder";
 import Image from "next/image";
 
 type ProjectListProps = {

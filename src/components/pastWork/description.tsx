@@ -1,5 +1,5 @@
 import { PreviousWorkSectionProps, ProjectsListProps } from "@/src/typings";
-import TechTags from "./techTagsDisplay";
+import TechTags from "./techTags";
 import Link from "next/link";
 
 type ProjectDescriptionProps = {

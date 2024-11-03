@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { PreviousWorkSectionProps } from "@/src/typings";
-import PreviousWorkTabs from "./previousWorkTabs";
+import ProjectTabs from "./projectTabs";
 import ProjectList from "./projectList";
-import ProjectDisplay from "./projectDisplay";
+import ProjectDisplay from "./display";
 import clsx from "clsx";
 
 const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
@@ -34,7 +34,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
           className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"
         >
-          <PreviousWorkTabs
+          <ProjectTabs
             data={list}
             selectedCompanyIndex={selectedCompanyIndex}
             updateComponentView={updateComponentView}
@@ -48,7 +48,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
                   "transition-all duration-500 ease-in-out",
                   selectedCompanyIndex === index
                     ? "animate-sideswipe-top-in pointer-events-auto static opacity-100"
-                    : " pointer-events-none absolute inset-0 opacity-0",
+                    : "pointer-events-none absolute inset-0 opacity-0",
                 )}
                 aria-hidden={selectedCompanyIndex !== index}
                 key={index}

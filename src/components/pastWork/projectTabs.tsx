@@ -9,7 +9,7 @@ type ProjectTabsProps = {
   updateComponentView: (arg: number) => void;
 };
 
-const PreviousWorkTabs = ({
+const ProjectTabs = ({
   data,
   selectedCompanyIndex,
   updateComponentView,
@@ -64,4 +64,4 @@ const PreviousWorkTabs = ({
       </button>
     );
   });
-export default PreviousWorkTabs;
+export default ProjectTabs;
