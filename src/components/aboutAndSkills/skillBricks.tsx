@@ -8,7 +8,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
   const dataArray = data.split(",");
   return (
     <>
-      <div className="flex p-2 md:w-5/6">
+      <div className="flex gap-y-4 p-2 md:w-5/6">
         <Image
           height={180}
           width={180}
@@ -31,7 +31,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
         href="#work"
         className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black shadow-button md:w-5/6"
       >
-        See which projects I used them in{" "}
+        See the projects I used them in
         <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white px-2 py-1">
           🔥
         </span>

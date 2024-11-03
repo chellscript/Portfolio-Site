@@ -74,7 +74,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
           </div>
           <div
             className={clsx(
-              "col-start-1 row-start-3 flex size-full flex-col max-md:h-fit md:col-span-full md:row-start-3",
+              "col-start-1 row-start-3 max-md:h-fit md:col-span-full md:row-start-3",
               activeSlide == 1
                 ? "max-md:animate-sideswipe-right"
                 : "max-md:hidden max-md:animate-sideswipe-right-out",

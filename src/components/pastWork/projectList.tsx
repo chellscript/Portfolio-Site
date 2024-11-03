@@ -40,14 +40,14 @@ const ProjectList = ({
           return (
             <li
               className={clsx(
-                "group relative grid h-96 snap-x flex-col items-center justify-center opacity-100 transition-all duration-0 ease-linear md:flex md:h-96 md:grayscale-0",
+                "group relative grid snap-x flex-col items-center justify-center py-4 opacity-100 transition-all duration-0 ease-linear md:flex md:grayscale-0",
               )}
               key={index}
               id={`project-${index}`}
             >
               <button
                 onClick={() => setSelectedProjectIndex(index)}
-                className="group relative z-1 flex h-4/5 w-52 flex-col flex-nowrap gap-y-2 rounded-lg border border-not-black/80 bg-white p-2 transition-all hover:-translate-y-1 hover:shadow-button-hover hover:shadow-not-black/80"
+                className="hover:shadow-card-hover group relative z-1 flex h-80 w-52 flex-col flex-nowrap gap-y-2 rounded-lg border border-not-black/80 bg-white p-2 transition-all hover:-translate-y-2 hover:shadow-brand-purple/60 md:h-72"
               >
                 <div className="self-center overflow-hidden rounded-lg border border-not-black/50 p-1 *:size-40">
                   {imageUrl ? (

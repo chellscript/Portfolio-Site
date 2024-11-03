@@ -22,7 +22,7 @@ const ImageLightbox = ({ onClose, open, media, name }: ImageLightboxProps) => {
             homevideo.variable,
           )}
         >
-          <div className="fixed left-1/2 top-1/2 flex w-[95dvw] -translate-x-1/2 -translate-y-1/2 flex-col gap-y-4 lg:max-w-[65dvw]">
+          <div className="fixed left-1/2 top-1/2 flex w-[95dvw] -translate-x-1/2 -translate-y-1/2 flex-col gap-y-4 lg:max-w-[70dvw]">
             {/* //TODO switch to react aria to allow close by esc */}
             <ImageMediaComponent
               width={1920}

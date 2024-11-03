@@ -21,18 +21,6 @@ export default function Document() {
           sizes="16x16"
           href="images/favicon/favicon-16x16.png"
         />
-        <link
-          rel="preload"
-          as="image"
-          href="images/hero/myself.png"
-          type="image/png"
-        />{" "}
-        <link
-          rel="preload"
-          as="image"
-          href="images/hero/myself-winking.png"
-          type="image/png"
-        />
         <link rel="manifest" href="images/favicon/site.webmanifest" />
       </Head>
       <body>

@@ -70,7 +70,7 @@
   }
 
   .subline {
-    @apply font-alondra_drawn text-center text-lg text-not-black max-md:text-center md:text-3xl;
+    @apply font-alondra_drawn text-center text-xl text-not-black max-md:text-center md:text-3xl;
   }
 }
 
@@ -117,7 +117,7 @@
   }
 
   .cta-button {
-    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-garden_delight text-black;
+    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-blacker text-black;
     background-color: var(--tw-bg-color);
   }
 

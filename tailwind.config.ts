@@ -46,6 +46,7 @@ const config: Config = {
         DEFAULT: '3px 2px 0px',
         'button': '3px 5px 0px',
         'button-hover': '0px 3px 0px',
+        'card-hover': '5px 11px 0px',
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
@@ -63,6 +64,7 @@ const config: Config = {
         'sideswipe-right-out': 'sideswipeRightOut 0.5s linear  forwards',
         'sideswipe-left': 'sideswipeLeftIn 0.5s linear forwards',
         'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
+        'sideswipe-top-in': 'sideswipeTopIn 0.2s linear forwards',
         marquee: 'marquee 10s linear infinite',
       },
       keyframes: {
@@ -86,6 +88,10 @@ const config: Config = {
         sideswipeLeftOut: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)', opacity: '0' },
+        },
+        sideswipeTopIn: {
+          '0%': { transform: 'translateY(-100%)', },
+          '100%': { transform: 'translateY(0)' },
         },
       }
 
