@@ -67,10 +67,9 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                   )}
                 </div>
                 {isActive && (
-                  <p
-                    className="text-pretty rounded-lg border border-not-black bg-white p-1 text-sm md:text-base"
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
+                  <p className="text-pretty rounded-lg border border-not-black bg-white p-1 text-sm md:text-base">
+                    {content}
+                  </p>
                 )}
               </div>
             </button>

@@ -49,16 +49,18 @@ const PreviousWorkTabs = ({
             "block text-start text-sm md:text-base lg:text-lg",
             isSelected ? "block" : "text-shadow max-md:hidden",
           )}
-          dangerouslySetInnerHTML={{ __html: companyTitle }}
-        />
+        >
+          {companyTitle}
+        </div>
 
         <div
           className={clsx(
             "absolute -right-2 -top-3 isolate flex aspect-square size-6 flex-col justify-center rounded-full border border-not-black bg-white text-not-black shadow-inner shadow-gray-500/50",
             isSelected && "hidden",
           )}
-          dangerouslySetInnerHTML={{ __html: projects.length }}
-        />
+        >
+          {projects.length}
+        </div>
       </button>
     );
   });

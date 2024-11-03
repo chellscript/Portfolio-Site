@@ -39,11 +39,15 @@ const StoryCorner = ({
             "not-prose span:text-highlight isolate z-1 mx-auto mb-4 text-center lg:w-3/4",
             highlightColoursIndex[0],
           )}
-          dangerouslySetInnerHTML={{ __html: data[0].title }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(data[0].title) as string,
+          }}
         />
         <div
           className="prose isolate z-1 max-w-none overflow-x-hidden rounded-md bg-white px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] max-lg:max-h-60 *:md:text-base lg:max-h-64"
-          dangerouslySetInnerHTML={{ __html: marked.parse(data[0].content) }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(data[0].content) as string,
+          }}
         />
       </div>
       <div className="prose relative w-full max-w-none rounded-md border border-not-black bg-pale p-4 shadow md:pb-8">
@@ -52,7 +56,9 @@ const StoryCorner = ({
             "not-prose span:text-highlight isolate z-1 mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:w-3/4 lg:text-start xl:w-full",
             highlightColoursIndex[1],
           )}
-          dangerouslySetInnerHTML={{ __html: data[1].title }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(data[1].title) as string,
+          }}
         />
         <Image
           height={120}
@@ -64,7 +70,9 @@ const StoryCorner = ({
 
         <div
           className="prose max-w-none overflow-x-hidden overflow-y-scroll rounded-md bg-white/80 px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] max-lg:max-h-60 *:md:text-base lg:max-h-64"
-          dangerouslySetInnerHTML={{ __html: marked.parse(data[1].content) }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(data[1].content) as string,
+          }}
         />
       </div>
     </div>

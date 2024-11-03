@@ -28,11 +28,8 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
       className="flex justify-center bg-brand-purple/50 p-6 md:p-10"
     >
       <div className="max-app-width flex w-full flex-col justify-items-center">
-        <h2
-          className="text-center"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-        <p className="subline" dangerouslySetInnerHTML={{ __html: subline }} />
+        <h2 className="text-center">{title}</h2>
+        <p className="subline">{subline}</p>
         <div
           className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"
@@ -50,8 +47,8 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
                 className={clsx(
                   "transition-all duration-500 ease-in-out",
                   selectedCompanyIndex === index
-                    ? "pointer-events-auto static animate-sideswipe-left opacity-100"
-                    : "pointer-events-none absolute inset-0 animate-sideswipe-left-out opacity-0",
+                    ? "animate-sideswipe-top-in pointer-events-auto static opacity-100"
+                    : " pointer-events-none absolute inset-0 opacity-0",
                 )}
                 aria-hidden={selectedCompanyIndex !== index}
                 key={index}

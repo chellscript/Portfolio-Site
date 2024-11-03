@@ -17,7 +17,7 @@ const MobileButtons = ({
   return mobileButtons.list.map(({ label, emoji }, index) => (
     <button
       key={index}
-      className="cta-button bg-brand-yellow p-2 text-not-black disabled:border-2 disabled:border-white disabled:bg-brand-purple disabled:text-white"
+      className="cta-button bg-brand-yellow p-2 font-blacker text-not-black disabled:border-2 disabled:border-white disabled:bg-brand-purple disabled:text-white"
       disabled={activeSlide == index}
       onClick={() => setActiveSlide(index)}
     >
@@ -59,14 +59,8 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
             />
           </div>
           <div className="col-span-full row-start-1 text-center">
-            <h2
-              className="font-blacker"
-              dangerouslySetInnerHTML={{ __html: aboutTitle }}
-            />
-            <p
-              className="subline"
-              dangerouslySetInnerHTML={{ __html: aboutSubline }}
-            />
+            <h2 className="font-blacker">{aboutTitle}</h2>
+            <p className="subline">{aboutSubline}</p>
           </div>
           <div
             className={clsx(
@@ -101,10 +95,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
       >
         <span className="mb-4 text-center">
           <h2 className="mb-0 text-center">{skillsTitle}</h2>
-          <p
-            className="subline"
-            dangerouslySetInnerHTML={{ __html: skillsSubline }}
-          />
+          <p className="subline">{skillsSubline}</p>
         </span>
         <SkillBricks data={skills} />
       </section>

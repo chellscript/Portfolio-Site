@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { ContactSectionProps } from "../typings";
 import clsx from "clsx";
 import Image from "next/image";
-import { marked } from "marked";
 import myself from "/public/images/contact/avatar_michi.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@headlessui/react";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { marked } from "marked";
 
 const buttonColor: { [key: string]: string } = {
   github: "bg-brand-yellow",
@@ -95,7 +95,9 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
             <div className="relative">
               <div
                 className="max-app-width w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
-                dangerouslySetInnerHTML={{ __html: marked.parse(contactMe) }}
+                dangerouslySetInnerHTML={{
+                  __html: marked.parse(contactMe) as string,
+                }}
               />
 
               <ReactionButtion
@@ -106,7 +108,9 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
             <div className="relative">
               <div
                 className="max-app-width [&>p:nth-of-type(2)]:hire-emph prose w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow prose-p:my-2 max-md:text-center"
-                dangerouslySetInnerHTML={{ __html: marked.parse(employMe) }}
+                dangerouslySetInnerHTML={{
+                  __html: marked.parse(employMe) as string,
+                }}
               />
               <ReactionButtion
                 toggleBool={hireHeart}
@@ -121,7 +125,10 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
               key={index}
               href={url}
               target="_blank"
-              className={clsx("cta-button max-md:w-full", buttonColor[key])}
+              className={clsx(
+                "cta-button font-blacker max-md:w-full",
+                buttonColor[key],
+              )}
             >
               {label}
               <span className="inner-shadow-button flex aspect-square size-8 items-center rounded-full border border-orange-950 bg-white px-2 py-1">

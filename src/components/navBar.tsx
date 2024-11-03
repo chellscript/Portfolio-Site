@@ -23,7 +23,7 @@ function NavBar() {
 
   return (
     //h-42 for scroll ofset
-    <nav className="fixed right-0 top-3 z-10 h-1 w-fit items-end justify-center gap-y-3 bg-transparent px-4 font-blacker max-md:grid md:left-1/2 md:flex md:w-full md:-translate-x-1/2 md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:p-0">
+    <nav className="fixed right-0 top-3 z-10 h-1 w-fit items-end justify-center gap-y-3 bg-transparent pr-4 font-blacker max-md:grid md:left-1/2 md:flex md:w-full md:-translate-x-1/2 md:flex-row md:justify-end md:gap-x-2 md:gap-y-0 lg:right-0 lg:max-w-screen-lg lg:pr-10 xl:pr-0">
       {" "}
       <button
         onClick={() => setIsOpen(!isOpen)}

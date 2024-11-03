@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FooterProps } from "../typings";
 import { marked } from "marked";
-import { FontAwesomeIconMapper } from "../iconMapper";
+import { FontAwesomeIconMapper } from "../utils/iconMapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 
@@ -33,7 +33,9 @@ const Footer = ({ data }: { data: FooterProps }) => {
         </li>
         <div
           className="prose-span: span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
-          dangerouslySetInnerHTML={{ __html: marked.parse(copyrightDate) }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(copyrightDate) as string,
+          }}
         />
         <div className="text-start">
           <details className="flex cursor-pointer flex-col flex-nowrap items-start">
@@ -43,7 +45,7 @@ const Footer = ({ data }: { data: FooterProps }) => {
             <div
               className="text-start text-sm prose-ul:list-inside prose-ul:list-disc"
               dangerouslySetInnerHTML={{
-                __html: marked.parse(attributions),
+                __html: marked.parse(attributions) as string,
               }}
             />
           </details>
