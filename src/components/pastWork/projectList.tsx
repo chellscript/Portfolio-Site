@@ -47,7 +47,7 @@ const ProjectList = ({
             >
               <button
                 onClick={() => setSelectedProjectIndex(index)}
-                className="hover:shadow-card-hover group relative z-1 flex h-80 w-52 flex-col flex-nowrap gap-y-2 rounded-lg border border-not-black/80 bg-white p-2 transition-all hover:-translate-y-2 hover:shadow-brand-purple/60 md:h-72"
+                className="group relative z-1 flex h-80 w-52 flex-col flex-nowrap gap-y-2 rounded-lg border border-not-black/80 bg-white p-2 transition-all hover:-translate-y-2 hover:shadow-card-hover hover:shadow-purple-950/40 md:h-72"
               >
                 <div className="self-center overflow-hidden rounded-lg border border-not-black/50 p-1 *:size-40">
                   {imageUrl ? (

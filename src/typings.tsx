@@ -76,7 +76,7 @@ export interface CompaniesDataProps {
 
 export interface ProjectsListProps {
   name: string;
-  description: string;
+  description: string | null;
   cover: string;
   media: string;
   mediaType: "image" | "video";

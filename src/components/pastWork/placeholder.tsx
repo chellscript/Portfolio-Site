@@ -18,7 +18,7 @@ export const ListPlaceholder = () => {
         src={listPlaceholder}
         loading="lazy"
         sizes="100px"
-        className="size-auto border-not-black object-cover mix-blend-hard-light"
+        className="border-not-black object-cover mix-blend-hard-light"
         alt=""
       />
       <div className="inline-block font-homevideo text-sm text-black mix-blend-hard-light">

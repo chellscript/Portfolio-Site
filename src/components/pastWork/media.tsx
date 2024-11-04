@@ -67,7 +67,7 @@ const ProjectMedia = ({
   }
 
   return (
-    <div className="relative row-start-2 flex w-full flex-col justify-center lg:justify-start">
+    <div className="relative row-start-2 flex w-full flex-col justify-center max-lg:items-center lg:justify-start">
       {renderedComponent}
     </div>
   );

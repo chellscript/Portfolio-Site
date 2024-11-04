@@ -4,6 +4,7 @@ import ProjectTabs from "./projectTabs";
 import ProjectList from "./projectList";
 import ProjectDisplay from "./display";
 import clsx from "clsx";
+import { marked } from "marked";
 
 const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
   const {
@@ -29,7 +30,12 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
     >
       <div className="max-app-width flex w-full flex-col justify-items-center">
         <h2 className="text-center">{title}</h2>
-        <p className="subline">{subline}</p>
+        <div
+          className="subline"
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(subline, { async: false }),
+          }}
+        />
         <div
           className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
           role="tablist"
@@ -47,7 +53,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
                 className={clsx(
                   "transition-all duration-500 ease-in-out",
                   selectedCompanyIndex === index
-                    ? "animate-sideswipe-top-in pointer-events-auto static opacity-100"
+                    ? "pointer-events-auto static animate-sideswipe-top-in opacity-100"
                     : "pointer-events-none absolute inset-0 opacity-0",
                 )}
                 aria-hidden={selectedCompanyIndex !== index}
