@@ -1,6 +1,8 @@
 import { AboutSectionProps } from "@/src/typings";
 import clsx from "clsx";
+import Image from "next/image";
 import React from "react";
+import { loadingBlur } from "../pastWork/placeholder";
 
 type TimeLineProps = {
   data: AboutSectionProps["timeline"]["list"];
@@ -22,7 +24,7 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
     <>
       <div className="relative grid size-full w-full auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center max-md:max-w-sm md:auto-cols-fr md:grid-flow-col md:gap-x-4">
         <div className="absolute left-2 h-full w-1 bg-gradient-to-b from-not-black from-90% md:left-0 md:h-1 md:w-full md:bg-gradient-to-r" />
-        {data.map(({ title, role, date, content, type }, index) => {
+        {data.map(({ title, role, date, content, type, image, alt }, index) => {
           const isActive = activeDate === index;
           return (
             <button
@@ -38,14 +40,14 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
               <p
                 className={clsx(
                   isActive && "md:text-lg",
-                  `rounded-lg rounded-b-none border border-not-black text-center font-garden_delight text-not-black ${buttonColors[type]}`,
+                  `rounded-lg rounded-b-none border border-not-black text-center font-blacker text-not-black ${buttonColors[type]}`,
                 )}
               >
                 {date}
               </p>
               <div
                 className={clsx(
-                  "rounded-none border border-not-black bg-pale p-2 md:rounded-lg md:rounded-t-none",
+                  "relative flex flex-col gap-y-2 rounded-none border border-not-black bg-pale p-2 md:rounded-lg md:rounded-t-none",
                   isActive
                     ? "mt-1 shadow-not-black"
                     : "border-t-0 group-hover:mt-1 group-hover:border-t",
@@ -61,16 +63,36 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                     {title}
                   </p>
                   {role && (
-                    <p className="m-0 font-bold italic md:inline-block md:text-lg">
+                    <p className="font-alondra_drawn m-0 font-bold md:inline-block md:text-lg">
                       {role}
                     </p>
                   )}
                 </div>
-                {isActive && (
+                <div
+                  aria-hidden={!isActive}
+                  className={clsx(
+                    "flex flex-col items-center gap-y-2",
+                    isActive
+                      ? "static h-auto *:opacity-100"
+                      : "absolute inset-0 h-0 *:opacity-0",
+                  )}
+                >
+                  {image && (
+                    <Image
+                      width="150"
+                      height="150"
+                      src={image}
+                      alt={alt}
+                      sizes="150px"
+                      className="not-prose self-center rounded-lg border-not-black object-contain max-md:size-1/4"
+                      placeholder="blur"
+                      blurDataURL={loadingBlur}
+                    />
+                  )}
                   <p className="text-pretty rounded-lg border border-not-black bg-white p-1 text-sm md:text-base">
                     {content}
                   </p>
-                )}
+                </div>
               </div>
             </button>
           );

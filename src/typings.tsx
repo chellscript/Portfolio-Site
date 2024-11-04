@@ -46,14 +46,17 @@ export interface AboutSectionProps {
     list: { title: string; content: string }[];
   };
   timeline: {
-    list: {
-      title: string;
-      date: string;
-      role?: string;
-      content: string;
-      type: "life" | "work" | "special";
-    }[];
+    list: TimelineProps[];
   };
+}
+export interface TimelineProps {
+  title: string;
+  date: string;
+  role?: string;
+  image: string;
+  alt: string;
+  content: string;
+  type: "life" | "work" | "special";
 }
 
 export interface PreviousWorkSectionProps {
