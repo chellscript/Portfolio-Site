@@ -19,6 +19,7 @@ import sanitizeResponse from "../utils/sanitizeResponse";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
+import { Analytics } from "@vercel/analytics/react";
 
 App.getInitialProps = async () => {
   const response = await fetch(`${process.env.CMS_URL}`, {
@@ -55,6 +56,7 @@ function App({
       >
         <NavBar data={navigation} />
         <Component {...pageProps} copyData={rest} />
+        <Analytics />
         <Footer data={footer} />
       </main>
     </>
