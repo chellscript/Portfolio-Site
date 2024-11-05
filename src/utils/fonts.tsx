@@ -8,21 +8,21 @@ export const pt_sans = PT_Sans({
 });
 
 export const homevideo = localFont({
-  src: "../../public/fonts/homevideo.ttf",
+  src: "../../public/fonts/homevideo.woff2",
   variable: "--font-homevideo",
 });
 
 export const blacker = localFont({
-  src: "../../public/fonts/blackershield.ttf",
+  src: "../../public/fonts/blackershield.woff2",
   variable: "--font-blacker",
 });
 
 export const garden_delight = localFont({
-  src: "../../public/fonts/garden-delight.otf",
+  src: "../../public/fonts/garden-delight.woff2",
   variable: "--font-garden_delight",
 });
 
 export const alondra_drawn = localFont({
-  src: "../../public/fonts/CSAlondraDrawn-Regular_demo.otf",
+  src: "../../public/fonts/CSAlondraDrawn-Regular_demo.woff2",
   variable: "--font-alondra_drawn",
 });

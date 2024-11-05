@@ -35,8 +35,6 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-pt_sans)', 'Arial', 'Helvetica', 'sans-serif'],
         homevideo: ['var(--font-homevideo)'],
-        gacko: ['var(--font-gacko)'],
-        caffie_lofie: ['var(--font-caffie_lofie)'],
         blacker: ['var(--font-blacker)'],
         garden_delight: ['var(--font-garden_delight)'],
         alondra_drawn: ['var(--font-alondra_drawn)'],
@@ -50,11 +48,11 @@ const config: Config = {
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
-        hero: "url('/images/hero/background.jpeg')",
+        hero: "url('/images/hero/background.svg')",
         heroMe: "url('/images/hero/myself.png')",
         'hero-pattern': "url('/images/hero/pattern.svg')",
-        'about-pattern': "url('/images/aboutMe/pattern.svg')",
-        'skills-pattern': "url('/images/aboutMe/pattern-skills.svg')",
+        'about-pattern': "url('/images/about/pattern.svg')",
+        'skills-pattern': "url('/images/skills/pattern.svg')",
         'work-pattern': "url('/images/previousWork/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
 

@@ -81,8 +81,8 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
         <div className="my-6 grid w-full grid-cols-1 grid-rows-[(repeat(3,auto))] content-center justify-items-center gap-x-4 rounded-lg bg-white/60 p-4 pb-8 md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] md:justify-items-start lg:w-10/12">
           <Image
             quality={100}
-            width={120}
-            height={120}
+            width={150}
+            height={150}
             src={myself}
             alt="chat avatar of michi"
             className="col-span-1 col-start-1 row-start-1 aspect-square rounded-full border-2 border-white bg-brand-yellow/80 object-contain object-bottom md:row-span-full"

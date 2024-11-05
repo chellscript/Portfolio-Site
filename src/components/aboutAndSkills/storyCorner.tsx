@@ -3,9 +3,9 @@ import clsx from "clsx";
 import { marked } from "marked";
 import React from "react";
 import Image from "next/image";
-import science from "/public/images/aboutMe/science.png";
-import gitPush from "/public/images/aboutMe/gitpush.png";
-import empathy from "/public/images/aboutMe/empathy.png";
+import science from "/public/images/about/science.png";
+import gitPush from "/public/images/about/gitpush.png";
+import empathy from "/public/images/about/empathy.png";
 
 const StoryCorner = ({
   data,

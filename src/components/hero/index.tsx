@@ -10,7 +10,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
   const ref = useRef<HTMLDivElement | null>(null);
   return (
-    <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-hero bg-cover p-4 pt-8 md:gap-y-[unset] md:p-10">
+    <section className="grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center bg-blend-soft-light justify-items-center gap-y-4 bg-[#F3E9DE] bg-hero bg-cover p-4 pt-8 md:gap-y-[unset] md:p-10">
       {/* In reverse order so peer selectors from hero card work */}
       <div className="peer z-1 flex w-full flex-col self-center overflow-x-hidden p-4 pb-0 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
         <div

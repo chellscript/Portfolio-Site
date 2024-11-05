@@ -23,7 +23,7 @@ const ProjectDisplay = ({
         mediaType={projectData.mediaType}
       />
     </div>
-    <div className="w-full content-center justify-items-center gap-y-2 lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full">
+    <div className="w-full justify-items-center gap-y-2 lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-16">
       <ProjectDescription projectData={projectData} companyData={companyData} />
     </div>
     <div className="col-span-full w-full max-lg:row-start-1">

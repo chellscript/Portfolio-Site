@@ -16,8 +16,8 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
   const buttonColors: {
     [key in TimelineItem["type"]]: string;
   } = {
-    life: "bg-brand-pink/80",
-    work: "bg-brand-blue/80",
+    life: "bg-brand-pink",
+    work: "bg-brand-blue",
     special: "bg-brand-yellow",
   };
   return (
@@ -40,7 +40,8 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
               <p
                 className={clsx(
                   isActive && "md:text-lg",
-                  `rounded-lg rounded-b-none border border-not-black text-center font-blacker text-not-black ${buttonColors[type]}`,
+                  buttonColors[type],
+                  "rounded-lg rounded-b-none border border-not-black bg-opacity-80 text-center font-blacker text-not-black",
                 )}
               >
                 {date}
@@ -53,7 +54,7 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                     : "border-t-0 group-hover:mt-1 group-hover:border-t",
                 )}
               >
-                <div className="prose">
+                <>
                   <p
                     className={clsx(
                       "m-0 font-blacker md:text-base lg:text-xl",
@@ -63,18 +64,18 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                     {title}
                   </p>
                   {role && (
-                    <p className="font-alondra_drawn m-0 font-bold md:inline-block md:text-lg">
+                    <p className="m-0 font-alondra_drawn font-bold md:inline-block md:text-lg">
                       {role}
                     </p>
                   )}
-                </div>
+                </>
                 <div
                   aria-hidden={!isActive}
                   className={clsx(
                     "flex flex-col items-center gap-y-2",
                     isActive
-                      ? "static h-auto *:opacity-100"
-                      : "absolute inset-0 h-0 *:opacity-0",
+                      ? "pointer-events-auto static h-auto *:opacity-100"
+                      : "pointer-events-none absolute inset-0 h-0 *:opacity-0",
                   )}
                 >
                   {image && (
@@ -84,7 +85,10 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                       src={image}
                       alt={alt}
                       sizes="150px"
-                      className="not-prose self-center rounded-lg border-not-black object-contain max-md:size-1/4"
+                      className={clsx(
+                        "self-center rounded-lg border-not-black bg-opacity-40 object-contain max-md:size-1/4",
+                        buttonColors[type],
+                      )}
                       placeholder="blur"
                       blurDataURL={loadingBlur}
                     />

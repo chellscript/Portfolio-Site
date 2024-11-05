@@ -75,7 +75,7 @@ export const VideoMediaComponent = ({
             <div
               key={videoID}
               className={clsx(
-                "debug relative flex max-h-80 w-full flex-col items-center md:max-h-96",
+                "relative flex max-h-80 w-full flex-col items-center md:max-h-96",
                 index === visibleVideoIndex ? "block" : "hidden",
               )}
             >
@@ -84,7 +84,9 @@ export const VideoMediaComponent = ({
                 controls
                 width="100%"
                 height="100%"
-                fallback={<div className="animate-pulse bg-brand-purple" />}
+                fallback={
+                  <div className="size-full animate-pulse bg-brand-purple" />
+                }
                 url={videoUrl}
               />
             </div>

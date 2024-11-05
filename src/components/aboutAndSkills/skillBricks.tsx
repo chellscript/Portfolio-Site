@@ -1,7 +1,7 @@
 import React from "react";
 import { AboutSectionProps } from "../../typings";
 import Link from "next/link";
-import skillsMichi from "/public/images/aboutMe/skills.png";
+import skillsMichi from "/public/images/skills/michi_builder.png";
 import Image from "next/image";
 
 const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
@@ -10,10 +10,11 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
     <>
       <div className="flex gap-y-4 p-2 md:w-5/6">
         <Image
-          height={180}
-          width={180}
+          height={290}
+          width={290}
+          sizes="290px"
           src={skillsMichi}
-          className="m-0 size-auto object-cover object-left max-lg:hidden"
+          className="m-0 object-cover max-lg:hidden"
           alt="Michi in a construction outfit holding a brick"
         />{" "}
         <div className="flex w-full flex-row flex-wrap gap-3 justify-self-center">
@@ -28,7 +29,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
         </div>
       </div>
       <Link
-        href="#work"
+        href="#portfolio"
         className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black shadow-button md:w-5/6"
       >
         See the projects I used them in
