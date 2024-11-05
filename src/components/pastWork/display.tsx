@@ -19,15 +19,16 @@ const ProjectDisplay = ({
       <ProjectMedia
         name={projectData.name}
         media={projectData.media}
+        mediaDescription={projectData.mediaDescription}
         mediaType={projectData.mediaType}
       />
     </div>
     <div className="w-full content-center justify-items-center gap-y-2 lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full">
       <ProjectDescription projectData={projectData} companyData={companyData} />
     </div>
-    <div className="col-span-full w-full max-md:row-start-1">
+    <div className="col-span-full w-full max-lg:row-start-1">
       <button
-        className="text-shadow cta-button col-span-1 row-span-1 w-full self-end text-nowrap rounded-lg border bg-brand-purple p-2 text-xl text-white hover:translate-y-1 max-lg:mx-auto md:w-1/2 lg:ml-auto"
+        className="text-shadow cta-button col-span-1 row-span-1 w-full self-end text-nowrap rounded-lg border bg-brand-purple p-2 text-xl text-white hover:translate-y-1 max-lg:mx-auto lg:ml-auto lg:w-1/2"
         onClick={() => setSelectedProjectIndex(null)}
       >
         Go back

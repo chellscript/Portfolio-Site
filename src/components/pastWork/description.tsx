@@ -13,7 +13,7 @@ const ProjectDescription = ({
   projectData: { techUsed, name, description, externalLink },
 }: ProjectDescriptionProps) => (
   <>
-    <div className="col-span-1 row-span-5 grid w-full grid-cols-1 grid-rows-[auto_minmax(auto,1fr)_auto] flex-col content-start rounded-lg bg-white p-5 md:w-[600px] lg:size-full">
+    <div className="col-span-1 row-span-5 grid w-full grid-cols-1 grid-rows-[auto_minmax(auto,1fr)_auto] flex-col content-start rounded-lg bg-white p-5 md:w-[600px] lg:w-full">
       <div className="grid w-full auto-cols-fr grid-flow-col items-center justify-evenly self-start whitespace-normal break-words border-b border-dashed border-not-black/50 pb-2 text-center font-homevideo text-xs uppercase">
         {[companyTitle, role, duration].map(
           (data, index) => data && <p key={index}>{data}</p>,
@@ -21,7 +21,7 @@ const ProjectDescription = ({
       </div>
       <div className="py-4">
         <h3 className="m-0 break-words text-center">{name}</h3>
-        <div className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80">
+        <div className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty p-4 scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80">
           {description ? (
             <div
               className="leading-normal marker:text-lg marker:text-brand-purple"

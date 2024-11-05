@@ -1,47 +1,14 @@
+"use client";
 import { CompaniesDataProps } from "@/src/typings";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { loadingBlur } from "./placeholder";
-import { CldVideoPlayer, getCldImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Image from "next/image";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-
-//TODO use when re-adding mobile navigation
-type MobNavButtionsProps = {
-  workData: CompaniesDataProps["projects"];
-  focusedProjectIndex: number;
-  previous: () => void;
-  next: () => void;
-};
-
-export const MobileNavigationButtons = ({
-  workData,
-  focusedProjectIndex,
-  previous,
-  next,
-}: MobNavButtionsProps) => {
-  return (
-    <div className="flex w-1/2 flex-row items-center justify-between md:hidden">
-      <button
-        onClick={() => previous()}
-        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
-        aria-label="Previous Project"
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </button>
-      <span className="inline-block h-fit text-lg">
-        {focusedProjectIndex + 1}/{workData.length}
-      </span>
-      <button
-        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
-        onClick={() => next()}
-        aria-label="Next Project"
-      >
-        <FontAwesomeIcon icon={faArrowRight} />
-      </button>
-    </div>
-  );
-};
+import ReactPlayer from "react-player";
+import clsx from "clsx";
+import { useState } from "react";
 
 type ImageMediaComponentProps = {
   media: string;
@@ -88,24 +55,90 @@ type VideoMediaComponentProps = {
 export const VideoMediaComponent = ({
   media,
   description,
-}: VideoMediaComponentProps) => (
-  <>
-    <CldVideoPlayer
-      width="1920"
-      height="1080"
-      logo={false}
-      src={media}
-      muted
-      fontFace="PT Sans Caption" //google fonts
-      className="cld-video-player cld-video-player-skin-light"
-      colors={{ accent: "#D4ED30", base: "#987dc1", text: "#fff" }}
-      aria-describedby="video-description"
-    />
-    <p id="video-description" className="sr-only">
-      {description}
-    </p>
-  </>
-);
+}: VideoMediaComponentProps) => {
+  const mediaList = media.split(",");
+  const descriptionList = description.split(",");
+
+  const [visibleVideoIndex, setVisibleVideoIndex] = useState<number>(0);
+
+  return (
+    <>
+      <div className="relative flex justify-center">
+        {mediaList.map((videoID, index) => {
+          const videoUrl = getCldVideoUrl({
+            width: 1920,
+            height: 1080,
+            src: videoID,
+          });
+
+          return (
+            <div
+              key={videoID}
+              className={clsx(
+                "debug relative flex max-h-80 w-full flex-col items-center md:max-h-96",
+                index === visibleVideoIndex ? "block" : "hidden",
+              )}
+            >
+              <ReactPlayer
+                id={videoID}
+                controls
+                width="100%"
+                height="100%"
+                fallback={<div className="animate-pulse bg-brand-purple" />}
+                url={videoUrl}
+              />
+            </div>
+          );
+        })}
+      </div>
+      <p
+        className="my-4 inline-block rounded-md bg-purple-200 px-2 text-center font-homevideo"
+        id="video-description"
+      >
+        Video walkthrough showing {descriptionList[visibleVideoIndex]}
+      </p>
+      {mediaList.length > 1 && (
+        <div className="flex flex-col justify-center p-4 pt-0 font-homevideo md:justify-start">
+          <p
+            id="video-playlist"
+            className="my-2 flex flex-col flex-wrap justify-start gap-y-2 font-bold"
+          >
+            Video Playlist:
+          </p>
+          <div
+            role="tablist"
+            aria-labelledby="video-playlist"
+            className="flex gap-x-2"
+          >
+            {mediaList.map((_, index) => (
+              <button
+                disabled={index === visibleVideoIndex}
+                onClick={() => setVisibleVideoIndex(index)}
+                className={clsx(
+                  "rounded-md px-4 py-2",
+                  index === visibleVideoIndex
+                    ? "pointer-events-none bg-brand-purple text-white"
+                    : "border border-not-black bg-white",
+                )}
+                key={index}
+                aria-controls={`video-${index}`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+{
+  /* <p id="video-description" className="sr-only">
+        {description}
+      </p>
+    </> */
+}
 
 type CTAButtonProps = {
   onClick: () => void;
@@ -126,3 +159,40 @@ export const CTAButton = ({ onClick, icon, tipMessage }: CTAButtonProps) => (
     </div>
   </>
 );
+
+//TODO use when re-adding mobile navigation
+type MobNavButtionsProps = {
+  workData: CompaniesDataProps["projects"];
+  focusedProjectIndex: number;
+  previous: () => void;
+  next: () => void;
+};
+
+export const MobileNavigationButtons = ({
+  workData,
+  focusedProjectIndex,
+  previous,
+  next,
+}: MobNavButtionsProps) => {
+  return (
+    <div className="flex w-1/2 flex-row items-center justify-between md:hidden">
+      <button
+        onClick={() => previous()}
+        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+        aria-label="Previous Project"
+      >
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
+      <span className="inline-block h-fit text-lg">
+        {focusedProjectIndex + 1}/{workData.length}
+      </span>
+      <button
+        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+        onClick={() => next()}
+        aria-label="Next Project"
+      >
+        <FontAwesomeIcon icon={faArrowRight} />
+      </button>
+    </div>
+  );
+};

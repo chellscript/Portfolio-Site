@@ -14,7 +14,10 @@ const ProjectMedia = ({
   media,
   mediaType,
   name,
-}: Pick<ProjectsListProps, "media" | "mediaType"> & { name: string }) => {
+  mediaDescription = "",
+}: Pick<ProjectsListProps, "media" | "mediaType" | "mediaDescription"> & {
+  name: string;
+}) => {
   const [showBigger, setShowBigger] = useState(false);
 
   let renderedComponent;
@@ -55,10 +58,7 @@ const ProjectMedia = ({
       break;
     case "video":
       renderedComponent = (
-        <VideoMediaComponent
-          media={media}
-          description={`Walkthrough demonstrating the functionality of the ${name}`}
-        />
+        <VideoMediaComponent media={media} description={mediaDescription} />
       );
       break;
     default:
