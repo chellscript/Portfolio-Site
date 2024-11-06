@@ -13,8 +13,8 @@ const StoryCorner = ({
   data: AboutSectionProps["story"]["list"];
 }) => {
   const highlightColoursIndex: { [index: number]: string } = {
-    0: "first-of-type:span:bg-brand-green/70 span:bg-brand-blue/70",
-    1: "span:bg-brand-pink/70",
+    0: "first-of-type:p-span:bg-brand-green/70 p-span:bg-brand-blue/70",
+    1: "p-span:bg-brand-pink/70",
   };
 
   return (
@@ -36,7 +36,7 @@ const StoryCorner = ({
         />
         <h3
           className={clsx(
-            "not-prose span:text-highlight isolate z-1 mx-auto mb-4 text-center lg:w-3/4",
+            "not-prose p-span:text-highlight isolate z-1 mx-auto mb-4 text-center lg:w-3/4",
             highlightColoursIndex[0],
           )}
           dangerouslySetInnerHTML={{
@@ -53,7 +53,7 @@ const StoryCorner = ({
       <div className="prose relative w-full max-w-none rounded-md border border-not-black bg-pale p-4 shadow md:pb-8">
         <h3
           className={clsx(
-            "not-prose span:text-highlight isolate z-1 mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:w-3/4 lg:text-start xl:w-full",
+            "not-prose p-span:text-highlight isolate z-1 mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:w-3/4 lg:text-start xl:w-full",
             highlightColoursIndex[1],
           )}
           dangerouslySetInnerHTML={{

@@ -2,7 +2,8 @@ import { AboutSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import { loadingBlur } from "../pastWork/placeholder";
+import { loadingBlur } from "../work/placeholder";
+import { marked } from "marked";
 
 type TimeLineProps = {
   data: AboutSectionProps["timeline"]["list"];
@@ -32,7 +33,7 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
               className={clsx(
                 "timeline-dot group relative max-md:w-5/6 max-md:justify-self-center md:mt-6 md:w-full md:self-start",
                 isActive
-                  ? "after:rounded-none after:bg-not-black"
+                  ? "after:rounded-none after:bg-not-black md:col-span-2"
                   : `after:bg-stone-500`,
               )}
               key={index}
@@ -86,16 +87,19 @@ const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
                       alt={alt}
                       sizes="150px"
                       className={clsx(
-                        "self-center rounded-lg border-not-black bg-opacity-40 object-contain max-md:size-1/4",
+                        "self-center rounded-lg border-not-black bg-opacity-30 object-contain max-md:size-1/4",
                         buttonColors[type],
                       )}
                       placeholder="blur"
                       blurDataURL={loadingBlur}
                     />
                   )}
-                  <p className="text-pretty rounded-lg border border-not-black bg-white p-1 text-sm md:text-base">
-                    {content}
-                  </p>
+                  <div
+                    className="prose max-w-none text-pretty rounded-lg border border-not-black bg-white p-1 text-sm prose-a:text-sky-600 md:text-base"
+                    dangerouslySetInnerHTML={{
+                      __html: marked.parse(content) as string,
+                    }}
+                  />
                 </div>
               </div>
             </button>

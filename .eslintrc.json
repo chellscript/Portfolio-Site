@@ -9,6 +9,7 @@
   "rules": {
     "tailwindcss/classnames-order": "off",
     "react/no-unescaped-entities": "off",
+    "tailwindcss/migration-from-tailwind-2": "off",
     "tailwindcss/no-custom-classname": [
       1,
       {

@@ -48,12 +48,7 @@ const config: Config = {
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
-        hero: "url('/images/hero/background.svg')",
-        heroMe: "url('/images/hero/myself.png')",
-        'hero-pattern': "url('/images/hero/pattern.svg')",
-        'about-pattern': "url('/images/about/pattern.svg')",
         'skills-pattern': "url('/images/skills/pattern.svg')",
-        'work-pattern': "url('/images/previousWork/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
 
       },
@@ -101,6 +96,7 @@ const config: Config = {
     plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
       addVariant('span', '&>span');
       addVariant('p-span', '&>p>span');
+
     })
 
   ],

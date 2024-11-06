@@ -1,19 +1,25 @@
 import React from "react";
 import { AboutSectionProps } from "../../typings";
 import Link from "next/link";
-import skillsMichi from "/public/images/skills/michi_builder.png";
 import Image from "next/image";
+import { getCldImageUrl } from "next-cloudinary";
 
 const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
   const dataArray = data.split(",");
+
+  const michiBuilder = getCldImageUrl({
+    width: 300,
+    height: 300,
+    src: "michi_builder_krrfxl.png",
+  });
+
   return (
     <>
       <div className="flex gap-y-4 p-2 md:w-5/6">
         <Image
-          height={290}
-          width={290}
-          sizes="290px"
-          src={skillsMichi}
+          height={300}
+          width={300}
+          src={michiBuilder}
           className="m-0 object-cover max-lg:hidden"
           alt="Michi in a construction outfit holding a brick"
         />{" "}

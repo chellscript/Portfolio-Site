@@ -1,6 +1,6 @@
 import Hero from "@/src/components/hero";
 import AboutMe from "@/src/components/aboutAndSkills";
-import Work from "@/src/components/pastWork";
+import Work from "@/src/components/work";
 import Contact from "@/src/components/contact";
 
 import { DataProps } from "../typings";

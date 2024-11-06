@@ -44,11 +44,17 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
   const [activeDate, setActiveDate] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
 
+  const backgroundImage =
+    "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730911237/pattern_h02tvc.svg')]";
+
   return (
     <div className="grid w-full auto-rows-min grid-cols-1 grid-rows-[repeat(2,auto)] flex-col items-center *:p-4 md:*:p-10">
       <section
         id="about-me"
-        className="flex w-full justify-center bg-orange-400/50 bg-about-pattern bg-repeat bg-blend-soft-light max-md:overflow-hidden *:lg:max-w-screen-lg"
+        className={clsx(
+          "flex w-full justify-center bg-orange-400/50 bg-repeat bg-blend-soft-light max-md:overflow-hidden *:lg:max-w-screen-lg",
+          backgroundImage,
+        )}
       >
         <div className="col-span-full col-start-1 row-start-1 grid gap-y-8 max-md:grid-rows-[repeat(3,auto)] md:grid-cols-2">
           <div className="col-span-full col-start-1 row-start-2 flex w-full flex-wrap gap-2 p-2 md:hidden">
