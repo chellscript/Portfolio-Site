@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import { useInView } from "react-intersection-observer";
 import { DataProps } from "../../typings";
+import ElementPlaceholder from "./placeholder";
 
 const LazyContact = ({
   data,
@@ -8,22 +8,19 @@ const LazyContact = ({
   loadingHeight?: string;
   data: DataProps["contact"];
 }) => {
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
-
   const DynamicComponent = dynamic<{ data: DataProps["contact"] }>(
     () => import("../contact"),
     {
       loading: () => (
-        <div className="min-h-96 animate-pulse bg-brand-pink/80">
-          Loading...
-        </div>
+        <ElementPlaceholder
+          className="bg-brand-pink/80"
+          loaderContent=' before:content-["Contact_Me_🤙🏾,_Loading..."]'
+        />
       ),
     },
   );
 
-  return <div ref={ref}>{inView && <DynamicComponent data={data} />}</div>;
+  return <DynamicComponent data={data} />;
 };
 
 export default LazyContact;
