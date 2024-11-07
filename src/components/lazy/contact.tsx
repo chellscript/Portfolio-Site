@@ -14,7 +14,7 @@ const LazyContact = ({
       loading: () => (
         <ElementPlaceholder
           className="bg-brand-pink/80"
-          loaderContent=' before:content-["Contact_Me_🤙🏾,_Loading..."]'
+          loaderContent='before:content-["Contact_Me_🤙🏾,_Loading..."]'
         />
       ),
     },

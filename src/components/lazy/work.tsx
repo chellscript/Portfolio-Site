@@ -14,7 +14,7 @@ const LazyWork = ({
       loading: () => (
         <ElementPlaceholder
           className="bg-brand-purple/80"
-          loaderContent="Previous_Work_🔥,_Loading..."
+          loaderContent=' before:content-["Previous_Work_🔥,_Loading..."]'
         />
       ),
     },

@@ -9,7 +9,7 @@ const LazyAbout = ({ data }: { data: DataProps["about"] }) => {
       loading: () => (
         <ElementPlaceholder
           className="bg-orange-500/80"
-          loaderContent=' before:content-["About_Me_💁🏾‍♀️,_Loading..."]'
+          loaderContent='before:content-["About_Me_💁🏾‍♀️,_Loading..."]'
         />
       ),
     },
