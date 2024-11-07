@@ -94,7 +94,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
           <div className="col-span-1 col-start-1 row-start-3 flex flex-col gap-y-6 md:col-start-2 md:row-start-2">
             <div className="relative">
               <div
-                className="max-app-width w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
+                className="w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
                 dangerouslySetInnerHTML={{
                   __html: marked.parse(contactMe) as string,
                 }}

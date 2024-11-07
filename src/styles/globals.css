@@ -70,7 +70,7 @@
   }
 
   .subline {
-    @apply font-alondra_drawn text-center text-xl text-not-black max-md:text-center md:text-3xl;
+    @apply text-center font-alondra_drawn text-xl text-not-black max-md:text-center md:text-3xl;
   }
 }
 
@@ -123,5 +123,23 @@
 
   .hero-bullet {
     @apply relative block after:absolute after:-left-8 after:top-1 after:size-6 after:bg-cover md:mb-2 md:ml-8 md:after:bg-[url("../../public/images/hero/bullet.svg")] md:after:content-[''];
+  }
+
+  @keyframes shiftGradient {
+    0% {
+      background-image: linear-gradient(45deg, #ff7e5f, #feb47b);
+    }
+    50% {
+      background-image: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+    100% {
+      background-image: linear-gradient(45deg, #ff7e5f, #feb47b);
+    }
+  }
+
+  .shifting-gradient {
+    height: 100vh; /* Full height or adjust based on your needs */
+    background-size: 400% 400%;
+    animation: shiftGradient 10s ease infinite;
   }
 }
