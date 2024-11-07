@@ -3,8 +3,10 @@ import React, { useRef } from "react";
 import HeroCards from "./heroCards";
 import { HeroSectionProps } from "@/src/typings";
 import arrow from "/public/images/hero/arrow.svg";
-import { getCldImageUrl } from "next-cloudinary";
+// import { getCldImageUrl } from "next-cloudinary";
 import clsx from "clsx";
+import myself from "../../../public/images/hero/myself_exnvyb.png";
+import myselfWink from "../../../public/images/hero/myself-wink_sotgys.png";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
@@ -15,17 +17,17 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
   const backgroundImage =
     "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg')]";
 
-  const myself = getCldImageUrl({
-    width: 500,
-    height: 546,
-    src: "myself_exnvyb.png",
-  });
+  // const myself = getCldImageUrl({
+  //   width: 500,
+  //   height: 546,
+  //   src: "myself_exnvyb.png",
+  // });
 
-  const myselfWink = getCldImageUrl({
-    width: 500,
-    height: 546,
-    src: "myself-wink_sotgys.png",
-  });
+  // const myselfWink = getCldImageUrl({
+  //   width: 500,
+  //   height: 546,
+  //   src: "myself-wink_sotgys.png",
+  // });
 
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -104,18 +106,24 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
         </div>
         <div className="relative col-span-full row-span-full row-start-1 flex items-end justify-self-center overflow-hidden md:col-start-2 md:row-start-1 md:h-full md:self-end md:justify-self-end lg:col-span-1 lg:row-start-1 lg:justify-end">
           <Image
-            src={myself}
+            src="/images/hero/myself_exnvyb.png"
             priority
-            width={500}
-            height={700}
+            width={400}
+            height={437}
+            sizes="(max-width: 375px) 400px,
+            (max-width: 768px) 400px,
+            (min-width: 1024px) 389px"
             alt="Picture of Michi"
             className="hero-image block"
           />{" "}
           <Image
-            src={myselfWink}
+            src="/images/hero/myself-wink_sotgys.png"
             priority
-            width={500}
-            height={700}
+            width={400}
+            height={437}
+            sizes="(max-width: 375px) 400px,
+            (max-width: 768px) 400px,
+            (min-width: 1024px) 389px"
             alt="Picture of Michi Winking!"
             className="hero-image absolute opacity-0"
           />

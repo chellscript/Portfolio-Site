@@ -3,6 +3,7 @@ import { DataProps } from "../typings";
 import LazyAbout from "../components/lazy/about";
 import LazyWork from "../components/lazy/work";
 import LazyContact from "../components/lazy/contact";
+import Head from "next/head";
 
 export default function Home({
   copyData,
@@ -13,6 +14,9 @@ export default function Home({
 
   return (
     <>
+      <Head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </Head>
       <Hero data={hero} />
       <LazyAbout data={about} />
       <LazyWork data={previousWork} />
