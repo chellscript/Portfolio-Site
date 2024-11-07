@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import HeroCards from "./heroCards";
-
 import { HeroSectionProps } from "@/src/typings";
 import arrow from "/public/images/hero/arrow.svg";
 import { getCldImageUrl } from "next-cloudinary";
 import clsx from "clsx";
+import { useMediaQuery } from "react-responsive";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
@@ -30,6 +30,8 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
 
   const ref = useRef<HTMLDivElement | null>(null);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
     <section
       className={clsx(
@@ -48,7 +50,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
             }
           }}
         >
-          <HeroCards className="md:hidden" data={cards.list} />
+          {isMobile && <HeroCards data={cards.list} />}{" "}
           <HeroCards className="peer" data={cards.list} />
         </div>
         <div
