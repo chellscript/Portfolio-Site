@@ -5,7 +5,6 @@ import { HeroSectionProps } from "@/src/typings";
 import arrow from "/public/images/hero/arrow.svg";
 import { getCldImageUrl } from "next-cloudinary";
 import clsx from "clsx";
-import { useMediaQuery } from "react-responsive";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
@@ -30,8 +29,6 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
 
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
   return (
     <section
       className={clsx(
@@ -50,7 +47,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
             }
           }}
         >
-          {isMobile && <HeroCards data={cards.list} />}{" "}
+          <HeroCards className="md:hidden" data={cards.list} />
           <HeroCards className="peer" data={cards.list} />
         </div>
         <div
@@ -70,7 +67,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
       </div>{" "}
       <div
         className={clsx(
-          "row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center peer-hover:[&_img.hero-image:nth-of-type(1)]:hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:static peer-hover:[&_img.hero-image:nth-of-type(2)]:opacity-100",
+          "row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center peer-hover:[&_img.hero-image:nth-of-type(1)]:hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:opacity-100",
           `peer-hover:${hiddenBackgroundImage}`,
         )}
       >

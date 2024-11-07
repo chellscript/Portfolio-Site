@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import { useInView } from "react-intersection-observer";
 import { DataProps } from "../../typings";
+import ElementPlaceholder from "./placeholder";
 
 const LazyWork = ({
   data,
@@ -8,29 +8,19 @@ const LazyWork = ({
   loadingHeight?: string;
   data: DataProps["previousWork"];
 }) => {
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
-
   const DynamicComponent = dynamic<{ data: DataProps["previousWork"] }>(
     () => import("../work/index"),
     {
       loading: () => (
-        <div className="min-h-96 animate-pulse bg-brand-purple">Loading...</div>
+        <ElementPlaceholder
+          className="bg-brand-purple/80"
+          loaderContent="Previous_Work_🔥,_Loading..."
+        />
       ),
     },
   );
 
-  // return <div ref={ref}>{inView && <DynamicComponent data={data} />}</div>;
-  return (
-    <div ref={ref}>
-      {inView && (
-        <div className="min-h-96 animate-pulse bg-brand-purple/80 font-garden_delight">
-          Loading...
-        </div>
-      )}
-    </div>
-  );
+  return <DynamicComponent data={data} />;
 };
 
 export default LazyWork;

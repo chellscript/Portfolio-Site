@@ -59,6 +59,7 @@ const config: Config = {
         'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
         'sideswipe-top-in': 'sideswipeTopIn 0.2s linear forwards',
         marquee: 'marquee 10s linear infinite',
+        l21: 'l21 2s infinite linear',
       },
       keyframes: {
         marquee: {
@@ -86,8 +87,12 @@ const config: Config = {
           '0%': { transform: 'translateY(-100%)', },
           '100%': { transform: 'translateY(0)' },
         },
+        l21: {
+          '100%': {
+            backgroundPosition: 'left'
+          }
+        },
       }
-
     },
   },
   plugins: [
