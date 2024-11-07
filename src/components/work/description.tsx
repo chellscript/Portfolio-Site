@@ -23,7 +23,7 @@ const ProjectDescription = ({
         <h3 className="m-0 break-words text-center">{name}</h3>
         {description ? (
           <>
-            <div className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty p-4 scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80">
+            <div className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty p-4 pt-0 scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80">
               <div
                 className="leading-normal marker:text-lg marker:text-brand-purple"
                 dangerouslySetInnerHTML={{
