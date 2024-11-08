@@ -2,6 +2,7 @@ import React from "react";
 import { PreviousWorkSectionProps, ProjectsListProps } from "../../typings";
 import ProjectMedia from "./media";
 import ProjectDescription from "./description";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 type ProjectDisplayProps = {
   companyData: PreviousWorkSectionProps["companies"]["list"][number];
@@ -23,15 +24,16 @@ const ProjectDisplay = ({
         mediaType={projectData.mediaType}
       />
     </div>
-    <div className="w-full justify-items-center gap-y-2 lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-16">
+    <div className="w-full justify-items-center gap-y-2 md:justify-items-start lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-0">
       <ProjectDescription projectData={projectData} companyData={companyData} />
     </div>
     <div className="col-span-full w-full max-lg:row-start-1">
       <button
-        className="text-shadow cta-button col-span-1 row-span-1 w-full self-end text-nowrap rounded-lg border bg-brand-purple p-2 text-xl text-white hover:translate-y-1 max-lg:mx-auto lg:ml-auto lg:w-1/2"
+        className="text-shadow cta-button col-span-1 row-span-1 w-full self-end text-nowrap rounded-lg border bg-brand-purple p-2 text-xl uppercase text-white hover:translate-y-1 max-lg:mx-auto lg:ml-auto lg:w-1/2"
         onClick={() => setSelectedProjectIndex(null)}
       >
-        Go back
+        <Icon icon="mingcute:large-arrow-left-fill" className="text-2xl" /> Go
+        back
       </button>
     </div>
   </div>

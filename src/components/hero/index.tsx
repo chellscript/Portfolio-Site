@@ -1,42 +1,19 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import HeroCards from "./heroCards";
-
 import { HeroSectionProps } from "@/src/typings";
 import arrow from "/public/images/hero/arrow.svg";
-import { getCldImageUrl } from "next-cloudinary";
-import clsx from "clsx";
+import myself from "/public/images/hero/myself_exnvyb.png";
+import myselfWink from "/public/images/hero/myself-wink_sotgys.png";
+import HeroBullet from "@/src/utils/criticalIcons/HeroBullet";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
 
-  const hiddenBackgroundImage =
-    "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730927902/pattern_qlxyqg.svg')]";
-
-  const backgroundImage =
-    "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg')]";
-
-  const myself = getCldImageUrl({
-    width: 500,
-    height: 546,
-    src: "myself_exnvyb.png",
-  });
-
-  const myselfWink = getCldImageUrl({
-    width: 500,
-    height: 546,
-    src: "myself-wink_sotgys.png",
-  });
-
   const ref = useRef<HTMLDivElement | null>(null);
 
   return (
-    <section
-      className={clsx(
-        "grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-pale bg-cover p-4 pt-12 bg-blend-soft-light md:gap-y-[unset] md:p-10",
-        backgroundImage,
-      )}
-    >
+    <section className="bg-hero-bg grid min-h-fit w-dvw grid-cols-1 grid-rows-[repeat(2,auto)] items-center justify-items-center gap-y-4 bg-pale bg-cover p-4 pt-12 bg-blend-soft-light md:gap-y-[unset] md:p-10">
       {/* In reverse order so peer selectors from hero card work */}
       <div className="peer z-1 flex w-full flex-col self-center overflow-x-hidden p-4 pb-0 max-md:max-w-md md:-mt-20 md:w-auto md:justify-self-center">
         <div
@@ -66,12 +43,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           </div>
         </div>
       </div>{" "}
-      <div
-        className={clsx(
-          "row-start-1 grid min-h-128 w-fit max-w-hero grid-cols-1 grid-rows-[repeat(3,auto)] overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center peer-hover:[&_img.hero-image:nth-of-type(1)]:hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:static peer-hover:[&_img.hero-image:nth-of-type(2)]:opacity-100",
-          `peer-hover:${hiddenBackgroundImage}`,
-        )}
-      >
+      <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden peer-hover:bg-hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
         <div className="col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center max-lg:z-1 md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">
           <h1
             className="max-md:text-shadow-hero-mobile md:text-shadow m-0 flex flex-col items-center justify-between py-2 text-left text-white max-md:h-full max-md:text-center md:h-fit md:p-0 md:pl-10 md:text-start md:text-not-black lg:gap-y-2"
@@ -93,11 +65,16 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
               </span>
             </span>
             <span className="inline-block w-fit text-[1.75rem] text-white md:whitespace-nowrap lg:text-4xl">
-              <span className="hero-bullet">Front End Developer</span>
-              <span className="hero-bullet">
-                User-Empathy Enthusiast, <br />
-                <span className="relative font-garden_delight text-brand-yellow underline decoration-orange-400 decoration-wavy underline-offset-4">
-                  always
+              <span className="xs:flex xs:items-baseline max-xs:[&_svg]:hidden block gap-x-2">
+                <HeroBullet /> Front End Developer
+              </span>
+              <span className="xs:flex xs:items-baseline max-xs:[&_svg]:hidden block gap-x-2">
+                <HeroBullet />
+                <span>
+                  User-Empathy Enthusiast, <br />
+                  <span className="relative font-garden_delight text-amber-300 underline decoration-red-400 decoration-wavy decoration-2 underline-offset-4">
+                    always
+                  </span>
                 </span>
               </span>
             </span>
@@ -107,18 +84,22 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           <Image
             src={myself}
             priority
-            width={500}
-            height={700}
+            quality={100}
+            width={400}
+            height={437}
+            sizes="(max-width: 375px) 400px,(max-width: 768px) 400px,(min-width: 1024px) 389px"
             alt="Picture of Michi"
-            className="hero-image block"
+            className="hero-image"
           />{" "}
           <Image
             src={myselfWink}
             priority
-            width={500}
-            height={700}
+            quality={100}
+            width={400}
+            height={437}
+            sizes="(max-width: 375px) 400px,(max-width: 768px) 400px,(min-width: 1024px) 389px"
             alt="Picture of Michi Winking!"
-            className="hero-image absolute opacity-0"
+            className="hero-image hidden"
           />
         </div>
       </div>

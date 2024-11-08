@@ -4,10 +4,9 @@ import { ContactSectionProps } from "../typings";
 import clsx from "clsx";
 import Image from "next/image";
 import myself from "/public/images/contact/avatar_michi.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@headlessui/react";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { marked } from "marked";
+import { Icon } from "@iconify/react";
 
 const buttonColor: { [key: string]: string } = {
   github: "bg-brand-yellow",
@@ -25,19 +24,19 @@ const ReactionButtion = ({
   toggleBool: boolean;
 }) => (
   <Button
-    className="inner-shadow-button ease absolute -bottom-4 right-2 block size-auto justify-center gap-y-2 rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center font-homevideo shadow-not-black/50"
+    className="inner-shadow-button ease absolute -bottom-4 right-2 flex size-auto items-center justify-center gap-y-2 rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center font-homevideo shadow-not-black/50"
     onClick={() => toggleFunction(!toggleBool)}
   >
-    <FontAwesomeIcon
+    <Icon
       className={clsx(
         "mr-1",
         toggleBool
           ? "text-red-500 hover:text-not-black"
           : "text-not-black hover:scale-125",
       )}
-      icon={faHeart}
-    />
-    {toggleBool && "1"}
+      icon="line-md:heart-filled"
+    />{" "}
+    {toggleBool && <span className="text-sm">1</span>}
   </Button>
 );
 
@@ -94,7 +93,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
           <div className="col-span-1 col-start-1 row-start-3 flex flex-col gap-y-6 md:col-start-2 md:row-start-2">
             <div className="relative">
               <div
-                className="max-app-width w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
+                className="w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow max-md:text-center"
                 dangerouslySetInnerHTML={{
                   __html: marked.parse(contactMe) as string,
                 }}
@@ -107,7 +106,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
             </div>{" "}
             <div className="relative">
               <div
-                className="[&>p:nth-of-type(2)]:hire-emph prose w-full text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow prose-p:my-2 max-md:text-center"
+                className="[&>p:nth-of-type(2)]:hire-emph prose w-full max-w-none text-pretty rounded-2xl rounded-bl-none border border-not-black bg-white p-4 shadow prose-p:my-2 max-md:text-center"
                 dangerouslySetInnerHTML={{
                   __html: marked.parse(employMe) as string,
                 }}
@@ -126,7 +125,7 @@ const Contact = ({ data }: { data: ContactSectionProps }) => {
               href={url}
               target="_blank"
               className={clsx(
-                "cta-button font-blacker max-md:w-full",
+                "cta-button font-blacker text-white hover:text-not-black max-md:w-full",
                 buttonColor[key],
               )}
             >
