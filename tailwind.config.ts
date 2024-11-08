@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -10,9 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '425px'
+      },
       spacing: {
-        128: '32rem',  // for 32rem (512px)
-        144: '36rem',  // for 36rem (576px)
+        128: '32rem',
+        144: '36rem',
       },
       maxWidth: {
         hero: '896px'
@@ -39,7 +42,6 @@ const config: Config = {
         garden_delight: ['var(--font-garden_delight)'],
         alondra_drawn: ['var(--font-alondra_drawn)'],
       },
-
       boxShadow: {
         DEFAULT: '3px 2px 0px',
         'button': '3px 5px 0px',
@@ -50,44 +52,49 @@ const config: Config = {
       backgroundImage: {
         'skills-pattern': "url('/images/skills/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
-
+        'hero-hidden': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730927902/pattern_qlxyqg.svg')",
+        'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'"
       },
       animation: {
-        'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',
-        'sideswipe-right-out': 'sideswipeRightOut 0.5s linear  forwards',
-        'sideswipe-left': 'sideswipeLeftIn 0.5s linear forwards',
+        'sideswipe-right-in': 'sideswipeRightIn 0.5s linear forwards',
+        'sideswipe-right-out': 'sideswipeRightOut 0.5s linear forwards',
+        'sideswipe-left-in': 'sideswipeLeftIn 0.5s linear forwards',
         'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
         'sideswipe-top-in': 'sideswipeTopIn 0.2s linear forwards',
-        marquee: 'marquee 10s linear infinite',
+        'marquee': 'marquee 10s linear infinite',
+        'l21': 'l21 2s infinite linear',
       },
       keyframes: {
-        marquee: {
+        'marquee': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-100% - 4px))' },
-        }
-        ,
-        sideswipeRightIn: {
+        },
+        'sideswipeRightIn': {
           '0%': { transform: 'translateX(100%)', },
           '100%': { transform: 'translateX(0)' },
         },
-        sideswipeRightOut: {
+        'sideswipeRightOut': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(100%)', opacity: '0' },
         },
-        sideswipeLeftIn: {
+        'sideswipeLeftIn': {
           '0%': { transform: 'translateX(-100%)', },
           '100%': { transform: 'translateX(0)' },
         },
-        sideswipeLeftOut: {
+        'sideswipeLeftOut': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)', opacity: '0' },
         },
-        sideswipeTopIn: {
+        'sideswipeTopIn': {
           '0%': { transform: 'translateY(-100%)', },
           '100%': { transform: 'translateY(0)' },
         },
+        'l21': {
+          '100%': {
+            backgroundPosition: 'left'
+          }
+        },
       }
-
     },
   },
   plugins: [
@@ -96,9 +103,7 @@ const config: Config = {
     plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
       addVariant('span', '&>span');
       addVariant('p-span', '&>p>span');
-
     })
-
   ],
 };
 export default config;

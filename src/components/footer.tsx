@@ -2,9 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { FooterProps } from "../typings";
 import { marked } from "marked";
-import { FontAwesomeIconMapper } from "../utils/iconMapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
+import IconMapper from "../utils/iconMapper";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Footer = ({ data }: { data: FooterProps }) => {
   const {
@@ -26,22 +25,28 @@ const Footer = ({ data }: { data: FooterProps }) => {
                 href={url}
                 className="text-4xl text-white hover:text-brand-green"
               >
-                <FontAwesomeIconMapper icon={icon} />{" "}
+                <Icon icon={IconMapper[icon]} />
               </Link>
             </ul>
           ))}
         </li>
         <div
-          className="prose-span: span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
+          className="span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
           dangerouslySetInnerHTML={{
             __html: marked.parse(copyrightDate) as string,
           }}
         />
-        <div className="text-start">
+        <div className="flex self-center text-start md:w-11/12">
           <details className="flex cursor-pointer flex-col flex-nowrap items-start">
-            <summary className="text-start hover:font-bold">
-              <FontAwesomeIcon icon={faImage} /> Asset Attributions
+            <summary className="flex items-center gap-x-2 text-start text-brand-pink hover:font-bold">
+              <Icon icon="mingcute:pic-ai-fill" />
+              Asset Attributions (open me)
             </summary>
+            <span className="mb-4 mt-2 text-sm">
+              <i>I woke up like thiiiis, I woke up like this—</i> <br />
+              Actually nope, not this time! Here’s a list of asset resources I
+              used to create this marvelous non-commercial portfolio site:{" "}
+            </span>
             <div
               className="text-start text-sm prose-ul:list-inside prose-ul:list-disc"
               dangerouslySetInnerHTML={{

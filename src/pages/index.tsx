@@ -1,23 +1,26 @@
 import Hero from "@/src/components/hero";
-import AboutMe from "@/src/components/aboutAndSkills";
-import Work from "@/src/components/work";
-import Contact from "@/src/components/contact";
-
 import { DataProps } from "../typings";
+import LazyAbout from "../components/lazy/about";
+import LazyWork from "../components/lazy/work";
+import LazyContact from "../components/lazy/contact";
+import Head from "next/head";
 
 export default function Home({
   copyData,
 }: {
-  copyData: Omit<DataProps, "footer">;
+  copyData: Omit<DataProps, "footer" | "navigation">;
 }) {
   const { hero, about, contact, previousWork } = copyData;
 
   return (
     <>
+      <Head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />\{" "}
+      </Head>
       <Hero data={hero} />
-      <AboutMe data={about} />
-      <Work data={previousWork} />
-      <Contact data={contact} />
+      <LazyAbout data={about} />
+      <LazyWork data={previousWork} />
+      <LazyContact data={contact} />
     </>
   );
 }
