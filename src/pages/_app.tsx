@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "dotenv/config";
 import type { AppProps } from "next/app";
-import reportA11y from "../../a11yreporting";
+import reportA11y from "../../a11yreporting"; //make dev server only?
 import React from "react";
 import Head from "next/head";
 import Footer from "../components/footer";
@@ -16,9 +16,6 @@ import {
 import clsx from "clsx";
 import { DataProps } from "../typings";
 import sanitizeResponse from "../utils/sanitizeResponse";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
