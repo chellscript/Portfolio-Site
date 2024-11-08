@@ -15,7 +15,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />\{" "}
       </Head>
       <Hero data={hero} />
       <LazyAbout data={about} />
