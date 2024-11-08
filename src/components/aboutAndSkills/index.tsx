@@ -50,7 +50,7 @@ const AboutMe = ({ data }: { data: AboutSectionProps }) => {
   return (
     <div className="grid w-full auto-rows-min grid-cols-1 grid-rows-[repeat(2,auto)] flex-col items-center *:p-4 md:*:p-10">
       <section
-        id="about-me"
+        id="about"
         className={clsx(
           "flex w-full justify-center bg-orange-400/50 bg-repeat bg-blend-soft-light max-md:overflow-hidden *:lg:max-w-screen-lg",
           backgroundImage,

@@ -43,7 +43,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           </div>
         </div>
       </div>{" "}
-      <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
+      <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden peer-hover:bg-hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
         <div className="col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center max-lg:z-1 md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">
           <h1
             className="max-md:text-shadow-hero-mobile md:text-shadow m-0 flex flex-col items-center justify-between py-2 text-left text-white max-md:h-full max-md:text-center md:h-fit md:p-0 md:pl-10 md:text-start md:text-not-black lg:gap-y-2"
@@ -99,7 +99,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
             height={437}
             sizes="(max-width: 375px) 400px,(max-width: 768px) 400px,(min-width: 1024px) 389px"
             alt="Picture of Michi Winking!"
-            className="hero-image"
+            className="hero-image hidden"
           />
         </div>
       </div>

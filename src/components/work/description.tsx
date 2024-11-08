@@ -40,7 +40,7 @@ const ProjectDescription = ({
                   <Link
                     href={externalLink}
                     target="_blank"
-                    className="custom-link"
+                    className="description-link"
                   >
                     {externalLink}
                   </Link>
@@ -54,7 +54,7 @@ const ProjectDescription = ({
                   <Link
                     href={githubLink}
                     target="_blank"
-                    className="custom-link"
+                    className="description-link"
                   >
                     {githubLink}
                   </Link>

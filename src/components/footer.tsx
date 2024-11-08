@@ -31,17 +31,22 @@ const Footer = ({ data }: { data: FooterProps }) => {
           ))}
         </li>
         <div
-          className="prose-span: span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
+          className="span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
           dangerouslySetInnerHTML={{
             __html: marked.parse(copyrightDate) as string,
           }}
         />
-        <div className="text-start">
+        <div className="flex self-center text-start md:w-11/12">
           <details className="flex cursor-pointer flex-col flex-nowrap items-start">
-            <summary className="flex gap-x-2 text-start hover:font-bold">
+            <summary className="flex items-center gap-x-2 text-start text-brand-pink hover:font-bold">
               <Icon icon="mingcute:pic-ai-fill" />
-              Asset Attributions
+              Asset Attributions (open me)
             </summary>
+            <span className="mb-4 mt-2 text-sm">
+              <i>I woke up like thiiiis, I woke up like this—</i> <br />
+              Actually nope, not this time! Here’s a list of asset resources I
+              used to create this marvelous non-commercial portfolio site:{" "}
+            </span>
             <div
               className="text-start text-sm prose-ul:list-inside prose-ul:list-disc"
               dangerouslySetInnerHTML={{

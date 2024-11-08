@@ -19,21 +19,19 @@
     @apply my-4 font-blacker text-3xl md:my-5 lg:text-4xl;
   }
 
-  .custom-link {
-    @apply font-medium text-[#1FB1D8] underline decoration-brand-yellow decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out hover:font-bold;
+  a {
+    @apply text-sky-600;
   }
-
-  .custom-link:hover {
+  a:hover {
     @apply text-brand-purple decoration-brand-purple;
+  }
+  a:active {
+    @apply text-brand-pink decoration-brand-pink;
   }
 
   *:focus-visible,
   a:focus-visible {
-    @apply outline-none ring-2 ring-[#1FB1D8] ring-offset-2 ring-offset-pale;
-  }
-
-  .custom-link:active {
-    @apply text-brand-pink decoration-brand-pink;
+    @apply outline-none ring-2 ring-sky-600 ring-offset-2 ring-offset-pale;
   }
 
   section {
@@ -42,71 +40,12 @@
 }
 
 @layer utilities {
-  .max-app-width {
-    @apply md:max-w-screen-md lg:max-w-screen-lg;
-  }
-
-  .animation-paused {
-    animation-play-state: paused !important;
-  }
-
   .debug {
     border: solid 1px hotpink;
   }
 
-  .hire-emph {
-    @apply span:text-highlight p-2 text-center font-blacker text-2xl span:bg-brand-green/50;
-  }
-
-  .hero-image {
-    @apply object-cover object-top max-lg:max-w-[400px] max-sm:object-cover max-sm:object-top md:h-full md:object-contain md:object-bottom lg:h-5/6 lg:w-auto;
-  }
-  .project-cover-overlay {
-    @apply after:absolute after:inset-0 after:size-full after:bg-brand-purple/30 after:transition-colors after:duration-300 after:content-[''];
-  }
-
-  footer a {
-    @apply text-pink-500 underline hover:font-bold;
-  }
-
-  .subline {
-    @apply text-center font-alondra_drawn text-xl text-not-black max-md:text-center md:text-3xl;
-  }
-
-  .hero-hidden {
-    @apply pointer-events-none absolute opacity-0;
-  }
-  .hero-show {
-    @apply pointer-events-auto static opacity-100;
-  }
-}
-
-@layer components {
-  .timeline-dot {
-    @apply after:absolute after:-left-[7%] after:top-1/4 after:block after:size-5 after:-translate-x-1/2 after:rounded-3xl after:border-2 after:border-not-black after:content-[''] md:after:-top-8 md:after:left-1/2;
-  }
-
-  .outer-shadow-button {
-    @apply shadow-button shadow-not-black hover:shadow-button-hover hover:shadow-not-black;
-  }
-
-  .inner-shadow-button {
-    @apply shadow-inner shadow-gray-300/80;
-  }
-
-  .combined-shadow-button {
-    box-shadow:
-      inset -2px -4px 0px 0px rgb(209 213 219 / 0.7),
-      3px 5px 0px rgb(43, 61, 79);
-
-    &:hover {
-      box-shadow:
-        inset -2px -4px 0px 0px rgba(255, 255, 255, 0.7),
-        1px 5px 0px rgb(43, 61, 79);
-    }
-  }
-  .brick {
-    @apply border border-not-black px-3 py-1 align-middle text-2xl leading-loose md:text-3xl;
+  .animation-paused {
+    animation-play-state: paused !important;
   }
 
   .text-highlight {
@@ -123,13 +62,11 @@
       1px 1px 0px #1f2937;
   }
 
-  .cta-button {
-    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-blacker text-black;
-    background-color: var(--tw-bg-color);
+  .hero-hidden {
+    @apply pointer-events-none absolute !hidden;
   }
-
-  .hero-bullet {
-    @apply relative block after:absolute after:-left-8 after:top-1 after:size-6 after:bg-cover md:mb-2 md:ml-8 md:after:bg-[url("../../public/images/hero/bullet.svg")] md:after:content-[''];
+  .hero-show {
+    @apply pointer-events-auto static !block;
   }
 
   .loader {
@@ -140,5 +77,61 @@
   .loader::before {
     @apply bg-gradient-to-r from-white to-transparent bg-clip-text px-1 font-homevideo text-transparent text-white;
     background-image: linear-gradient(90deg, #fff 50%, #000 0);
+  }
+
+  .outer-shadow-button {
+    @apply shadow-button shadow-not-black hover:shadow-button-hover hover:shadow-not-black;
+  }
+
+  .combined-shadow-button {
+    box-shadow:
+      inset -2px -4px 0px 0px rgb(209 213 219 / 0.7),
+      3px 5px 0px rgb(43, 61, 79);
+
+    &:hover {
+      box-shadow:
+        inset -2px -4px 0px 0px rgba(255, 255, 255, 0.7),
+        1px 5px 0px rgb(43, 61, 79);
+    }
+  }
+
+  footer a {
+    @apply text-pink-500 underline hover:font-bold;
+  }
+
+  .description-link {
+    @apply font-medium underline decoration-brand-yellow decoration-2 underline-offset-4 transition-colors duration-300 ease-in-out hover:font-bold;
+  }
+
+  .max-app-width {
+    @apply md:max-w-screen-md lg:max-w-screen-lg;
+  }
+
+  .cta-button {
+    @apply outer-shadow-button flex w-fit grow flex-nowrap items-center justify-center gap-x-2 rounded-2xl border border-not-black p-2 font-blacker text-black;
+  }
+
+  .hire-emph {
+    @apply span:text-highlight p-2 text-center font-blacker text-2xl span:bg-brand-green/50;
+  }
+
+  .hero-image {
+    @apply object-cover object-top max-lg:max-w-[400px] max-sm:object-cover max-sm:object-top md:h-full md:object-contain md:object-bottom lg:h-5/6 lg:w-auto;
+  }
+
+  .subline {
+    @apply text-center font-alondra_drawn text-xl text-not-black max-md:text-center md:text-3xl;
+  }
+
+  .timeline-dot::after {
+    @apply absolute -left-[7%] top-1/4 block size-5 -translate-x-1/2 rounded-3xl border-2 border-not-black content-[''] md:-top-8 md:left-1/2;
+  }
+
+  .inner-shadow-button {
+    @apply shadow-inner shadow-gray-300/80;
+  }
+
+  .brick {
+    @apply border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
   }
 }
