@@ -50,7 +50,8 @@ const config: Config = {
       backgroundImage: {
         'skills-pattern': "url('/images/skills/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
-
+        'hero-hidden-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730927902/pattern_qlxyqg.svg')",
+        'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'"
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',

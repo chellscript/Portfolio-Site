@@ -1,14 +1,11 @@
-"use client";
-import { CompaniesDataProps } from "@/src/typings";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { CompaniesDataProps } from "@/src/typings";
 import { loadingBlur } from "./placeholder";
 import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Image from "next/image";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import ReactPlayer from "react-player";
 import clsx from "clsx";
 import { useState } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 type ImageMediaComponentProps = {
   media: string;
@@ -135,16 +132,9 @@ export const VideoMediaComponent = ({
   );
 };
 
-{
-  /* <p id="video-description" className="sr-only">
-        {description}
-      </p>
-    </> */
-}
-
 type CTAButtonProps = {
   onClick: () => void;
-  icon: IconProp;
+  icon: string;
   tipMessage: string;
 };
 
@@ -154,7 +144,7 @@ export const CTAButton = ({ onClick, icon, tipMessage }: CTAButtonProps) => (
       onClick={onClick}
       className="peer z-1 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-white p-4 shadow-inner shadow-gray-300/80 hover:translate-y-1 hover:scale-105 hover:shadow-none"
     >
-      <FontAwesomeIcon icon={icon} size="xl" className="text-not-black" />
+      <Icon icon={icon} className="scale-125 text-8xl text-not-black" />
     </button>
     <div className="text-highlight h-fit bg-brand-green text-center !font-homevideo text-lg opacity-0 peer-hover:opacity-100">
       {tipMessage}
@@ -162,39 +152,39 @@ export const CTAButton = ({ onClick, icon, tipMessage }: CTAButtonProps) => (
   </>
 );
 
-//TODO use when re-adding mobile navigation
-type MobNavButtionsProps = {
-  workData: CompaniesDataProps["projects"];
-  focusedProjectIndex: number;
-  previous: () => void;
-  next: () => void;
-};
+// //TODO use when re-adding mobile navigation
+// type MobNavButtionsProps = {
+//   workData: CompaniesDataProps["projects"];
+//   focusedProjectIndex: number;
+//   previous: () => void;
+//   next: () => void;
+// };
 
-export const MobileNavigationButtons = ({
-  workData,
-  focusedProjectIndex,
-  previous,
-  next,
-}: MobNavButtionsProps) => {
-  return (
-    <div className="flex w-1/2 flex-row items-center justify-between md:hidden">
-      <button
-        onClick={() => previous()}
-        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
-        aria-label="Previous Project"
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </button>
-      <span className="inline-block h-fit text-lg">
-        {focusedProjectIndex + 1}/{workData.length}
-      </span>
-      <button
-        className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
-        onClick={() => next()}
-        aria-label="Next Project"
-      >
-        <FontAwesomeIcon icon={faArrowRight} />
-      </button>
-    </div>
-  );
-};
+// export const MobileNavigationButtons = ({
+//   workData,
+//   focusedProjectIndex,
+//   previous,
+//   next,
+// }: MobNavButtionsProps) => {
+//   return (
+//     <div className="flex w-1/2 flex-row items-center justify-between md:hidden">
+//       <button
+//         onClick={() => previous()}
+//         className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+//         aria-label="Previous Project"
+//       >
+//         <Icon icon="mingcute:square-arrow-left-fill" />
+//       </button>
+//       <span className="inline-block h-fit text-lg">
+//         {focusedProjectIndex + 1}/{workData.length}
+//       </span>
+//       <button
+//         className="aspect-square rounded-full border border-not-black bg-white px-4 py-1 text-center text-lg text-not-black shadow-inner shadow-gray-300/80 active:bg-brand-green"
+//         onClick={() => next()}
+//         aria-label="Next Project"
+//       >
+//         <Icon icon="mingcute:square-arrow-right-fill" />
+//       </button>
+//     </div>
+//   );
+// };
