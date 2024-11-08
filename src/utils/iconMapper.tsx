@@ -1,39 +1,16 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
-import {
-  faFire,
-  faArrowPointer,
-  faBuilding,
-  faWandMagicSparkles,
-  IconDefinition,
-  faFileArrowDown,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ComponentProps } from "react";
+// For externally defined icons
 
 type IconMapper = {
-  [key: string]: IconDefinition;
+  [key: string]: string;
 };
 
 const IconMapper: IconMapper = {
-  faArrowPointer: faArrowPointer,
-  faFire: faFire,
-  faBuilding: faBuilding,
-  faWandMagicSparkles: faWandMagicSparkles,
-  github: faGithub,
-  "linkedin-in": faLinkedin,
-  "file-arrow-down": faFileArrowDown,
+  faArrowPointer: "tabler:pointer",
+  faFire: "mingcute:fire-fill",
+  faBuilding: "lucide:handshake",
+  faWandMagicSparkles: "mingcute:magic-hat-2-line",
+  github: "mdi:github",
+  "linkedin-in": "mdi:linkedin",
+  "file-arrow-down": "mingcute:file-download-fill",
 };
-
-export const FontAwesomeIconMapper = ({
-  icon,
-  className = "",
-  ...props
-}: {
-  icon: keyof IconMapper;
-  className?: string;
-} & Omit<ComponentProps<typeof FontAwesomeIcon>, "icon" | "className">) => {
-  return (
-    <FontAwesomeIcon icon={IconMapper[icon]} className={className} {...props} />
-  );
-};
+export default IconMapper;

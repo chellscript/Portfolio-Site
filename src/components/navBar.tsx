@@ -1,10 +1,9 @@
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavigationProps } from "../typings";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 function NavBar({ data: { list } }: { data: NavigationProps }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +23,12 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
         className={clsx(
           "text-nowrap rounded-full border border-indigo-950 px-4 py-2 md:hidden",
           isOpen
-            ? "outer-shadow-button w-32 bg-brand-green"
+            ? "outer-shadow-button w-full bg-brand-green"
             : "combined-shadow-button w-fit bg-white hover:bg-brand-green",
         )}
       >
         <span className="text-not-black">
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
+          <Icon icon={isOpen ? "mingcute:close-fill" : "mingcute:menu-fill"} />
         </span>
       </button>
       {list.map(({ key, label, url }) => (

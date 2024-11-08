@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-//TODO replace headlessui with ReactAria
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { ProjectsListProps } from "@/src/typings";
 import {
   CTAButton,
@@ -38,10 +36,10 @@ const ProjectMedia = ({
             media={media}
             alt={`Screenshot of ${name}`}
           />
-          <div className="absolute -bottom-8 right-0 z-[5] flex flex-row-reverse items-baseline gap-x-4 lg:bottom-0 lg:right-0 lg:translate-y-1/2">
+          <div className="absolute -bottom-8 right-0 z-[5] flex flex-row-reverse items-center gap-x-4 lg:bottom-0 lg:right-0 lg:translate-y-1/2">
             <CTAButton
-              tipMessage="View this larger"
-              icon={faMagnifyingGlass}
+              tipMessage="View larger image"
+              icon="mingcute:zoom-in-fill"
               onClick={() => setShowBigger(true)}
             />
           </div>

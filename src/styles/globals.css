@@ -72,6 +72,13 @@
   .subline {
     @apply text-center font-alondra_drawn text-xl text-not-black max-md:text-center md:text-3xl;
   }
+
+  .hero-hidden {
+    @apply pointer-events-none absolute opacity-0;
+  }
+  .hero-show {
+    @apply pointer-events-auto static opacity-100;
+  }
 }
 
 @layer components {
@@ -126,7 +133,7 @@
   }
 
   .loader {
-    @apply animate-l21 relative inline-block font-mono text-2xl font-bold;
+    @apply relative inline-block animate-l21 font-mono text-2xl font-bold;
     background: linear-gradient(90deg, #000 50%, #0000 0) right/200% 100%;
   }
 
