@@ -3,7 +3,6 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { homevideo } from "@/src/utils/fonts";
 import clsx from "clsx";
 import { CTAButton, ImageMediaComponent } from "./components";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 type ImageLightboxProps = {
   onClose: (arg: boolean) => void;
@@ -35,7 +34,7 @@ const ImageLightbox = ({ onClose, open, media, name }: ImageLightboxProps) => {
             <div className="flex w-full flex-col items-center gap-y-4">
               <CTAButton
                 tipMessage="Close"
-                icon={faXmark}
+                icon="mingcute:close-circle-fill"
                 onClick={() => onClose(false)}
               />
             </div>

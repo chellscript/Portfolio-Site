@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '425px'
+      },
       spacing: {
         128: '32rem',  // for 32rem (512px)
         144: '36rem',  // for 36rem (576px)
@@ -50,7 +53,8 @@ const config: Config = {
       backgroundImage: {
         'skills-pattern': "url('/images/skills/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
-
+        'hero-hidden-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730927902/pattern_qlxyqg.svg')",
+        'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'"
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',

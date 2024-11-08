@@ -1,10 +1,10 @@
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavigationProps } from "../typings";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import MenuMobile from "../utils/criticalIcons/mobileMenu";
 
 function NavBar({ data: { list } }: { data: NavigationProps }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +24,12 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
         className={clsx(
           "text-nowrap rounded-full border border-indigo-950 px-4 py-2 md:hidden",
           isOpen
-            ? "outer-shadow-button w-32 bg-brand-green"
+            ? "w-full bg-brand-green shadow-button"
             : "combined-shadow-button w-fit bg-white hover:bg-brand-green",
         )}
       >
-        <span className="text-not-black">
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
+        <span className="flex justify-center text-not-black hover:scale-150">
+          {isOpen ? <Icon icon="mingcute:close-fill" /> : <MenuMobile />}
         </span>
       </button>
       {list.map(({ key, label, url }) => (
@@ -38,7 +38,7 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
           key={key}
           onClick={() => setIsOpen(false)}
           className={clsx(
-            "hover:outer-shadow-button combined-shadow-button relative text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:top-12 md:block",
+            "hover:outer-shadow-button combined-shadow-button relative text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center text-not-black transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green hover:text-not-black md:top-12 md:block",
             isOpen ? "block" : "hidden",
           )}
         >
