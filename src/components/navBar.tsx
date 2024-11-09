@@ -3,8 +3,20 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavigationProps } from "../typings";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import MenuMobile from "../utils/criticalIcons/mobileMenu";
+import MenuMobile from "./criticalIcons/MobileMenu";
+import MenuClose from "./criticalIcons/MobileClose";
+
+export const getStaticProps = async () => {
+  const response = await fetch(`${process.env.CMS_URL}`, {
+    cache: "no-store",
+  });
+  const data = await response.json();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { footer, navigation, ...rest } = data;
+
+  return { props: rest };
+};
 
 function NavBar({ data: { list } }: { data: NavigationProps }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +34,19 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="menu"
         className={clsx(
-          "text-nowrap rounded-full border border-indigo-950 px-4 py-2 md:hidden",
+          "text-nowrap rounded-full border border-indigo-950 md:hidden",
           isOpen
             ? "w-full bg-brand-green shadow-button"
             : "combined-shadow-button w-fit bg-white hover:bg-brand-green",
         )}
       >
-        <span className="flex justify-center text-not-black hover:scale-150">
-          {isOpen ? <Icon icon="mingcute:close-fill" /> : <MenuMobile />}
+        <span
+          className={clsx(
+            "flex justify-center text-not-black",
+            isOpen ? "px-4 py-2" : "px-6 py-4",
+          )}
+        >
+          {isOpen ? <MenuClose /> : <MenuMobile />}
         </span>
       </button>
       {list.map(({ key, label, url }) => (
