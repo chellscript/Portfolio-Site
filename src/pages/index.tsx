@@ -1,12 +1,12 @@
 import Hero from "@/src/components/hero";
 import { DataProps } from "../typings";
-import LazyAbout from "../components/lazy/about";
-import LazyWork from "../components/lazy/work";
-import LazyContact from "../components/lazy/contact";
 import Head from "next/head";
 import sanitizeResponse from "../utils/sanitizeResponse";
 import NavBar from "../components/navBar";
-import LazyFooter from "../components/lazy/footer";
+import AboutMe from "../components/aboutAndSkills";
+import Work from "../components/work";
+import Contact from "../components/contact";
+import Footer from "../components/footer";
 
 export const getStaticProps = async () => {
   const response = await fetch(`${process.env.CMS_URL}`, {
@@ -31,10 +31,10 @@ export default function Home({ data }: { data: DataProps }) {
       </Head>
       <NavBar data={navigation} />
       <Hero data={hero} />
-      <LazyAbout data={about} />
-      <LazyWork data={previousWork} />
-      <LazyContact data={contact} />
-      <LazyFooter data={footer} />
+      <AboutMe data={about} />
+      <Work data={previousWork} />
+      <Contact data={contact} />
+      <Footer data={footer} />
     </>
   );
 }
