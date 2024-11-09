@@ -6,7 +6,7 @@ const ElementPlaceholder = ({
   loaderContent,
 }: {
   className?: string;
-  loaderContent: string;
+  loaderContent?: string;
 }) => {
   return (
     <div
@@ -15,7 +15,7 @@ const ElementPlaceholder = ({
         className,
       )}
     >
-      <p className={clsx("loader", loaderContent)} />
+      {loaderContent && <p className={clsx("loader", loaderContent)} />}
     </div>
   );
 };
