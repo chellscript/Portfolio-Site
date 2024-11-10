@@ -23,7 +23,11 @@ const ProjectDescription = ({
         <h3 className="m-0 break-words text-center">{name}</h3>
         {description ? (
           <>
-            <div className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty p-4 pt-0 scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80">
+            <div
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+              tabIndex={0}
+              className="prose max-h-40 w-full max-w-none flex-col overflow-y-auto overflow-x-hidden text-pretty p-4 pt-0 scrollbar scrollbar-track-brand-purple/40 scrollbar-thumb-brand-purple/80"
+            >
               <div
                 className="leading-normal marker:text-lg marker:text-brand-purple"
                 dangerouslySetInnerHTML={{
@@ -31,7 +35,7 @@ const ProjectDescription = ({
                 }}
               />
             </div>
-            <div className="w-full gap-y-4 space-y-2 self-end border-t border-dashed border-not-black/50 pt-2 prose-a:text-sky-600">
+            <div className="w-full gap-y-4 space-y-2 self-end border-t border-dashed border-not-black/50 pt-2">
               {externalLink && (
                 <div className="flex flex-row flex-wrap items-center gap-x-2">
                   <div className="inline-flex h-fit gap-x-1 bg-brand-yellow/50 font-homevideo text-sm">

@@ -24,6 +24,7 @@ const ReactionButtion = ({
   toggleBool: boolean;
 }) => (
   <Button
+    aria-label="reaction button"
     className="inner-shadow-button ease absolute -bottom-4 right-2 flex size-auto items-center justify-center gap-y-2 rounded-full border border-indigo-950 bg-pale px-4 py-1 text-center font-homevideo shadow-not-black/50"
     onClick={() => toggleFunction(!toggleBool)}
   >

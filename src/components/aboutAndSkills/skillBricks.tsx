@@ -23,10 +23,16 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
           className="m-0 object-cover max-lg:hidden"
           alt="Michi in a construction outfit holding a brick"
         />{" "}
-        <div className="flex w-full flex-row flex-wrap gap-3 justify-self-center">
+        <div aria-describedby="skills" className="sr-only">
+          {data}
+        </div>
+        <div
+          className="flex w-full flex-row flex-wrap gap-3 justify-self-center"
+          aria-hidden="true"
+        >
           {dataArray.map((skill, index) => (
             <span
-              className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center text-xl font-normal text-red-950 lg:text-2xl"
+              className="brick flex-1 content-center whitespace-nowrap border-2 border-red-950/30 bg-red-400 text-center font-homevideo text-lg text-red-950 md:text-xl lg:text-2xl"
               key={index}
             >
               {skill}
@@ -36,7 +42,7 @@ const SkillBricks = ({ data }: { data: AboutSectionProps["skills"] }) => {
       </div>
       <Link
         href="#portfolio"
-        className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black shadow-button md:w-5/6"
+        className="cta-button w-full bg-white p-4 text-center font-blacker text-xl text-not-black shadow-button hover:text-not-black md:w-5/6"
       >
         See the projects I used them in
         <span className="inner-shadow-button aspect-square rounded-full border border-orange-950 bg-white px-2 py-1">

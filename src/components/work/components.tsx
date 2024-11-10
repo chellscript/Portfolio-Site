@@ -136,11 +136,18 @@ type CTAButtonProps = {
   onClick: () => void;
   icon: string;
   tipMessage: string;
+  ariaLabel: string;
 };
 
-export const CTAButton = ({ onClick, icon, tipMessage }: CTAButtonProps) => (
+export const CTAButton = ({
+  onClick,
+  icon,
+  tipMessage,
+  ariaLabel,
+}: CTAButtonProps) => (
   <>
     <button
+      aria-label={ariaLabel}
       onClick={onClick}
       className="peer z-1 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-white p-4 shadow-inner shadow-gray-300/80 hover:translate-y-1 hover:scale-105 hover:shadow-none"
     >

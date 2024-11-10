@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { PreviousWorkSectionProps } from "@/src/typings";
+import { PreviousWorkSectionProps, ProjectsListProps } from "@/src/typings";
 import ProjectTabs from "./projectTabs";
 import ProjectList from "./projectList";
-import ProjectDisplay from "./display";
 import clsx from "clsx";
 import { marked } from "marked";
+import dynamic from "next/dynamic";
+
+const LazyProjectDisplay = dynamic<{
+  companyData: PreviousWorkSectionProps["companies"]["list"][number];
+  projectData: ProjectsListProps;
+  setSelectedProjectIndex: (arg: null) => void;
+}>(() => import("./display"));
 
 const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
   const {
@@ -71,7 +77,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
               />
             ))
           ) : (
-            <ProjectDisplay
+            <LazyProjectDisplay
               setSelectedProjectIndex={setSelectedProjectIndex}
               companyData={list[selectedCompanyIndex]}
               projectData={

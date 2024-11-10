@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { AboutSectionProps } from "@/src/typings";
 import clsx from "clsx";
 import { marked } from "marked";
@@ -19,7 +20,7 @@ const StoryCorner = ({
 
   return (
     <div className="flex flex-col items-center justify-stretch gap-4 md:flex-row md:items-start *:md:w-10/12 lg:gap-y-4 xl:items-start">
-      <div className="prose relative w-full max-w-none overflow-hidden rounded-md border border-not-black bg-pale p-4 shadow md:pb-8">
+      <div className="prose relative w-full max-w-none overflow-hidden rounded-md border border-not-black bg-pale p-4 shadow sm:max-md:w-9/12 md:w-full md:pb-8">
         <Image
           height={100}
           width={100}
@@ -45,12 +46,13 @@ const StoryCorner = ({
         />
         <div
           className="prose isolate z-1 max-w-none overflow-x-hidden rounded-md bg-white px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] max-lg:max-h-60 *:md:text-base lg:max-h-64"
+          tabIndex={0}
           dangerouslySetInnerHTML={{
             __html: marked.parse(data[0].content) as string,
           }}
         />
       </div>
-      <div className="prose relative w-full max-w-none rounded-md border border-not-black bg-pale p-4 shadow md:pb-8">
+      <div className="prose relative w-full max-w-none rounded-md border border-not-black bg-pale p-4 shadow sm:max-md:w-9/12 md:w-full md:pb-8">
         <h3
           className={clsx(
             "not-prose p-span:text-highlight isolate z-1 mb-4 max-lg:mx-auto max-lg:text-center lg:mr-auto lg:w-3/4 lg:text-start xl:w-full",
@@ -70,6 +72,7 @@ const StoryCorner = ({
 
         <div
           className="prose max-w-none overflow-x-hidden overflow-y-scroll rounded-md bg-white/80 px-4 py-1 scrollbar scrollbar-track-not-black/40 scrollbar-thumb-not-black/80 *:my-2 *:text-pretty *:text-justify *:text-[15px] max-lg:max-h-60 *:md:text-base lg:max-h-64"
+          tabIndex={0}
           dangerouslySetInnerHTML={{
             __html: marked.parse(data[1].content) as string,
           }}
