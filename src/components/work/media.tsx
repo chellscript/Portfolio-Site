@@ -40,6 +40,7 @@ const ProjectMedia = ({
             <CTAButton
               tipMessage="View larger image"
               icon="mingcute:zoom-in-fill"
+              ariaLabel="View Large Image"
               onClick={() => setShowBigger(true)}
             />
           </div>

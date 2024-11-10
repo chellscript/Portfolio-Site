@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import "dotenv/config";
 import type { AppProps } from "next/app";
-import reportA11y from "../../a11yreporting"; //make dev server only?
 import React from "react";
 import Head from "next/head";
 import {
@@ -38,7 +37,5 @@ function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
-reportA11y(React);
 
 export default App;

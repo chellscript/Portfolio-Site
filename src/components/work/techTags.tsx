@@ -16,13 +16,13 @@ const TechTags = ({ limit, tagsString }: TechTagsProps) => {
       {displayTags.map((item, index) => (
         <div
           key={index}
-          className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 text-sm"
+          className="size-fit rounded-lg border border-not-black bg-brand-blue/80 px-2 font-homevideo text-sm"
         >
           {item}
         </div>
       ))}
       {limit && limit < tagArray.length && (
-        <div className="size-fit rounded-lg border border-not-black bg-brand-pink px-2 text-sm font-bold text-white">
+        <div className="size-fit rounded-lg border border-not-black bg-[#8F5C8F] px-2 font-homevideo text-sm font-bold text-white">
           {Number(tagArray.length - limit)}+ more
         </div>
       )}

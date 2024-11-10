@@ -65,10 +65,10 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
               </span>
             </span>
             <span className="inline-block w-fit text-[1.75rem] text-white md:whitespace-nowrap lg:text-4xl">
-              <span className="block gap-x-2 xs:flex xs:items-baseline max-xs:[&_svg]:hidden">
+              <span className="block gap-x-1 xs:flex xs:items-baseline max-xs:[&_svg]:hidden">
                 <HeroBullet /> Front End Developer
               </span>
-              <span className="block gap-x-2 xs:flex xs:items-baseline max-xs:[&_svg]:hidden">
+              <span className="block gap-x-1 xs:flex xs:items-baseline max-xs:[&_svg]:hidden">
                 <HeroBullet />
                 <span>
                   User-Empathy Enthusiast, <br />

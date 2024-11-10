@@ -56,44 +56,45 @@ const config: Config = {
         'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'"
       },
       animation: {
-        'sideswipe-right-in': 'sideswipeRightIn 0.5s linear forwards',
-        'sideswipe-right-out': 'sideswipeRightOut 0.5s linear forwards',
-        'sideswipe-left-in': 'sideswipeLeftIn 0.5s linear forwards',
+        'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',
+        'sideswipe-right-out': 'sideswipeRightOut 0.5s linear  forwards',
+        'sideswipe-left': 'sideswipeLeftIn 0.5s linear forwards',
         'sideswipe-left-out': 'sideswipeLeftOut 0.5s linear forwards',
         'sideswipe-top-in': 'sideswipeTopIn 0.2s linear forwards',
-        'marquee': 'marquee 10s linear infinite',
-        'l21': 'l21 2s infinite linear',
+        marquee: 'marquee 10s linear infinite',
+        'tilt': 'tilt 1s ease-in-out infinite',
       },
       keyframes: {
-        'marquee': {
+        marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-100% - 4px))' },
-        },
-        'sideswipeRightIn': {
+        }
+        ,
+        sideswipeRightIn: {
           '0%': { transform: 'translateX(100%)', },
           '100%': { transform: 'translateX(0)' },
         },
-        'sideswipeRightOut': {
+        sideswipeRightOut: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(100%)', opacity: '0' },
         },
-        'sideswipeLeftIn': {
+        sideswipeLeftIn: {
           '0%': { transform: 'translateX(-100%)', },
           '100%': { transform: 'translateX(0)' },
         },
-        'sideswipeLeftOut': {
+        sideswipeLeftOut: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)', opacity: '0' },
         },
-        'sideswipeTopIn': {
+        sideswipeTopIn: {
           '0%': { transform: 'translateY(-100%)', },
           '100%': { transform: 'translateY(0)' },
         },
-        'l21': {
-          '100%': {
-            backgroundPosition: 'left'
-          }
-        },
+
+        tilt: {
+          '0%, 100%': { transform: 'rotate(-5deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+        }
       }
     },
   },
