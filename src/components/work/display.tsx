@@ -38,7 +38,10 @@ const ProjectDisplay = ({
         className="text-shadow cta-button col-span-1 row-span-1 self-end text-nowrap rounded-lg border bg-brand-purple p-2 text-xl uppercase !text-white hover:translate-y-1 max-lg:w-full lg:ml-auto lg:w-1/2"
         onClick={() => setSelectedProjectIndex(null)}
       >
-        <Icon icon="mingcute:large-arrow-left-fill" className="text-2xl" />
+        <Icon
+          icon="mingcute:exit-door-fill"
+          className="-scale-x-100 text-2xl"
+        />
         Go back
       </button>
     </div>
