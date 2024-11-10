@@ -61,13 +61,13 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
           <li
             key={key}
             className={clsx(
-              "hover:outer-shadow-button combined-shadow-button relative text-nowrap rounded-full border border-indigo-950 bg-white px-4 py-2 text-center transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:top-12 md:block",
+              "hover:outer-shadow-button combined-shadow-button relative text-nowrap rounded-full border border-indigo-950 bg-white text-center transition-shadow hover:translate-y-1 hover:border-white/50 hover:bg-brand-green md:top-12 md:block",
               isOpen ? "block" : "hidden",
             )}
           >
             <Link
               href={`#${url}`}
-              className="text-not-black hover:text-not-black active:text-slate-600"
+              className="block size-full px-4 py-2 text-not-black hover:text-not-black active:text-slate-600"
               onClick={() => setIsOpen(false)}
             >
               {label}
