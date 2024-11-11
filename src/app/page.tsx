@@ -1,13 +1,16 @@
 import Hero from "@/src/components/hero";
-import { DataProps } from "../typings";
 import Head from "next/head";
 import AboutMe from "../components/aboutAndSkills";
 import Work from "../components/work";
 import Contact from "../components/contact";
-import getCopyData from "../utils/getCopyData";
+import getCopyData, { ReturnedResponse } from "../utils/getCopyData";
 
 export default async function Home() {
-  const data: DataProps = await getCopyData();
+  const { data, error }: ReturnedResponse = await getCopyData();
+
+  if (error) {
+    return;
+  }
 
   const { hero, about, contact, previousWork } = data;
 

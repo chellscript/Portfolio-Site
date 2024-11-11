@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import DOMPurify from "isomorphic-dompurify";
 
+// added to allow links to open externally
+DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+  if ("target" in node) {
+    node.setAttribute("target", "_blank");
+    node.setAttribute("rel", "noopener");
+  }
+});
+
 // Function to sanitize an object or string
 function sanitizeResponse(data) {
   if (data == null) {

@@ -1,17 +1,25 @@
 import { DataProps } from "../typings";
 import sanitizeResponse from "./sanitizeResponse";
 
-const getCopyData = async () => {
-  //TODO add try catch to handle errors
+export type ReturnedResponse = {
+  data: DataProps | null;
+  error: null | Error;
+};
 
-  const response = await fetch(`${process.env.CMS_URL}`, {
-    cache: "no-store",
-  });
-
-  const unsafeJSON = await response.json();
-  const { data }: { data: DataProps } = sanitizeResponse(unsafeJSON);
-
-  return data;
+const getCopyData = async (): Promise<ReturnedResponse> => {
+  try {
+    const response = await fetch(`${process.env.CMS_URL}`, {
+      cache: "no-store",
+    });
+    if (!response.ok) {
+      throw new Error("Data not found");
+    }
+    const unsafeJSON = await response.json();
+    const { data }: { data: DataProps } = sanitizeResponse(unsafeJSON);
+    return { data, error: null };
+  } catch (error) {
+    return { data: null, error };
+  }
 };
 
 export default getCopyData;
