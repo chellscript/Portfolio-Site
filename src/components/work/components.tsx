@@ -1,4 +1,5 @@
-// import { CompaniesDataProps } from "@/src/typings";
+"use client";
+
 import { loadingBlur } from "./placeholder";
 import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Image from "next/image";
