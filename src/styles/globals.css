@@ -122,6 +122,6 @@
   }
 
   .brick {
-    @apply border border-not-black px-3 py-1 text-2xl leading-loose md:text-3xl;
+    @apply border border-not-black px-3 py-1 text-xl leading-loose md:text-2xl;
   }
 }
