@@ -14,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import getCopyData from "../utils/getCopyData";
+import ErrorUI from "../components/errorUI";
 
 export const metaData: Metadata = {
   title: "ChellScript",
@@ -47,9 +48,8 @@ export const metaData: Metadata = {
 };
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
-  const data = await getCopyData();
+  const { error, data } = await getCopyData();
 
-  const { navigation, footer } = data;
   return (
     <html lang="en">
       <body
@@ -62,10 +62,17 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
           "font-sans antialiased",
         )}
       >
-        <NavBar data={navigation} />
-        {children}
-        <Footer data={footer} />
-        <Analytics />
+        {error ? (
+          <ErrorUI error={error} />
+        ) : (
+          <>
+            {" "}
+            <NavBar data={data.navigation} />
+            {children}
+            <Footer data={data.footer} />
+            <Analytics />
+          </>
+        )}
       </body>
     </html>
   );
