@@ -78,31 +78,28 @@ const TimelineItem = ({
                 isActive ? "mb-1 shadow-not-black" : "group-hover:mb-1",
               )}
             >
-              <p
+              <h4
                 className={clsx(
-                  "m-0 text-center font-blacker md:text-base lg:text-xl",
+                  "m-0 text-center font-blacker max-md:break-all md:text-base lg:text-xl",
                   isActive && "before:absolute md:text-2xl",
                 )}
               >
                 {title}
-              </p>
-              {role && (
-                <p className="m-0 text-center font-alondra_drawn font-bold md:inline-block md:text-lg">
-                  {role}
-                </p>
-              )}
+                {role && (
+                  <span className="m-0 block text-center font-alondra_drawn font-bold md:inline-block md:text-lg">
+                    {role}
+                  </span>
+                )}
+              </h4>
             </div>
           </div>
         </div>
       </button>
-
       <div
         id={a11yString}
         className={clsx(
-          "flex flex-col items-center gap-y-2",
-          isActive
-            ? "pointer-events-auto static h-auto border border-not-black bg-white p-2 shadow-card-hover shadow-orange-400/80 *:opacity-100"
-            : "pointer-events-none absolute inset-0 h-0 *:opacity-0",
+          "relative flex flex-col flex-wrap items-center gap-y-2 overflow-hidden border border-not-black bg-white p-2 shadow-card-hover shadow-orange-400/80",
+          isActive ? "pointer-events-auto block" : "pointer-events-none hidden",
         )}
       >
         {image && (
@@ -113,7 +110,7 @@ const TimelineItem = ({
             alt={alt}
             sizes="150px"
             className={clsx(
-              "self-center rounded-lg bg-opacity-15 object-contain max-md:size-1/4",
+              "self-center rounded-lg bg-opacity-15 object-contain max-md:size-1/2",
               buttonColors[type],
             )}
             placeholder="blur"
@@ -122,7 +119,7 @@ const TimelineItem = ({
         )}
         <div
           className={clsx(
-            "prose max-h-52 max-w-none overflow-scroll overflow-y-scroll text-pretty border border-orange-300 bg-opacity-50 p-1 text-center text-sm scrollbar-track-orange-200 scrollbar-thumb-orange-400/80 md:text-base",
+            "max-h-52 overflow-y-auto overflow-x-hidden text-pretty border border-orange-300 bg-opacity-50 p-1 text-center text-sm scrollbar scrollbar-track-orange-200 scrollbar-thumb-orange-400/80 prose-a:underline md:text-base",
             buttonColors[type],
           )}
           dangerouslySetInnerHTML={{
@@ -136,7 +133,7 @@ const TimelineItem = ({
 
 const TimeLine = ({ data, activeDate, setActiveDate }: TimeLineProps) => {
   return (
-    <div className="relative grid size-full w-full auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center max-md:max-w-sm md:auto-cols-fr md:grid-flow-col md:gap-x-4">
+    <div className="relative grid size-full w-full auto-cols-max grid-flow-row grid-cols-1 justify-end gap-y-4 self-center max-md:max-w-lg md:auto-cols-fr md:grid-flow-col md:gap-x-4">
       <div
         className="absolute left-2 h-full w-1 bg-gradient-to-b from-not-black from-90% md:left-0 md:h-1 md:w-full md:bg-gradient-to-r"
         role="group"
