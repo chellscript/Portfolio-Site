@@ -1,9 +1,28 @@
 import Hero from "@/src/components/hero";
-import Head from "next/head";
 import AboutMe from "../components/aboutAndSkills";
 import Work from "../components/work";
 import Contact from "../components/contact";
+import { Metadata } from "next";
 import getCopyData, { ReturnedResponse } from "../utils/getCopyData";
+
+export const metadata: Metadata = {
+  title: "ChellScript",
+  description:
+    "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
+  openGraph: {
+    type: "website",
+    url: "https://chellscript.dev",
+    title: "ChellScript",
+    description:
+      "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
+  },
+  twitter: {
+    title: "ChellScript",
+    card: "summary_large_image",
+    description:
+      "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
+  },
+};
 
 export default async function Home() {
   const { data, error }: ReturnedResponse = await getCopyData();
@@ -16,9 +35,6 @@ export default async function Home() {
 
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://res.cloudinary.com" />\{" "}
-      </Head>
       <Hero data={hero} />
       <AboutMe data={about} />
       <Work data={previousWork} />

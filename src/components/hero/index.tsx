@@ -4,10 +4,10 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import HeroCards from "./heroCards";
 import { HeroSectionProps } from "@/src/typings";
-import arrow from "/public/images/hero/arrow.svg";
 import myself from "/public/images/hero/myself_exnvyb.webp";
 import myselfWink from "/public/images/hero/myself-wink_sotgys.webp";
 import HeroBullet from "@/src/components/criticalIcons/HeroBullet";
+import Arrow from "../criticalIcons/Arrow";
 
 const Hero = ({ data }: { data: HeroSectionProps }) => {
   const { cards } = data;
@@ -34,18 +34,14 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           ref={ref}
           className="mt-6 flex items-end justify-end font-homevideo text-lg peer-hover:hidden"
         >
-          <Image
-            src={arrow}
-            className="relative bottom-5 left-2 -z-1 object-cover"
-            alt=""
-          />
+          <Arrow />
           <div className="text-highlight bg-brand-green/80 text-center text-xl lg:text-xl">
             <span className="md:hidden">Press the cards above...</span>
             <span className="max-md:hidden">Hover over the cards above...</span>
           </div>
         </div>
       </div>{" "}
-      <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-hidden peer-hover:bg-blend-color-dodge md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
+      <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-hidden peer-hover:bg-blend-color-burn md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
         <div className="col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center max-lg:z-1 md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">
           <h1 className="sr-only">
             Hey, Beautiful World! My name is Michi and I am Front End Developer,
