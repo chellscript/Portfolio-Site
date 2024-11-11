@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -5,18 +7,6 @@ import { useMediaQuery } from "react-responsive";
 import { NavigationProps } from "../typings";
 import MenuMobile from "./criticalIcons/MobileMenu";
 import MenuClose from "./criticalIcons/MobileClose";
-
-export const getStaticProps = async () => {
-  const response = await fetch(`${process.env.CMS_URL}`, {
-    cache: "no-store",
-  });
-  const data = await response.json();
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { footer, navigation, ...rest } = data;
-
-  return { props: rest };
-};
 
 function NavBar({ data: { list } }: { data: NavigationProps }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +57,7 @@ function NavBar({ data: { list } }: { data: NavigationProps }) {
           >
             <Link
               href={`#${url}`}
-              className="block size-full px-4 py-2 text-not-black hover:text-not-black active:text-slate-600"
+              className="block size-full px-4 py-2 text-not-black no-underline hover:text-not-black active:text-slate-600"
               onClick={() => setIsOpen(false)}
             >
               {label}

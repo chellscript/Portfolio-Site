@@ -40,10 +40,6 @@
 }
 
 @layer utilities {
-  .debug {
-    border: solid 1px hotpink;
-  }
-
   .animation-paused {
     animation-play-state: paused !important;
   }
