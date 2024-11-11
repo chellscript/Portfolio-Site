@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "sh sitemap.sh",
-    "start": "next start",
+    "start": "PORT=8080 next start",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{js,tsx}\""
   },

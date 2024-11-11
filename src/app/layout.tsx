@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import "dotenv/config";
 import clsx from "clsx";
-import { Metadata } from "next";
 import { ReactNode } from "react";
 import {
   pt_sans,
@@ -15,37 +14,6 @@ import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import getCopyData from "../utils/getCopyData";
 import ErrorUI from "../components/errorUI";
-
-export const metaData: Metadata = {
-  title: "ChellScript",
-  description:
-    "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
-  openGraph: {
-    type: "website",
-    url: "https://chellscript.dev",
-    title: "ChellScript",
-    description:
-      "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
-    images: [
-      {
-        url: "https://chellscript.dev/images/opengraph-image.png",
-      },
-    ],
-  },
-  twitter: {
-    title: "ChellScript",
-    card: "summary_large_image",
-    description:
-      "Portfolio site for the Front-End Dev with user empathy superpowers. I create intuitive, enjoyable and accessible experiences that actually make sense, especially for humans that use them.",
-    images: [
-      {
-        url: "https://chellscript.dev/images/twitter-image.png",
-      },
-    ],
-  },
-
-  manifest: "/favicon/site.webmanifest",
-};
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   const { error, data } = await getCopyData();
@@ -63,10 +31,9 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
         )}
       >
         {error ? (
-          <ErrorUI error={error} />
+          <ErrorUI />
         ) : (
           <>
-            {" "}
             <NavBar data={data.navigation} />
             {children}
             <Footer data={data.footer} />
