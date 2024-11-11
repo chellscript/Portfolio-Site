@@ -50,10 +50,13 @@ const config: Config = {
         inner: 'inset -2px -4px 0px 0px '
       },
       backgroundImage: {
+        'about-pattern': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730911237/pattern_h02tvc.svg')",
         'skills-pattern': "url('/images/skills/pattern.svg')",
         'contact-pattern': "url('/images/contact/pattern.svg')",
         'hero-hidden': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730927902/pattern_qlxyqg.svg')",
-        'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'"
+        'hero-bg': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730928204/background_fpx9rj.svg'",
+        'work-pattern': "url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730911301/pattern_cbhxxo.svg')"
+
       },
       animation: {
         'sideswipe-right': 'sideswipeRightIn 0.5s linear forwards',

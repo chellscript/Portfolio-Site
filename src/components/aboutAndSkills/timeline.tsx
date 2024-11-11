@@ -33,7 +33,7 @@ const TimelineItem = ({
   setActiveDate,
 }: TimelineItem) => {
   const { title, role, date, content, type, image, alt } = data;
-  const a11yString = `'${title}' description`.replace(/ /g, "_");
+  const a11yString = `'${title}' description`.replace(/ /g, "-");
 
   return (
     <div
@@ -60,7 +60,7 @@ const TimelineItem = ({
           <div
             className={clsx(
               !isActive &&
-                "hover:animate-tilt rounded-lg hover:shadow-card-hover hover:shadow-orange-400/50",
+                "rounded-lg hover:animate-tilt hover:shadow-card-hover hover:shadow-orange-400/50",
             )}
           >
             <p
