@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useMemo } from "react";
 import TechTags from "./techTags";
 import clsx from "clsx";
