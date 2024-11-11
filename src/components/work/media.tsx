@@ -7,6 +7,7 @@ import {
 } from "./components";
 import { MediaPlaceholder } from "./placeholder";
 import ImageLightbox from "./ImageLightbox";
+import { useClose } from "@headlessui/react";
 
 const ProjectMedia = ({
   media,
@@ -19,6 +20,7 @@ const ProjectMedia = ({
   const [showBigger, setShowBigger] = useState(false);
 
   let renderedComponent;
+  const close = useClose();
 
   if (!media || !["image", "video"].includes(mediaType)) {
     renderedComponent = <MediaPlaceholder />;
@@ -40,13 +42,17 @@ const ProjectMedia = ({
             <CTAButton
               tipMessage="View larger image"
               icon="mingcute:zoom-in-fill"
+              ariaLabel="View Large Image"
               onClick={() => setShowBigger(true)}
             />
           </div>
           {showBigger && (
             <ImageLightbox
-              open={showBigger}
-              onClose={() => setShowBigger(false)}
+              isOpen={showBigger}
+              onClose={() => {
+                close();
+                setShowBigger(false);
+              }}
               media={media}
               name={name}
             />

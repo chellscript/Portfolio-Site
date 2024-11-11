@@ -18,18 +18,19 @@ const Footer = ({ data }: { data: FooterProps }) => {
   return (
     <footer className="flex w-full flex-col flex-wrap items-center gap-2 gap-y-6 bg-not-black p-4 text-center text-white">
       <div className="flex flex-col gap-y-2">
-        <li className="flex justify-center gap-x-4">
+        <ul className="flex justify-center gap-x-4">
           {list.map(({ key, icon, url }) => (
-            <ul key={key}>
+            <li key={key}>
               <Link
+                aria-label={`${key} Link`}
                 href={url}
                 className="text-4xl text-white hover:text-brand-green"
               >
                 <Icon icon={IconMapper[icon]} />
               </Link>
-            </ul>
+            </li>
           ))}
-        </li>
+        </ul>
         <div
           className="span:text-lg p-span:font-garden_delight p-span:text-brand-yellow"
           dangerouslySetInnerHTML={{

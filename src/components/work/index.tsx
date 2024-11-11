@@ -1,10 +1,17 @@
-import React, { useState } from "react";
-import { PreviousWorkSectionProps } from "@/src/typings";
+import React, { Fragment, useState } from "react";
+import { PreviousWorkSectionProps, ProjectsListProps } from "@/src/typings";
 import ProjectTabs from "./projectTabs";
 import ProjectList from "./projectList";
-import ProjectDisplay from "./display";
 import clsx from "clsx";
 import { marked } from "marked";
+import dynamic from "next/dynamic";
+import { TabGroup, TabList, TabPanels } from "@headlessui/react";
+
+const LazyProjectDisplay = dynamic<{
+  companyData: PreviousWorkSectionProps["companies"]["list"][number];
+  projectData: ProjectsListProps;
+  setSelectedProjectIndex: (arg: null) => void;
+}>(() => import("./display"));
 
 const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
   const {
@@ -23,15 +30,19 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
     setSelectedProjectIndex(null);
   };
 
-  const backgroundImage =
-    "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730911301/pattern_cbhxxo.svg')]";
-
   return (
     <section
       id="portfolio"
       className="flex justify-center bg-brand-purple/50 p-6 md:p-10"
     >
-      <div className="max-app-width flex w-full flex-col justify-items-center">
+      <TabGroup
+        manual
+        className="max-app-width flex w-full flex-col justify-items-center"
+        selectedIndex={selectedCompanyIndex}
+        onChange={(index) => {
+          updateComponentView(index);
+        }}
+      >
         <h2 className="text-center">{title}</h2>
         <div
           className="subline"
@@ -39,39 +50,32 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
             __html: marked.parse(subline, { async: false }),
           }}
         />
-        <div
-          className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start"
-          role="tablist"
-        >
+        <TabList className="mt-5 flex flex-row place-items-end gap-x-2 self-start justify-self-start">
           <ProjectTabs
             data={list}
             selectedCompanyIndex={selectedCompanyIndex}
-            updateComponentView={updateComponentView}
           />
-        </div>
-        <div
-          className={clsx(
-            "relative z-1 mb-5 overflow-hidden rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6",
-            backgroundImage,
-          )}
-        >
+        </TabList>
+        <div className="bg-work-pattern relative z-1 mb-5 overflow-hidden rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
           {selectedProjectIndex === null ? (
-            list.map((company, index) => (
-              <ProjectList
-                className={clsx(
-                  "transition-all duration-500 ease-in-out",
-                  selectedCompanyIndex === index
-                    ? "pointer-events-auto static animate-sideswipe-top-in opacity-100"
-                    : "pointer-events-none absolute inset-0 opacity-0",
-                )}
-                aria-hidden={selectedCompanyIndex !== index}
-                key={index}
-                data={company.projects}
-                setSelectedProjectIndex={setSelectedProjectIndex}
-              />
-            ))
+            <TabPanels as={Fragment}>
+              {list.map((company, index) => (
+                <ProjectList
+                  key={index}
+                  className={clsx(
+                    "transition-all duration-500 ease-in-out",
+                    selectedCompanyIndex === index
+                      ? "pointer-events-auto static animate-sideswipe-top-in opacity-100"
+                      : "pointer-events-none absolute inset-0 opacity-0",
+                  )}
+                  isSelected={index === selectedCompanyIndex}
+                  data={company.projects}
+                  setSelectedProjectIndex={setSelectedProjectIndex}
+                />
+              ))}
+            </TabPanels>
           ) : (
-            <ProjectDisplay
+            <LazyProjectDisplay
               setSelectedProjectIndex={setSelectedProjectIndex}
               companyData={list[selectedCompanyIndex]}
               projectData={
@@ -80,7 +84,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
             />
           )}
         </div>
-      </div>
+      </TabGroup>
     </section>
   );
 };

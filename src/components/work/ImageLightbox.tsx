@@ -6,23 +6,28 @@ import { CTAButton, ImageMediaComponent } from "./components";
 
 type ImageLightboxProps = {
   onClose: (arg: boolean) => void;
-  open: boolean;
+  isOpen: boolean;
   media: string;
   name: string;
 };
 
-const ImageLightbox = ({ onClose, open, media, name }: ImageLightboxProps) => {
+const ImageLightbox = ({
+  onClose,
+  isOpen,
+  media,
+  name,
+}: ImageLightboxProps) => {
   return (
-    <Dialog open={open} onClose={onClose} className="relative z-50 h-dvh">
+    <Dialog open={isOpen} onClose={onClose} className="relative z-50 h-dvh">
       <div className="fixed inset-0 flex w-screen bg-not-black/90">
         <DialogPanel
+          transition
           className={clsx(
             "relative flex h-screen w-screen flex-col items-center justify-center",
             homevideo.variable,
           )}
         >
           <div className="fixed left-1/2 top-1/2 flex w-[95dvw] -translate-x-1/2 -translate-y-1/2 flex-col gap-y-4 lg:max-w-[70dvw]">
-            {/* //TODO switch to react aria to allow close by esc */}
             <ImageMediaComponent
               width={1920}
               height={1080}
@@ -33,6 +38,7 @@ const ImageLightbox = ({ onClose, open, media, name }: ImageLightboxProps) => {
             />
             <div className="flex w-full flex-col items-center gap-y-4">
               <CTAButton
+                ariaLabel="Close Lightbox"
                 tipMessage="Close"
                 icon="mingcute:close-circle-fill"
                 onClick={() => onClose(false)}
