@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Fragment, useState } from "react";
 import { PreviousWorkSectionProps, ProjectsListProps } from "@/src/typings";
 import ProjectTabs from "./projectTabs";
@@ -56,7 +58,7 @@ const Work = ({ data }: { data: PreviousWorkSectionProps }) => {
             selectedCompanyIndex={selectedCompanyIndex}
           />
         </TabList>
-        <div className="bg-work-pattern relative z-1 mb-5 overflow-hidden rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
+        <div className="relative z-1 mb-5 overflow-hidden rounded-md rounded-l-none border-t-[0.5px] bg-pale bg-work-pattern bg-repeat px-4 py-6 bg-blend-normal shadow shadow-not-black md:p-6">
           {selectedProjectIndex === null ? (
             <TabPanels as={Fragment}>
               {list.map((company, index) => (
