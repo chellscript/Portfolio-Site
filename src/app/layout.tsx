@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import "dotenv/config";
-import type { AppProps } from "next/app";
-import React from "react";
-import Head from "next/head";
+import clsx from "clsx";
+import { Metadata } from "next";
+import { ReactNode } from "react";
 import {
   pt_sans,
   homevideo,
@@ -10,10 +10,10 @@ import {
   alondra_drawn,
   garden_delight,
 } from "../utils/fonts";
-import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Metadata } from "next";
+import NavBar from "../components/navBar";
+import Footer from "../components/footer";
+import getCopyData from "../utils/getCopyData";
 
 export const metaData: Metadata = {
   title: "ChellScript",
@@ -42,32 +42,17 @@ export const metaData: Metadata = {
       },
     ],
   },
-  //   {
-  //     rel: "icon",
-  //     href: "/favicon.ico", // Path to your favicon
-  //     sizes: "16x16",
-  //   },
-  //   {
-  //     rel: "icon",
-  //     href: "/icon-192x192.png", // Path to a 192x192 icon
-  //     sizes: "192x192",
-  //   },
-  //   {
-  //     rel: "icon",
-  //     href: "/icon-512x512.png", // Path to a 512x512 icon
-  //     sizes: "512x512",
-  //   },
-  // ],
+
   manifest: "/favicon/site.webmanifest",
 };
 
-function App({ Component, pageProps }: AppProps) {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
+  const data = await getCopyData();
+
+  const { navigation, footer } = data;
   return (
-    <>
-      <Head>
-        <title>ChellScript</title>
-      </Head>
-      <main
+    <html lang="en">
+      <body
         className={clsx(
           pt_sans.variable,
           homevideo.variable,
@@ -77,12 +62,13 @@ function App({ Component, pageProps }: AppProps) {
           "font-sans antialiased",
         )}
       >
-        <Component {...pageProps} />
+        <NavBar data={navigation} />
+        {children}
+        <Footer data={footer} />
         <Analytics />
-        <SpeedInsights />
-      </main>
-    </>
+      </body>
+    </html>
   );
-}
+};
 
-export default App;
+export default RootLayout;

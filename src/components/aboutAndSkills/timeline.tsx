@@ -122,7 +122,7 @@ const TimelineItem = ({
         )}
         <div
           className={clsx(
-            "prose max-h-52 max-w-none overflow-scroll overflow-y-scroll text-pretty border border-orange-300 bg-opacity-50 p-1 text-center text-sm scrollbar-track-orange-200 scrollbar-thumb-orange-400/80 md:text-base",
+            "prose max-h-52 max-w-none overflow-y-scroll text-pretty border border-orange-300 bg-opacity-50 p-1 text-center text-sm scrollbar-track-orange-200 scrollbar-thumb-orange-400/80 md:text-base",
             buttonColors[type],
           )}
           dangerouslySetInnerHTML={{
