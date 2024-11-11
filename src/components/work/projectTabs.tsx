@@ -2,39 +2,28 @@ import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 import { PreviousWorkSectionProps } from "../../typings";
+import { Tab } from "@headlessui/react";
 
 type ProjectTabsProps = {
   data: PreviousWorkSectionProps["companies"]["list"];
   selectedCompanyIndex: number;
-  updateComponentView: (arg: number) => void;
 };
 
-const backgroundImage =
-  "bg-[url('https://res.cloudinary.com/michasaportfolio/image/upload/v1730911301/pattern_cbhxxo.svg')]";
-
-const ProjectTabs = ({
-  data,
-  selectedCompanyIndex,
-  updateComponentView,
-}: ProjectTabsProps) =>
+const ProjectTabs = ({ data, selectedCompanyIndex }: ProjectTabsProps) =>
   data.map(({ logo, companyTitle, projects }, index) => {
     const isSelected = selectedCompanyIndex === index;
     return (
-      <button
+      <Tab
         key={index}
         aria-label={`${companyTitle} Past Work Tab`}
-        role="tab"
         aria-selected={isSelected}
         disabled={isSelected}
         className={clsx(
           "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 font-blacker text-base",
           isSelected
-            ? `border border-b-0 border-not-black bg-pale bg-[length:580px] bg-left bg-repeat text-not-black bg-blend-normal ${backgroundImage}`
+            ? "bg-work-pattern border border-b-0 border-not-black bg-pale bg-[length:580px] bg-left bg-repeat text-not-black bg-blend-normal"
             : "bg-brand-purple text-white hover:text-brand-yellow",
         )}
-        onClick={() => {
-          if (!isSelected) updateComponentView(index);
-        }}
       >
         <Image
           quality={100}
@@ -64,7 +53,7 @@ const ProjectTabs = ({
         >
           {projects.length}
         </div>
-      </button>
+      </Tab>
     );
   });
 export default ProjectTabs;
