@@ -4,7 +4,6 @@
     "plugin:jsx-a11y/recommended",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals"
-    // ,"next/typescript"
   ],
   "ignorePatterns": [".next"],
   "rules": {

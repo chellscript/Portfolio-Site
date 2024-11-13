@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  optimizeFonts: true,
   experimental: { optimizeCss: true },
   images: {
     remotePatterns: [
@@ -11,16 +12,6 @@ const nextConfig = {
         pathname: "/MichasaPortfolio/**",
       },
     ],
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        fs: false,
-        path: false,
-      };
-    }
-
-    return config;
   },
 };
 

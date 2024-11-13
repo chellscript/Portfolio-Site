@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "sh scripts/sitemap.sh",
+    "postbuild": "sh scripts/sitemap_generator.sh",
     "start": "PORT=8080 next start",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{js,tsx}\""

@@ -44,8 +44,9 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
       <div className="[&_img.hero-image:nth-of-type(1)]:hero-show [&_img.hero-image:nth-of-type(2)]:hero-hidden peer-hover:[&_img.hero-image:nth-of-type(2)]:hero-show peer-hover:[&_img.hero-image:nth-of-type(1)]:hero-hidden row-start-1 grid min-h-128 w-fit max-w-hero overflow-hidden rounded-md border border-not-black bg-brand-blue bg-cover shadow shadow-not-black peer-hover:bg-hero-hidden peer-hover:bg-blend-color-burn md:max-h-144 md:grid-cols-2 md:grid-rows-5 md:justify-items-center">
         <div className="col-span-full col-start-1 row-span-full row-start-1 flex h-full flex-col self-center max-lg:z-1 md:col-span-1 md:row-span-full md:row-start-1 md:justify-center md:self-start md:justify-self-start">
           <h1 className="sr-only">
-            Hey, Beautiful World! My name is Michi and I am Front End Developer,
-            and User-Empathy Enthusiast, always! This is my portfolio site.
+            Hello, Beautiful World! My name is Michi and I am Front End
+            Developer, and User-Empathy Enthusiast, always! This is my portfolio
+            site.
           </h1>
           <h1
             aria-hidden
@@ -55,7 +56,7 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
             <span className="flex flex-col *:block max-md:h-full max-md:items-center max-md:justify-between md:gap-y-8">
               <span className="max-md:px-4">
                 Hey,{" "}
-                <span className="font-garden_delight text-white lg:text-6xl">
+                <span className="font-garden_delight text-brand-green md:text-white lg:text-6xl">
                   eautifu
                 </span>{" "}
                 World!
@@ -96,7 +97,6 @@ const Hero = ({ data }: { data: HeroSectionProps }) => {
           />{" "}
           <Image
             src={myselfWink}
-            priority
             quality={100}
             width={400}
             height={437}
