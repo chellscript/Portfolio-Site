@@ -66,8 +66,13 @@ const config: Config = {
         'marquee': 'marquee 10s linear infinite',
         'l21': 'l21 2s infinite linear',
         'tilt': 'tilt 1s ease-in-out infinite',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
       },
       keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-100vh)' },
+        },
         'marquee': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-100% - 4px))' },
