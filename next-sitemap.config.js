@@ -16,6 +16,10 @@ module.exports = {
         userAgent: "*",
         disallow: "/_next/image", // Block all images served through the Next.js image optimization route
       },
+      {
+        userAgent: "*",
+        disallow: "*.pdf", // No indexing my Resume
+      },
     ],
   },
 };
