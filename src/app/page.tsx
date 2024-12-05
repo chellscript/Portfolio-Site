@@ -3,6 +3,7 @@ import Hero from "@/src/components/hero";
 import { Metadata } from "next";
 import getCopyData, { ReturnedResponse } from "../utils/getCopyData";
 import dynamic from "next/dynamic";
+import LoadingWrapper from "../components/loadingWrapper";
 
 const AboutMe = dynamic(() => import("../components/aboutAndSkills"), {
   ssr: false,
@@ -52,13 +53,13 @@ export default async function Home() {
   const { hero, about, contact, previousWork, navigation, footer } = data;
 
   return (
-    <>
+    <LoadingWrapper>
       <NavBar data={navigation} />
       <Hero data={hero} />
       <AboutMe data={about} />
       <Work data={previousWork} />
       <Contact data={contact} />
       <Footer data={footer} />
-    </>
+    </LoadingWrapper>
   );
 }
