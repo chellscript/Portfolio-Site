@@ -24,7 +24,7 @@ const ProjectMedia = ({
   let renderedComponent;
   const close = useClose();
 
-  if (media.length === 0 || !["image", "video"].includes(mediaType)) {
+  if (media?.length === 0 || !["image", "video"].includes(mediaType)) {
     renderedComponent = <MediaPlaceholder />;
   }
 

@@ -27,7 +27,7 @@ const ProjectDisplay = ({
     >
       <div
         className={clsx(
-          "size-full content-start justify-items-center md:justify-items-end lg:col-span-1 lg:row-span-full",
+          "size-full content-start justify-items-center max-lg:row-start-2 md:justify-items-end lg:col-span-1 lg:row-span-full",
           projectData.mediaType === "image" && "lg:pt-16",
         )}
       >
@@ -38,7 +38,7 @@ const ProjectDisplay = ({
           mediaType={projectData.mediaType}
         />
       </div>
-      <div className="w-full justify-items-center gap-y-2 md:justify-items-center lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-0">
+      <div className="w-full justify-items-center gap-y-2 max-lg:row-start-3 md:justify-items-center lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-0">
         <ProjectDescription
           projectData={projectData}
           companyData={companyData}

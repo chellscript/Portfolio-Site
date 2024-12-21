@@ -30,7 +30,11 @@ export const ListPlaceholder = () => {
 
 export const MediaPlaceholder = () => {
   return (
-    <div className="relative flex aspect-video size-full max-h-[305px] max-w-[540px] flex-col items-center justify-center rounded-lg border border-not-black bg-white">
+    <div
+      role="img"
+      aria-label="Image coming Soon"
+      className="relative flex aspect-video size-full max-h-[305px] max-w-[540px] flex-col items-center justify-center rounded-lg border border-not-black bg-white"
+    >
       <div className="absolute z-1 h-[95%] w-[98%] rounded-lg bg-brand-purple/20" />
       <Image
         width="104"
