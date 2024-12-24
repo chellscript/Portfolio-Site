@@ -57,7 +57,7 @@ const DisplayImage = ({
               <GalleryImage
                 width={IMAGE_WIDTH}
                 height={IMAGE_HEIGHT}
-                className="debug max-h-[350px] object-contain max-md:size-full"
+                className="max-h-80 object-contain max-md:size-full"
                 sizes="(max-width: 425px) 250px, (max-width: 785px) 650px"
                 url={url}
                 alt={`Screenshot of ${name}`}
@@ -90,7 +90,7 @@ const DisplayImage = ({
         <>
           {description && (
             <p
-              className="my-4 inline-block rounded-lg bg-purple-200 px-4 py-2 text-center font-homevideo"
+              className="my-4 mt-8 inline-block rounded-lg bg-purple-200 px-4 py-2 text-center font-homevideo"
               id="screenshot-description"
             >
               Screenshot of {descriptionList[visibleImageIndex]}

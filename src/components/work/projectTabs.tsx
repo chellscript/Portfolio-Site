@@ -21,7 +21,7 @@ const ProjectTabs = ({ data, selectedCompanyIndex }: ProjectTabsProps) =>
         className={clsx(
           "relative flex w-auto flex-row items-center gap-x-2 rounded-t-lg border border-b-0 border-not-black p-2 font-blacker text-base",
           isSelected
-            ? "bg-work-pattern border border-b-0 border-not-black bg-pale bg-[length:580px] bg-left bg-repeat text-not-black bg-blend-normal"
+            ? "border border-b-0 border-not-black bg-pale bg-work-pattern bg-fixed bg-left text-not-black bg-blend-normal"
             : "bg-brand-purple text-white hover:text-brand-yellow",
         )}
       >
