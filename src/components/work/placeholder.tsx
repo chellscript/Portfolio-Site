@@ -28,7 +28,7 @@ export const ListPlaceholder = () => {
   );
 };
 
-export const MediaPlaceholder = () => {
+export const PlaceholderComponent = () => {
   return (
     <div
       role="img"

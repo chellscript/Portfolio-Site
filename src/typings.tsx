@@ -79,6 +79,7 @@ export interface ProjectsListProps {
   description: string | null;
   cover: string;
   media: string;
+  mediaLightbox?: string;
   mediaDescription?: string;
   mediaType: "image" | "video";
   techUsed: string;

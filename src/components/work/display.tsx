@@ -1,7 +1,7 @@
 import React from "react";
 import { PreviousWorkSectionProps, ProjectsListProps } from "../../typings";
-import ProjectMedia from "./media";
-import ProjectDescription from "./description";
+import ProjectMedia from "./displayComponents/projectMedia";
+import ProjectDescription from "./displayComponents/projectDescription";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import clsx from "clsx";
 
@@ -28,14 +28,14 @@ const ProjectDisplay = ({
       <div
         className={clsx(
           "size-full content-start justify-items-center max-lg:row-start-2 md:justify-items-end lg:col-span-1 lg:row-span-full",
-          projectData.mediaType === "image" && "lg:pt-16",
         )}
       >
         <ProjectMedia
           name={projectData.name}
-          media={projectData.media}
           mediaDescription={projectData.mediaDescription}
           mediaType={projectData.mediaType}
+          media={projectData.media}
+          mediaLightbox={projectData.mediaLightbox}
         />
       </div>
       <div className="w-full justify-items-center gap-y-2 max-lg:row-start-3 md:justify-items-center lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:size-full lg:pt-0">
