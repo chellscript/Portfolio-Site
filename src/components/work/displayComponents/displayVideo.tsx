@@ -1,59 +1,15 @@
 "use client";
-
-import { loadingBlur } from "./placeholder";
-import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
-import Image from "next/image";
+import { getCldVideoUrl } from "next-cloudinary";
 import ReactPlayer from "react-player";
 import clsx from "clsx";
 import { useState } from "react";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
-type ImageMediaComponentProps = {
-  media: string;
-  alt?: string;
-  height: number;
-  width: number;
-  className?: string;
-  sizes: string;
-};
-
-export const ImageMediaComponent = ({
-  media,
-  alt = "",
-  width,
-  height,
-  className = "",
-  sizes,
-}: ImageMediaComponentProps) => {
-  const url = getCldImageUrl({
-    width: width,
-    height: height,
-    src: media,
-  });
-  return (
-    <Image
-      width={width}
-      height={height}
-      src={url}
-      alt={alt}
-      sizes={sizes}
-      loading="eager"
-      placeholder="blur"
-      blurDataURL={loadingBlur}
-      className={className}
-    />
-  );
-};
-
-type VideoMediaComponentProps = {
+type DisplayVideoProps = {
   media: string;
   description: string;
 };
 
-export const VideoMediaComponent = ({
-  media,
-  description,
-}: VideoMediaComponentProps) => {
+const DisplayVideo = ({ media, description }: DisplayVideoProps) => {
   const mediaList = media.split(",");
   const descriptionList = description.split(",");
 
@@ -92,7 +48,7 @@ export const VideoMediaComponent = ({
         })}
       </div>
       <p
-        className="my-4 inline-block rounded-md bg-purple-200 px-2 text-center font-homevideo"
+        className="my-4 inline-block rounded-lg bg-purple-200 px-4 py-2 text-center font-homevideo"
         id="video-description"
       >
         Video walkthrough showing {descriptionList[visibleVideoIndex]}
@@ -133,29 +89,4 @@ export const VideoMediaComponent = ({
   );
 };
 
-type CTAButtonProps = {
-  onClick: () => void;
-  icon: string;
-  tipMessage: string;
-  ariaLabel: string;
-};
-
-export const CTAButton = ({
-  onClick,
-  icon,
-  tipMessage,
-  ariaLabel,
-}: CTAButtonProps) => (
-  <>
-    <button
-      aria-label={ariaLabel}
-      onClick={onClick}
-      className="peer z-1 flex aspect-square size-16 items-center justify-center rounded-full border-2 border-not-black bg-white p-4 shadow-inner shadow-gray-300/80 hover:translate-y-1 hover:scale-105 hover:shadow-none"
-    >
-      <Icon icon={icon} className="scale-125 text-8xl text-not-black" />
-    </button>
-    <div className="text-highlight h-fit bg-brand-green text-center !font-homevideo text-lg opacity-0 peer-hover:opacity-100">
-      {tipMessage}
-    </div>
-  </>
-);
+export default DisplayVideo;
